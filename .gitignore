@@ -1,0 +1,97 @@
+# =========================
+# Unity Generated Folders
+# =========================
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+
+# =========================
+# Unity Cache / Package
+# =========================
+Library/PackageCache/
+Library/ScriptAssemblies/
+Library/ShaderCache/
+
+# =========================
+# Auto-generated files
+# =========================
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =========================
+# Unity meta (IMPORTANTE)
+# =========================
+# NÃO ignorar arquivos .meta
+# Eles devem ser versionados!
+
+# =========================
+# Builds
+# =========================
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+
+# =========================
+# Crash Reports
+# =========================
+sysinfo.txt
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Addressables (opcional)
+# =========================
+ServerData/
+
+# =========================
+# Visual Studio Code
+# =========================
+.history/
+
+# =========================
+# Rider
+# =========================
+.idea/
+
+# =========================
+# Temporary files
+# =========================
+*.bak
+*.swp
+*.orig
