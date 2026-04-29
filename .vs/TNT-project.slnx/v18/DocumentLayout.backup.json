@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|a:\\projetosunity\\soulcode\\tnt-project\\assets\\project\\scripts\\ui\\timerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\ui\\timerui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|a:\\projetosunity\\soulcode\\tnt-project\\assets\\project\\scripts\\gameplay\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\gameplay\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|a:\\projetosunity\\soulcode\\tnt-project\\assets\\project\\scripts\\gameplay\\zonerandomizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\gameplay\\zonerandomizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ZoneRandomizer.cs",
+              "DocumentMoniker": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\Assets\\Project\\Scripts\\Gameplay\\ZoneRandomizer.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Gameplay\\ZoneRandomizer.cs",
+              "ToolTip": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\Assets\\Project\\Scripts\\Gameplay\\ZoneRandomizer.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Gameplay\\ZoneRandomizer.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAwwEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T19:10:22.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InputHandler.cs",
+              "DocumentMoniker": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\Assets\\Project\\Scripts\\Gameplay\\InputHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Gameplay\\InputHandler.cs",
+              "ToolTip": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\Assets\\Project\\Scripts\\Gameplay\\InputHandler.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Gameplay\\InputHandler.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T18:15:45.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimerUI.cs",
+              "DocumentMoniker": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\Assets\\Project\\Scripts\\UI\\TimerUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\UI\\TimerUI.cs",
+              "ToolTip": "A:\\ProjetosUnity\\Soulcode\\TNT-project\\Assets\\Project\\Scripts\\UI\\TimerUI.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\UI\\TimerUI.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwBEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T18:00:54.482Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

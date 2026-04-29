@@ -1,16 +1,44 @@
+/*
+Responsabilidade:
+Controlar o estado global do jogo.
+
+Como funciona:
+- Recebe evento de fim de jogo do TimerSystem
+- Ativa UI de fim de jogo
+- Pode pausar sistemas futuramente
+
+Depende de:
+- TimerSystem
+*/
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TimerSystem timerSystem;
+    public GameObject gameOverUI;
+
+    private bool gameEnded = false;
+
+    private void Update()
     {
-        
+        if (gameEnded) return;
+
+        if (timerSystem != null && timerSystem.isGameOver)
+        {
+            EndGame();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void EndGame()
     {
-        
+        gameEnded = true;
+
+        Debug.Log("GAME OVER TRIGGERADO");
+
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(true);
+        }
     }
 }
