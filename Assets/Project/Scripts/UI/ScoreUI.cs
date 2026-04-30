@@ -29,8 +29,8 @@ public class ScoreUI : MonoBehaviour
         if (scoreSystem == null)
             return;
 
-        scoreText.text = $"Score: {scoreSystem.score:0.0}";
-        comboText.text = $"Combo: {scoreSystem.combo}";
-        multiplierText.text = $"Multi: {scoreSystem.multiplier:0.00}x";
+        scoreText.text = ((int)scoreSystem.score).ToString("N0");
+        multiplierText.text = scoreSystem.multiplier.ToString("F0") + "x";
+        comboText.text = scoreSystem.combo.ToString();
     }
 }

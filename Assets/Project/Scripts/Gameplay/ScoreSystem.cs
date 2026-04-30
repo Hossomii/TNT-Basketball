@@ -52,7 +52,7 @@ public class ScoreSystem : MonoBehaviour
         float pointsToAdd = basePoints * multiplier;
         score += pointsToAdd;
 
-        Debug.Log($"Resultado: {result} | +{pointsToAdd} pts | Score: {score} | Combo: {combo} | Multi: {multiplier}x");
+        Debug.Log($"Resultado: {result} | +{(int)pointsToAdd} pts | Score: {(int)score} | Combo: {combo} | Multi: {(int)multiplier}x");
     }
 
     private void UpdateMultiplier()

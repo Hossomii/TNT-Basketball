@@ -21,6 +21,6 @@ public class TimerUI : MonoBehaviour
 
         int seconds = Mathf.CeilToInt(timerSystem.timeRemaining);
 
-        timerText.text = $"TEMPO\n00:{seconds:00}";
+        timerText.text = $"00:{seconds:00}";
     }
 }
