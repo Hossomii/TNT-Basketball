@@ -66,6 +66,7 @@ desktop.ini
 # IDEs
 # =========================
 .vscode/
+.vs/
 .idea/
 *.code-workspace
 
