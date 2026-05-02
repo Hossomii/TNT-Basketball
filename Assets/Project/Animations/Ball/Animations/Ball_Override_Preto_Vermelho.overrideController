@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ball_Override_Preto_Vermelho
+  m_Controller: {fileID: 9100000, guid: 4c87ee02e719a244c9e37037f0856205, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 086c74c673d3d7248916864ce3b398c4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7437d4a80dabaa8489f287000051b839, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e54fbedee759e1f43bb30e2c3cf1f2bd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 83301c9378c10b84caa0cb9ffe29d927, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ba47e70bb48511e43be87135844b9e2b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b788588366dc5b8499fc563b9d3ef274, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 77edfa0853c90354cbcf2070b643fb73, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e2f3c1c2af27ec447ae142a5074f61d9, type: 2}

@@ -25,6 +25,9 @@ public class ScoreSystem : MonoBehaviour
     public int combo = 0;
     public float multiplier = 1f;
 
+    [Header("External Multiplier")]
+        public float externalMultiplier = 1f;
+
     public void ApplyShotResult(ShotEvaluator.ShotResult result)
     {
         float basePoints = 0f;
@@ -49,7 +52,7 @@ public class ScoreSystem : MonoBehaviour
 
         UpdateMultiplier();
 
-        float pointsToAdd = basePoints * multiplier;
+        float pointsToAdd = basePoints * multiplier * externalMultiplier;
         score += pointsToAdd;
 
         Debug.Log($"Resultado: {result} | +{(int)pointsToAdd} pts | Score: {(int)score} | Combo: {combo} | Multi: {(int)multiplier}x");
@@ -63,5 +66,10 @@ public class ScoreSystem : MonoBehaviour
             multiplier = 2f;
         else
             multiplier = 1f;
+    }
+
+    public void SetExternalMultiplier(float value)
+    {
+        externalMultiplier = value;
     }
 }

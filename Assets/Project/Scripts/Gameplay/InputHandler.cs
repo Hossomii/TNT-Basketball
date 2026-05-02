@@ -9,8 +9,8 @@ public class InputHandler : MonoBehaviour
     public ScoreSystem scoreSystem;
     public ZoneRandomizer zoneRandomizer;
     public TimerSystem timerSystem;
-    // public EnergySystem energySystem;
     public BallAnimationController ballAnimationController;
+    public TNTSystem tntSystem;
 
     private bool isResolvingShot = false;
 
@@ -34,18 +34,33 @@ public class InputHandler : MonoBehaviour
 
         var result = evaluator.Evaluate();
 
+        AudioManager.Instance?.PlayShoot();
+
         if (ballAnimationController != null)
-        {
             yield return StartCoroutine(ballAnimationController.PlayResultAnimation(result));
+
+        switch (result)
+        {
+            case ShotEvaluator.ShotResult.Perfect:
+                AudioManager.Instance?.PlayPerfect();
+                break;
+
+            case ShotEvaluator.ShotResult.Good:
+                AudioManager.Instance?.PlayHit();
+                break;
+
+            case ShotEvaluator.ShotResult.Miss:
+                AudioManager.Instance?.PlayMiss();
+                break;
         }
 
         feedback.Show(result);
         scoreSystem.ApplyShotResult(result);
 
         if (result != ShotEvaluator.ShotResult.Miss)
-        {   
-            // if (energySystem != null)
-            // energySystem.AddEnergy(1);
+        {
+            if (tntSystem != null)
+                tntSystem.AddEnergy(1);
 
             zoneRandomizer.TryRandomizeZones();
         }

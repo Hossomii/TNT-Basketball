@@ -1,0 +1,1248 @@
+fileFormatVersion: 2
+guid: 1b42b22062a5d90458bdbd0fd013a90b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4659299318627757621
+    second: "bot\xE3oCinza_0"
+  - first:
+      213: 3464054373290568146
+    second: "bot\xE3oCinza_1"
+  - first:
+      213: 5419810323526292592
+    second: "bot\xE3oCinza_2"
+  - first:
+      213: -7708276746566742475
+    second: "bot\xE3oCinza_3"
+  - first:
+      213: 1861031708747218410
+    second: "bot\xE3oCinza_4"
+  - first:
+      213: 7767683704012600387
+    second: "bot\xE3oCinza_5"
+  - first:
+      213: 5475403770958219813
+    second: "bot\xE3oCinza_6"
+  - first:
+      213: -1207861685195818740
+    second: "bot\xE3oCinza_7"
+  - first:
+      213: -8119217946339722906
+    second: "bot\xE3oCinza_8"
+  - first:
+      213: -2332838849491913916
+    second: "bot\xE3oCinza_9"
+  - first:
+      213: 3812016553521983045
+    second: "bot\xE3oCinza_10"
+  - first:
+      213: 5237335910509716347
+    second: "bot\xE3oCinza_11"
+  - first:
+      213: -8637559317794840644
+    second: "bot\xE3oCinza_12"
+  - first:
+      213: -1253829896283794329
+    second: "bot\xE3oCinza_13"
+  - first:
+      213: 290645236725621162
+    second: "bot\xE3oCinza_14"
+  - first:
+      213: -2061788061151935603
+    second: "bot\xE3oCinza_15"
+  - first:
+      213: -4614871626414918111
+    second: "bot\xE3oCinza_16"
+  - first:
+      213: 2618920226138617270
+    second: "bot\xE3oCinza_17"
+  - first:
+      213: 4548087281996332243
+    second: "bot\xE3oCinza_18"
+  - first:
+      213: -2296627608122060709
+    second: "bot\xE3oCinza_19"
+  - first:
+      213: -8107587745187487743
+    second: "bot\xE3oCinza_20"
+  - first:
+      213: -313675727821035614
+    second: "bot\xE3oCinza_21"
+  - first:
+      213: -3443430709201814232
+    second: "bot\xE3oCinza_22"
+  - first:
+      213: -4574369178534726941
+    second: "bot\xE3oCinza_23"
+  - first:
+      213: -3521786803564271152
+    second: "bot\xE3oCinza_24"
+  - first:
+      213: 1403850168591002836
+    second: "bot\xE3oCinza_25"
+  - first:
+      213: 7633692812118322206
+    second: "bot\xE3oCinza_26"
+  - first:
+      213: 7328092833105570492
+    second: "bot\xE3oCinza_27"
+  - first:
+      213: 336396335614498163
+    second: "bot\xE3oCinza_28"
+  - first:
+      213: -7420550387498282494
+    second: "bot\xE3oCinza_29"
+  - first:
+      213: -6527970684644695870
+    second: "bot\xE3oCinza_30"
+  - first:
+      213: -7701088956882042601
+    second: "bot\xE3oCinza_31"
+  - first:
+      213: -7781944260629810795
+    second: "bot\xE3oCinza_32"
+  - first:
+      213: 5152149214017156058
+    second: "bot\xE3oCinza_33"
+  - first:
+      213: 1680565389161446920
+    second: "bot\xE3oCinza_34"
+  - first:
+      213: 6570981114011610583
+    second: "bot\xE3oCinza_35"
+  - first:
+      213: -4263701975773316320
+    second: "bot\xE3oCinza_36"
+  - first:
+      213: -8503049931724131217
+    second: "bot\xE3oCinza_37"
+  - first:
+      213: -2823417133968373644
+    second: "bot\xE3oCinza_38"
+  - first:
+      213: 4942368938462426457
+    second: "bot\xE3oCinza_39"
+  - first:
+      213: 2972343575305936873
+    second: "bot\xE3oCinza_40"
+  - first:
+      213: 8930782051999250170
+    second: "bot\xE3oCinza_41"
+  - first:
+      213: -8484109590637913683
+    second: "bot\xE3oCinza_42"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 185
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ee6055b0829a040800000000000000
+      internalID: 4659299318627757621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_1"
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 1374
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d96f92691bc21030800000000000000
+      internalID: 3464054373290568146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_2"
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 1015
+        width: 500
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07497cb16c8073b40800000000000000
+      internalID: 5419810323526292592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_3"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 1008
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53e4c72a323b60590800000000000000
+      internalID: -7708276746566742475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_4"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 983
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aedbd9b9a76b3d910800000000000000
+      internalID: 1861031708747218410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_5"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 952
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344f2418c2b5ccb60800000000000000
+      internalID: 7767683704012600387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_6"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 896
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a8cc148ba8cfb40800000000000000
+      internalID: 5475403770958219813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_7"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 815
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0939146230dc3fe0800000000000000
+      internalID: -1207861685195818740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_8"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 807
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669b1769b4eb25f80800000000000000
+      internalID: -8119217946339722906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_9"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 734
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443bdc12d6710afd0800000000000000
+      internalID: -2332838849491913916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_10"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 719
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e2696cbd007e430800000000000000
+      internalID: 3812016553521983045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_11"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 707
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7324531341cea840800000000000000
+      internalID: 5237335910509716347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_12"
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 703
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf19707099312880800000000000000
+      internalID: -8637559317794840644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_13"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 668
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7645d373a50899ee0800000000000000
+      internalID: -1253829896283794329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_14"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 648
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1a0ba8d44980400800000000000000
+      internalID: 290645236725621162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_15"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 630
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83c5e4aeae0363e0800000000000000
+      internalID: -2061788061151935603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_16"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 620
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1267287d4bea4ffb0800000000000000
+      internalID: -4614871626414918111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_17"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 613
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5f31ee116485420800000000000000
+      internalID: 2618920226138617270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_18"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 606
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dcfcd2494d0e1f30800000000000000
+      internalID: 4548087281996332243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_19"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 543
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b509784cb5db020e0800000000000000
+      internalID: -2296627608122060709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_20"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 518
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1002acec6ef0c7f80800000000000000
+      internalID: -8107587745187487743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_21"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 526
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7a094669995abf0800000000000000
+      internalID: -313675727821035614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_22"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 487
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82dba59930a7630d0800000000000000
+      internalID: -3443430709201814232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_23"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 479
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e231f9d7739480c0800000000000000
+      internalID: -4574369178534726941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_24"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 470
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9a4e6bf89102fc0800000000000000
+      internalID: -3521786803564271152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_25"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 452
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc2db85a4a7b7310800000000000000
+      internalID: 1403850168591002836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_26"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 460
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ce3c6ea2350f960800000000000000
+      internalID: 7633692812118322206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_27"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 447
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbae7561b9d92b560800000000000000
+      internalID: 7328092833105570492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_28"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 423
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3759b085fae1ba400800000000000000
+      internalID: 336396335614498163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_29"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 436
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20217430db8e40990800000000000000
+      internalID: -7420550387498282494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_30"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 390
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0e69dbf3df765a0800000000000000
+      internalID: -6527970684644695870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_31"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 395
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711cc55556c302590800000000000000
+      internalID: -7701088956882042601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_32"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 350
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591354beceaf00490800000000000000
+      internalID: -7781944260629810795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_33"
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 315
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3fc43b96c108740800000000000000
+      internalID: 5152149214017156058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_34"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 320
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80eb8c24151925710800000000000000
+      internalID: 1680565389161446920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_35"
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 328
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd66763280d03b50800000000000000
+      internalID: 6570981114011610583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_36"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 310
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b76e1a4a944d4c0800000000000000
+      internalID: -4263701975773316320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_37"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 296
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f647c2063291ff980800000000000000
+      internalID: -8503049931724131217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_38"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 272
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4784015631531d8d0800000000000000
+      internalID: -2823417133968373644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_39"
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 236
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9553afd1d52d69440800000000000000
+      internalID: 4942368938462426457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_40"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 200
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef568ccbb2ef3920800000000000000
+      internalID: 2972343575305936873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_41"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 120
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af679df75f280fb70800000000000000
+      internalID: 8930782051999250170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "bot\xE3oCinza_42"
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 104
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9da8e2743624a80800000000000000
+      internalID: -8484109590637913683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "bot\xE3oCinza_0": 4659299318627757621
+      "bot\xE3oCinza_1": 3464054373290568146
+      "bot\xE3oCinza_10": 3812016553521983045
+      "bot\xE3oCinza_11": 5237335910509716347
+      "bot\xE3oCinza_12": -8637559317794840644
+      "bot\xE3oCinza_13": -1253829896283794329
+      "bot\xE3oCinza_14": 290645236725621162
+      "bot\xE3oCinza_15": -2061788061151935603
+      "bot\xE3oCinza_16": -4614871626414918111
+      "bot\xE3oCinza_17": 2618920226138617270
+      "bot\xE3oCinza_18": 4548087281996332243
+      "bot\xE3oCinza_19": -2296627608122060709
+      "bot\xE3oCinza_2": 5419810323526292592
+      "bot\xE3oCinza_20": -8107587745187487743
+      "bot\xE3oCinza_21": -313675727821035614
+      "bot\xE3oCinza_22": -3443430709201814232
+      "bot\xE3oCinza_23": -4574369178534726941
+      "bot\xE3oCinza_24": -3521786803564271152
+      "bot\xE3oCinza_25": 1403850168591002836
+      "bot\xE3oCinza_26": 7633692812118322206
+      "bot\xE3oCinza_27": 7328092833105570492
+      "bot\xE3oCinza_28": 336396335614498163
+      "bot\xE3oCinza_29": -7420550387498282494
+      "bot\xE3oCinza_3": -7708276746566742475
+      "bot\xE3oCinza_30": -6527970684644695870
+      "bot\xE3oCinza_31": -7701088956882042601
+      "bot\xE3oCinza_32": -7781944260629810795
+      "bot\xE3oCinza_33": 5152149214017156058
+      "bot\xE3oCinza_34": 1680565389161446920
+      "bot\xE3oCinza_35": 6570981114011610583
+      "bot\xE3oCinza_36": -4263701975773316320
+      "bot\xE3oCinza_37": -8503049931724131217
+      "bot\xE3oCinza_38": -2823417133968373644
+      "bot\xE3oCinza_39": 4942368938462426457
+      "bot\xE3oCinza_4": 1861031708747218410
+      "bot\xE3oCinza_40": 2972343575305936873
+      "bot\xE3oCinza_41": 8930782051999250170
+      "bot\xE3oCinza_42": -8484109590637913683
+      "bot\xE3oCinza_5": 7767683704012600387
+      "bot\xE3oCinza_6": 5475403770958219813
+      "bot\xE3oCinza_7": -1207861685195818740
+      "bot\xE3oCinza_8": -8119217946339722906
+      "bot\xE3oCinza_9": -2332838849491913916
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

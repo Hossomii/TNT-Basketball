@@ -1,27 +1,16 @@
-/*
-Responsabilidade:
-Controlar o tempo da partida.
-
-Como funciona:
-- Começa com 60 segundos.
-- Diminui o tempo enquanto o jogo está ativo.
-- Permite aplicar penalidade de tempo.
-- Quando chega em 0, encerra a partida.
-
-Depende de:
-- InputHandler para receber penalidade por erro.
-*/
-
 using UnityEngine;
 
 public class TimerSystem : MonoBehaviour
 {
     public float timeRemaining = 60f;
     public bool isGameOver = false;
+    public bool isPaused = false;
+    public Animator ballAnimator;
 
     private void Update()
     {
         if (isGameOver) return;
+        if (isPaused) return;
 
         timeRemaining -= Time.deltaTime;
 
@@ -30,17 +19,16 @@ public class TimerSystem : MonoBehaviour
             timeRemaining = 0f;
             isGameOver = true;
 
+            // Pausa a animação da bola
+            if (ballAnimator != null)
+                ballAnimator.speed = 0f;
+
             Debug.Log("FIM DE JOGO!");
         }
     }
 
-    public void ApplyPenalty(float penalty)
+    public void SetTimePaused(bool value)
     {
-        if (isGameOver) return;
-
-        timeRemaining -= penalty;
-
-        if (timeRemaining < 0f)
-            timeRemaining = 0f;
+        isPaused = value;
     }
 }
