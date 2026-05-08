@@ -2191,10 +2191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuUI
   cenaJogo: 2
-  cenaRanking: 0
+  cenaRanking: 5
   cenaPersonalizar: 3
-  cenaTutorial: 1
-  cenaCreditos: 4
+  cenaTutorial: 6
+  cenaCreditos: 1
 --- !u!4 &1960900804
 Transform:
   m_ObjectHideFlags: 0
