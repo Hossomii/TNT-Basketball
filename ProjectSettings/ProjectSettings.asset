@@ -774,11 +774,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 6b0ff4ea-cf3e-447e-a884-5cdeb5c88520
+  cloudProjectId: cc764cdf-4985-46a2-9b26-c04b3a739452
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: TNT-project
-  organizationId: hossomii
+  organizationId: lailazappiello90
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
