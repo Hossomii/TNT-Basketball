@@ -45,7 +45,7 @@ public class GameStartCountdown : MonoBehaviour
         if (powerBar != null)
             powerBar.enabled = false;
 
-        if(ballAnimator != null)
+        if (ballAnimator != null)
             ballAnimator.speed = 0f;
 
         // Countdown 3 → 1

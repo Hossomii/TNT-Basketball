@@ -1,11 +1,11 @@
 /*
 Responsabilidade:
-Controla a posição das zonas Good e Perfect na barra.
+Controlar posição e tamanho das zonas Good/Perfect.
 
 Regras:
-- Nos primeiros 10 segundos de partida, as zonas ficam fixas no centro.
-- Quando o tempo chega em 50s ou menos, as zonas passam a mudar aleatoriamente após cada acerto.
-- Suporta PowerUp TNT que aumenta temporariamente a área perfeita.
+- Início da partida: zonas centralizadas.
+- Após o tempo definido: zonas randomizam após acertos.
+- PowerUp TNT pode aumentar temporariamente a zona Perfect.
 */
 
 using UnityEngine;
@@ -18,32 +18,26 @@ public class ZoneRandomizer : MonoBehaviour
     public TimerSystem timerSystem;
 
     [Header("Zone Sizes")]
-    public float goodZoneSize = 0.5f;
-    public float perfectZoneSize = 0.3f;
+    [Range(0f, 1f)] public float goodZoneSize = 0.5f;
+    [Range(0f, 1f)] public float perfectZoneSize = 0.3f;
 
     [Header("Randomization")]
     public float randomizeAfterTime = 50f;
 
     [Header("TNT PowerUp")]
     public bool isPerfectBoostActive = false;
-    public float boostedPerfectZoneSize = 0.5f;
+    [Range(0f, 1f)] public float boostedPerfectZoneSize = 0.18f;
+
+    private float lastCenter = 0.5f;
 
     private void Start()
     {
         SetCenteredZones();
     }
 
-    public void SetPerfectZoneBoost(bool active)
-    {
-        isPerfectBoostActive = active;
-
-        // Atualiza imediatamente a zona atual
-        ReapplyCurrentZones();
-    }
-
     public void TryRandomizeZones()
     {
-        if (timerSystem != null && timerSystem.timeRemaining > randomizeAfterTime)
+        if (ShouldKeepCentered())
         {
             SetCenteredZones();
             return;
@@ -52,39 +46,57 @@ public class ZoneRandomizer : MonoBehaviour
         RandomizeZones();
     }
 
+    public void SetPerfectZoneBoost(bool active, float boostedSize)
+    {
+        isPerfectBoostActive = active;
+        boostedPerfectZoneSize = Mathf.Clamp01(boostedSize);
+
+        ApplyZones(lastCenter);
+    }
+
+    private bool ShouldKeepCentered()
+    {
+        return timerSystem != null &&
+               timerSystem.timeRemaining > randomizeAfterTime;
+    }
+
     private void SetCenteredZones()
     {
-        float center = 0.5f;
-        ApplyZones(center);
+        lastCenter = 0.5f;
+        ApplyZones(lastCenter);
     }
 
     private void RandomizeZones()
     {
-        float halfGood = goodZoneSize / 2f;
+        float safeHalfGood = Mathf.Clamp01(goodZoneSize) / 2f;
 
-        float center = Random.Range(halfGood, 1f - halfGood);
+        lastCenter = Random.Range(
+            safeHalfGood,
+            1f - safeHalfGood
+        );
 
-        ApplyZones(center);
+        ApplyZones(lastCenter);
     }
 
-    private void ReapplyCurrentZones()
-    {
-        // Recalcula usando o mesmo centro atual
-        // Pegamos o centro atual baseado nas zonas já existentes
-
-        float currentCenter = 0.5f;
-
-        // Se quiser algo mais preciso no futuro:
-        // você pode guardar o último center em uma variável
-
-        ApplyZones(currentCenter);
-    }
-
+    /*
+    Responsabilidade:
+    Aplicar valores normalizados das zonas na lógica e na UI.
+    */
     private void ApplyZones(float center)
     {
-        float activePerfectSize = isPerfectBoostActive ? boostedPerfectZoneSize : perfectZoneSize;
+        float safeGoodSize = Mathf.Clamp01(goodZoneSize);
 
-        float halfGood = goodZoneSize / 2f;
+        float activePerfectSize = isPerfectBoostActive
+            ? boostedPerfectZoneSize
+            : perfectZoneSize;
+
+        activePerfectSize = Mathf.Clamp(
+            activePerfectSize,
+            0f,
+            safeGoodSize
+        );
+
+        float halfGood = safeGoodSize / 2f;
         float halfPerfect = activePerfectSize / 2f;
 
         float goodStart = center - halfGood;
@@ -93,11 +105,24 @@ public class ZoneRandomizer : MonoBehaviour
         float perfectStart = center - halfPerfect;
         float perfectEnd = center + halfPerfect;
 
-        shotEvaluator.SetZones(goodStart, goodEnd, perfectStart, perfectEnd);
+        if (shotEvaluator != null)
+        {
+            shotEvaluator.SetZones(
+                goodStart,
+                goodEnd,
+                perfectStart,
+                perfectEnd
+            );
+        }
 
         if (zoneUI != null)
         {
-            zoneUI.UpdateZones(goodStart, goodEnd, perfectStart, perfectEnd);
+            zoneUI.UpdateZones(
+                goodStart,
+                goodEnd,
+                perfectStart,
+                perfectEnd
+            );
         }
     }
 }

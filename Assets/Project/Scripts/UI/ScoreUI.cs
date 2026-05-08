@@ -1,16 +1,9 @@
 /*
 Responsabilidade:
-Exibir na UI os valores atuais de pontuação, combo e multiplicador.
+Atualizar UI de score e combo.
 
-Como funciona:
-- Lê os dados do ScoreSystem.
-- Atualiza os textos na tela em tempo real.
-
-Depende de:
+Usado por:
 - ScoreSystem
-
-Observação:
-Apenas visual. Não altera a lógica da pontuação.
 */
 
 using UnityEngine;
@@ -18,19 +11,48 @@ using TMPro;
 
 public class ScoreUI : MonoBehaviour
 {
+    [Header("References")]
     public ScoreSystem scoreSystem;
 
+    [Header("Texts")]
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI comboText;
-    public TextMeshProUGUI multiplierText;
+
+    [Header("Labels")]
+    public string comboPrefix = "COMBO ";
 
     private void Update()
     {
         if (scoreSystem == null)
             return;
 
-        scoreText.text = ((int)scoreSystem.score).ToString("N0");
-        multiplierText.text = scoreSystem.multiplier.ToString("F0") + "x";
-        comboText.text = scoreSystem.combo.ToString();
+        UpdateScore();
+        UpdateCombo();
+    }
+
+    /*
+    Responsabilidade:
+    Atualizar texto da pontuação.
+    */
+    private void UpdateScore()
+    {
+        if (scoreText == null)
+            return;
+
+        scoreText.text =
+            scoreSystem.score.ToString("F2").Replace(".", ",");
+    }
+
+    /*
+    Responsabilidade:
+    Atualizar texto do combo.
+    */
+    private void UpdateCombo()
+    {
+        if (comboText == null)
+            return;
+
+        comboText.text =
+            $"{comboPrefix}{scoreSystem.combo}";
     }
 }

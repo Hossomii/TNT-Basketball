@@ -1,11 +1,26 @@
+/*
+Responsabilidade:
+Exibir feedback visual do resultado do arremesso.
+
+Resultados:
+- Good
+- Perfect
+- Miss
+
+Usado por:
+- InputHandler
+*/
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class FeedbackUI : MonoBehaviour
 {
+    [Header("UI")]
     public Image feedbackImage;
 
+    [Header("Sprites")]
     public Sprite goodSprite;
     public Sprite perfectSprite;
     public Sprite missSprite;
@@ -14,40 +29,45 @@ public class FeedbackUI : MonoBehaviour
     public float fadeInTime = 0.15f;
     public float displayTime = 0.5f;
     public float fadeOutTime = 0.3f;
-    public float scaleMultiplier = 1.2f;
+    public float startScale = 0.7f;
+    public float popScale = 1.2f;
 
     private Coroutine currentRoutine;
 
     private void Start()
     {
-        feedbackImage.gameObject.SetActive(false);
+        HideFeedback();
     }
 
     public void Show(ShotEvaluator.ShotResult result)
     {
-        if (feedbackImage == null) return;
+        if (feedbackImage == null)
+            return;
 
-        // Define sprite
-        switch (result)
-        {
-            case ShotEvaluator.ShotResult.Good:
-                feedbackImage.sprite = goodSprite;
-                break;
+        feedbackImage.sprite = GetFeedbackSprite(result);
 
-            case ShotEvaluator.ShotResult.Perfect:
-                feedbackImage.sprite = perfectSprite;
-                break;
-
-            case ShotEvaluator.ShotResult.Miss:
-                feedbackImage.sprite = missSprite;
-                break;
-        }
-
-        // Cancela animação anterior
         if (currentRoutine != null)
             StopCoroutine(currentRoutine);
 
         currentRoutine = StartCoroutine(PlayAnimation());
+    }
+
+    private Sprite GetFeedbackSprite(ShotEvaluator.ShotResult result)
+    {
+        switch (result)
+        {
+            case ShotEvaluator.ShotResult.Good:
+                return goodSprite;
+
+            case ShotEvaluator.ShotResult.Perfect:
+                return perfectSprite;
+
+            case ShotEvaluator.ShotResult.Miss:
+                return missSprite;
+
+            default:
+                return missSprite;
+        }
     }
 
     private IEnumerator PlayAnimation()
@@ -58,44 +78,51 @@ public class FeedbackUI : MonoBehaviour
         color.a = 0f;
         feedbackImage.color = color;
 
-        Vector3 startScale = Vector3.one * 0.7f;
-        Vector3 targetScale = Vector3.one * scaleMultiplier;
+        Vector3 initialScale = Vector3.one * startScale;
+        Vector3 targetScale = Vector3.one * popScale;
 
-        feedbackImage.transform.localScale = startScale;
+        feedbackImage.transform.localScale = initialScale;
 
-        float time = 0f;
+        float timer = 0f;
 
-        // 🔹 Fade In + Scale Up
-        while (time < fadeInTime)
+        while (timer < fadeInTime)
         {
-            time += Time.deltaTime;
-            float t = time / fadeInTime;
+            timer += Time.deltaTime;
+            float t = timer / fadeInTime;
 
             color.a = Mathf.Lerp(0f, 1f, t);
             feedbackImage.color = color;
 
-            feedbackImage.transform.localScale = Vector3.Lerp(startScale, targetScale, t);
+            feedbackImage.transform.localScale =
+                Vector3.Lerp(initialScale, targetScale, t);
 
             yield return null;
         }
 
         feedbackImage.transform.localScale = Vector3.one;
 
-        // 🔹 Tempo visível
         yield return new WaitForSeconds(displayTime);
 
-        // 🔹 Fade Out
-        time = 0f;
-        while (time < fadeOutTime)
+        timer = 0f;
+
+        while (timer < fadeOutTime)
         {
-            time += Time.deltaTime;
-            float t = time / fadeOutTime;
+            timer += Time.deltaTime;
+            float t = timer / fadeOutTime;
 
             color.a = Mathf.Lerp(1f, 0f, t);
             feedbackImage.color = color;
 
             yield return null;
         }
+
+        HideFeedback();
+    }
+
+    private void HideFeedback()
+    {
+        if (feedbackImage == null)
+            return;
 
         feedbackImage.gameObject.SetActive(false);
     }
