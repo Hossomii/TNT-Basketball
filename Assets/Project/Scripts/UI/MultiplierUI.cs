@@ -4,7 +4,7 @@ Controlar visual do multiplicador.
 
 Como funciona:
 - Troca sprite baseado no multiplicador atual.
-- Suporta visual especial para buff TNT.
+- Usa PNGs prontos para 1x até 6x.
 
 Usado por:
 - ScoreSystem
@@ -26,49 +26,31 @@ public class MultiplierUI : MonoBehaviour
     public Sprite multiplier5x;
     public Sprite multiplier6x;
 
-    [Header("FX")]
-    public Outline multiplierOutline;
-
     private void Start()
     {
         UpdateMultiplier(1f);
-        SetDoubleScoreVisual(false);
     }
 
-    /*
-    Responsabilidade:
-    Atualizar sprite do multiplicador.
-    */
     public void UpdateMultiplier(float multiplier)
     {
         if (multiplierImage == null)
             return;
 
         multiplierImage.gameObject.SetActive(true);
-
-        multiplierImage.sprite =
-            GetMultiplierSprite(multiplier);
+        multiplierImage.sprite = GetMultiplierSprite(multiplier);
     }
 
-    /*
-    Responsabilidade:
-    Ativar visual do buff de double score.
-    */
     public void SetDoubleScoreVisual(bool active)
     {
-        if (multiplierOutline != null)
-        {
-            multiplierOutline.enabled = active;
-        }
+        // Mantido vazio de propósito.
+        // Os sprites PNG já carregam o visual do multiplicador.
+        // Esse método continua existindo para não quebrar chamadas do TNTPowerUpSystem.
     }
 
     private Sprite GetMultiplierSprite(float multiplier)
     {
-        int value =
-            Mathf.RoundToInt(multiplier);
-
-        value =
-            Mathf.Clamp(value, 1, 6);
+        int value = Mathf.RoundToInt(multiplier);
+        value = Mathf.Clamp(value, 1, 6);
 
         switch (value)
         {

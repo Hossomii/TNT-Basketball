@@ -28,15 +28,19 @@ public class TNTCanVisualController : MonoBehaviour
     [Header("Smooth")]
     public float smoothSpeed = 10f;
 
-    private List<int> queue = new List<int>();
+    private readonly List<int> queue = new List<int>();
 
     private void Start()
     {
         InitializeQueue();
+        UpdateVisualsInstant();
     }
 
     private void Update()
     {
+        if (GameplayLockSystem.IsGameplayLocked)
+            return;
+
         UpdateVisuals();
     }
 
@@ -44,10 +48,11 @@ public class TNTCanVisualController : MonoBehaviour
     {
         queue.Clear();
 
+        if (cans == null)
+            return;
+
         for (int i = 0; i < cans.Length; i++)
-        {
             queue.Add(i);
-        }
     }
 
     public int GetCurrentCanIndex()
@@ -67,18 +72,20 @@ public class TNTCanVisualController : MonoBehaviour
 
         queue.RemoveAt(0);
         queue.Add(current);
+
+        UpdateVisualsInstant();
     }
 
     private void UpdateVisuals()
     {
-        if (cans == null || canGroups == null)
+        if (!HasValidReferences())
             return;
 
         for (int queuePosition = 0; queuePosition < queue.Count; queuePosition++)
         {
             int canIndex = queue[queuePosition];
 
-            if (canIndex < 0 || canIndex >= cans.Length)
+            if (!IsValidCanIndex(canIndex))
                 continue;
 
             bool isNext = queuePosition == 0;
@@ -90,14 +97,81 @@ public class TNTCanVisualController : MonoBehaviour
         }
     }
 
-    private void ApplyPosition(int canIndex, int queuePosition)
+    private void UpdateVisualsInstant()
     {
-        Vector2 targetPosition = firstPosition;
+        if (!HasValidReferences())
+            return;
+
+        for (int queuePosition = 0; queuePosition < queue.Count; queuePosition++)
+        {
+            int canIndex = queue[queuePosition];
+
+            if (!IsValidCanIndex(canIndex))
+                continue;
+
+            bool isNext = queuePosition == 0;
+
+            cans[canIndex].anchoredPosition = GetTargetPosition(queuePosition);
+            cans[canIndex].localScale = GetTargetScale(isNext);
+            cans[canIndex].localRotation = Quaternion.Euler(0f, 0f, GetTargetRotationWithoutShake(isNext));
+            canGroups[canIndex].alpha = GetTargetAlpha(isNext);
+        }
+    }
+
+    private bool HasValidReferences()
+    {
+        return cans != null &&
+               canGroups != null &&
+               cans.Length > 0 &&
+               canGroups.Length >= cans.Length;
+    }
+
+    private bool IsValidCanIndex(int canIndex)
+    {
+        return canIndex >= 0 &&
+               canIndex < cans.Length &&
+               cans[canIndex] != null &&
+               canGroups[canIndex] != null;
+    }
+
+    private Vector2 GetTargetPosition(int queuePosition)
+    {
+        if (queuePosition == 0)
+            return firstPosition;
 
         if (queuePosition == 1)
-            targetPosition = secondPosition;
-        else if (queuePosition == 2)
-            targetPosition = thirdPosition;
+            return secondPosition;
+
+        return thirdPosition;
+    }
+
+    private Vector3 GetTargetScale(bool isNext)
+    {
+        return isNext ? nextScale : inactiveScale;
+    }
+
+    private float GetTargetRotation(bool isNext)
+    {
+        if (!isNext)
+            return 0f;
+
+        float shake = Mathf.Sin(Time.time * shakeSpeed) * shakeAmount;
+        return nextBaseRotation + shake;
+    }
+
+    private float GetTargetRotationWithoutShake(bool isNext)
+    {
+        return isNext ? nextBaseRotation : 0f;
+    }
+
+    private float GetTargetAlpha(bool isNext)
+    {
+        return isNext ? nextAlpha : inactiveAlpha;
+    }
+
+    private void ApplyPosition(int canIndex, int queuePosition)
+    {
+        Vector2 targetPosition = GetTargetPosition(queuePosition);
 
         cans[canIndex].anchoredPosition = Vector2.Lerp(
             cans[canIndex].anchoredPosition,
@@ -108,7 +182,7 @@ public class TNTCanVisualController : MonoBehaviour
 
     private void ApplyScale(int canIndex, bool isNext)
     {
-        Vector3 targetScale = isNext ? nextScale : inactiveScale;
+        Vector3 targetScale = GetTargetScale(isNext);
 
         cans[canIndex].localScale = Vector3.Lerp(
             cans[canIndex].localScale,
@@ -119,13 +193,7 @@ public class TNTCanVisualController : MonoBehaviour
 
     private void ApplyRotation(int canIndex, bool isNext)
     {
-        float targetRotationZ = 0f;
-
-        if (isNext)
-        {
-            float shake = Mathf.Sin(Time.time * shakeSpeed) * shakeAmount;
-            targetRotationZ = nextBaseRotation + shake;
-        }
+        float targetRotationZ = GetTargetRotation(isNext);
 
         cans[canIndex].localRotation = Quaternion.Lerp(
             cans[canIndex].localRotation,
@@ -136,7 +204,7 @@ public class TNTCanVisualController : MonoBehaviour
 
     private void ApplyAlpha(int canIndex, bool isNext)
     {
-        float targetAlpha = isNext ? nextAlpha : inactiveAlpha;
+        float targetAlpha = GetTargetAlpha(isNext);
 
         canGroups[canIndex].alpha = Mathf.Lerp(
             canGroups[canIndex].alpha,

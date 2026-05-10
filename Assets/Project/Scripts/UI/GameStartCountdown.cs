@@ -1,83 +1,66 @@
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class GameStartCountdown : MonoBehaviour
 {
-    [Header("UI")]
-    public GameObject overlay; // fundo preto
-    public TextMeshProUGUI countdownText;
+    [Header("References")]
+    [SerializeField] private GameObject overlayObject;
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private GameplayLockSystem gameplayLockSystem;
 
-    [Header("Referências do jogo")]
-    public TimerSystem timerSystem;
-    public InputHandler inputHandler;
-    public PowerBar powerBar;
+    [Header("Settings")]
+    [SerializeField] private int startNumber = 3;
+    [SerializeField] private float numberDuration = 1f;
+    [SerializeField] private float goDuration = 0.5f;
+    [SerializeField] private string goText = "VAI!";
 
-    [Header("Referências da bola")]
-    public Animator ballAnimator;
+    private Coroutine countdownRoutine;
 
     private void Awake()
     {
-        if (ballAnimator == null)
-        {
-            ballAnimator = GameObject.Find("Ball").GetComponent<Animator>();
-        }
+        if (gameplayLockSystem == null)
+            gameplayLockSystem = FindFirstObjectByType<GameplayLockSystem>();
     }
 
     private void Start()
     {
-        StartCoroutine(StartCountdownRoutine());
+        StartCountdown();
     }
 
-    private IEnumerator StartCountdownRoutine()
+    public void StartCountdown()
     {
-        // Ativa overlay
-        if (overlay != null)
-            overlay.SetActive(true);
+        if (countdownRoutine != null)
+            StopCoroutine(countdownRoutine);
 
-        // Pausa sistemas
-        if (timerSystem != null)
-            timerSystem.SetTimePaused(true);
+        countdownRoutine = StartCoroutine(CountdownRoutine());
+    }
 
-        if (inputHandler != null)
-            inputHandler.enabled = false;
+    private IEnumerator CountdownRoutine()
+    {
+        gameplayLockSystem?.LockGameplay();
 
-        if (powerBar != null)
-            powerBar.enabled = false;
+        if (overlayObject != null)
+            overlayObject.SetActive(true);
 
-        if (ballAnimator != null)
-            ballAnimator.speed = 0f;
-
-        // Countdown 3 → 1
-        for (int i = 3; i > 0; i--)
+        for (int i = startNumber; i > 0; i--)
         {
             if (countdownText != null)
                 countdownText.text = i.ToString();
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSecondsRealtime(numberDuration);
         }
 
-        // "VAI!"
         if (countdownText != null)
-            countdownText.text = "VAI!";
+            countdownText.text = goText;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(goDuration);
 
-        // Desativa overlay
-        if (overlay != null)
-            overlay.SetActive(false);
+        if (overlayObject != null)
+            overlayObject.SetActive(false);
 
-        // Libera sistemas
-        if (timerSystem != null)
-            timerSystem.SetTimePaused(false);
+        gameplayLockSystem?.UnlockGameplay();
 
-        if (powerBar != null)
-            powerBar.enabled = true;
-
-        if (inputHandler != null)
-            inputHandler.enabled = true;
-
-        if (ballAnimator != null)
-            ballAnimator.speed = 1f;
+        countdownRoutine = null;
     }
 }

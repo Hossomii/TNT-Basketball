@@ -50,6 +50,9 @@ TextureImporter:
   - first:
       213: -6068725132861067294
     second: 3x_15
+  - first:
+      213: 8278197778439116225
+    second: 3x_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -82,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -93,10 +96,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 256
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -161,10 +164,10 @@ TextureImporter:
       name: 3x_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 16
-        width: 1019
-        height: 995
+        x: 11
+        y: 0
+        width: 431
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +186,10 @@ TextureImporter:
       name: 3x_1
       rect:
         serializedVersion: 2
-        x: 307
-        y: 891
-        width: 117
-        height: 128
+        x: 81
+        y: 325
+        width: 8
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +208,10 @@ TextureImporter:
       name: 3x_2
       rect:
         serializedVersion: 2
-        x: 611
-        y: 911
-        width: 67
-        height: 108
+        x: 81
+        y: 229
+        width: 8
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +230,10 @@ TextureImporter:
       name: 3x_3
       rect:
         serializedVersion: 2
-        x: 647
-        y: 896
-        width: 11
-        height: 11
+        x: 81
+        y: 86
+        width: 8
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +252,10 @@ TextureImporter:
       name: 3x_4
       rect:
         serializedVersion: 2
-        x: 735
-        y: 875
-        width: 22
-        height: 29
+        x: 82
+        y: 807
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,10 +274,10 @@ TextureImporter:
       name: 3x_5
       rect:
         serializedVersion: 2
-        x: 920
-        y: 640
-        width: 8
-        height: 9
+        x: 82
+        y: 622
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,9 +296,9 @@ TextureImporter:
       name: 3x_6
       rect:
         serializedVersion: 2
-        x: 125
-        y: 575
-        width: 11
+        x: 82
+        y: 350
+        width: 7
         height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -315,10 +318,10 @@ TextureImporter:
       name: 3x_7
       rect:
         serializedVersion: 2
-        x: 900
-        y: 571
-        width: 14
-        height: 11
+        x: 82
+        y: 0
+        width: 7
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,9 +340,9 @@ TextureImporter:
       name: 3x_8
       rect:
         serializedVersion: 2
-        x: 111
-        y: 536
-        width: 10
+        x: 83
+        y: 951
+        width: 6
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -359,10 +362,10 @@ TextureImporter:
       name: 3x_9
       rect:
         serializedVersion: 2
-        x: 902
-        y: 538
-        width: 7
-        height: 6
+        x: 83
+        y: 732
+        width: 6
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,9 +384,9 @@ TextureImporter:
       name: 3x_10
       rect:
         serializedVersion: 2
-        x: 907
-        y: 527
-        width: 8
+        x: 83
+        y: 534
+        width: 6
         height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -403,8 +406,8 @@ TextureImporter:
       name: 3x_11
       rect:
         serializedVersion: 2
-        x: 124
-        y: 442
+        x: 83
+        y: 222
         width: 6
         height: 8
       alignment: 0
@@ -425,10 +428,10 @@ TextureImporter:
       name: 3x_12
       rect:
         serializedVersion: 2
-        x: 523
-        y: 171
-        width: 11
-        height: 9
+        x: 83
+        y: 126
+        width: 6
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +450,10 @@ TextureImporter:
       name: 3x_13
       rect:
         serializedVersion: 2
-        x: 503
-        y: 163
+        x: 83
+        y: 62
         width: 6
-        height: 6
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,10 +472,10 @@ TextureImporter:
       name: 3x_14
       rect:
         serializedVersion: 2
-        x: 535
-        y: 142
-        width: 15
-        height: 12
+        x: 83
+        y: 23
+        width: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,10 +494,10 @@ TextureImporter:
       name: 3x_15
       rect:
         serializedVersion: 2
-        x: 567
-        y: 152
-        width: 11
-        height: 9
+        x: 463
+        y: 0
+        width: 1064
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,6 +508,28 @@ TextureImporter:
       bones: []
       spriteID: 2efa45825ae87cba0800000000000000
       internalID: -6068725132861067294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 3x_16
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 24
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c59a4c050112e270800000000000000
+      internalID: 8278197778439116225
       vertices: []
       indices: 
       edges: []
@@ -531,6 +556,7 @@ TextureImporter:
       3x_13: -7927661929885376353
       3x_14: 2836782112826628059
       3x_15: -6068725132861067294
+      3x_16: 8278197778439116225
       3x_2: 186842577333350155
       3x_3: 8446120962708532842
       3x_4: -7630241811911083696

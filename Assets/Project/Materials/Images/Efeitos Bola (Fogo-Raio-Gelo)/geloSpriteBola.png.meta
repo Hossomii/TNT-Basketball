@@ -1,0 +1,512 @@
+fileFormatVersion: 2
+guid: 889bce7a323f27343a0034cc197cefde
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8782654846830204904
+    second: geloSpriteBola_0
+  - first:
+      213: 7578303140226535773
+    second: geloSpriteBola_1
+  - first:
+      213: -7052285324283544168
+    second: geloSpriteBola_2
+  - first:
+      213: -2732266518235877388
+    second: geloSpriteBola_3
+  - first:
+      213: -1155872453508943668
+    second: geloSpriteBola_4
+  - first:
+      213: -9071676462106431721
+    second: geloSpriteBola_5
+  - first:
+      213: -5225261613752264
+    second: geloSpriteBola_6
+  - first:
+      213: -8992148401740892955
+    second: geloSpriteBola_7
+  - first:
+      213: -118691828098398448
+    second: geloSpriteBola_8
+  - first:
+      213: -673673424744162589
+    second: geloSpriteBola_9
+  - first:
+      213: -3189961302022139396
+    second: geloSpriteBola_10
+  - first:
+      213: -7792979009718701023
+    second: geloSpriteBola_11
+  - first:
+      213: 4579385025423039067
+    second: geloSpriteBola_12
+  - first:
+      213: -3060979988760980805
+    second: geloSpriteBola_13
+  - first:
+      213: -8251904524455754356
+    second: geloSpriteBola_14
+  - first:
+      213: -8961252470119491591
+    second: geloSpriteBola_15
+  - first:
+      213: 3659079103053774191
+    second: geloSpriteBola_16
+  - first:
+      213: 1350917909454029106
+    second: geloSpriteBola_17
+  - first:
+      213: 1065084595232647002
+    second: geloSpriteBola_18
+  - first:
+      213: 7911847886242911132
+    second: geloSpriteBola_19
+  - first:
+      213: 6347133228089750539
+    second: geloSpriteBola_20
+  - first:
+      213: 6772859829859209498
+    second: geloSpriteBola_21
+  - first:
+      213: 2921057821143483593
+    second: geloSpriteBola_22
+  - first:
+      213: -7311385762645730938
+    second: geloSpriteBola_23
+  - first:
+      213: 9121905524479841386
+    second: geloSpriteBola_24
+  - first:
+      213: -796765357948810426
+    second: geloSpriteBola_25
+  - first:
+      213: -2880633832261759162
+    second: geloSpriteBola_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: geloSpriteBola_0
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1516
+        width: 362
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818a2d503fdbd1680800000000000000
+      internalID: -8782654846830204904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_1
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1511
+        width: 376
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d511e61fd8a8b2960800000000000000
+      internalID: 7578303140226535773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1020
+        width: 378
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89df067bcdf312e90800000000000000
+      internalID: -7052285324283544168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_3
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1011
+        width: 392
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff6bdce31a051ad0800000000000000
+      internalID: -2732266518235877388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_4
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 996
+        width: 434
+        height: 437
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0b0faa02485ffe0800000000000000
+      internalID: -1155872453508943668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_5
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 998
+        width: 438
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71fafde425eea1280800000000000000
+      internalID: -9071676462106431721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 507
+        width: 437
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83067a9f6af6deff0800000000000000
+      internalID: -5225261613752264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_7
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 508
+        width: 438
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e433aacba8753380800000000000000
+      internalID: -8992148401740892955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_8
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 508
+        width: 439
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017047449625a5ef0800000000000000
+      internalID: -118691828098398448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_9
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 518
+        width: 396
+        height: 430
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ead087e691a6a6f0800000000000000
+      internalID: -673673424744162589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 29
+        width: 404
+        height: 430
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf15ab1d81bfab3d0800000000000000
+      internalID: -3189961302022139396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_11
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 27
+        width: 437
+        height: 423
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12434af21e6c9d390800000000000000
+      internalID: -7792979009718701023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: geloSpriteBola_12
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 288
+        width: 347
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a55120b6e3d8f30800000000000000
+      internalID: 4579385025423039067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 096c7448f53f43a498c384f7189e1cf7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":547.0,"y":488.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      geloSpriteBola_0: -8782654846830204904
+      geloSpriteBola_1: 7578303140226535773
+      geloSpriteBola_10: -3189961302022139396
+      geloSpriteBola_11: -7792979009718701023
+      geloSpriteBola_12: 4579385025423039067
+      geloSpriteBola_2: -7052285324283544168
+      geloSpriteBola_3: -2732266518235877388
+      geloSpriteBola_4: -1155872453508943668
+      geloSpriteBola_5: -9071676462106431721
+      geloSpriteBola_6: -5225261613752264
+      geloSpriteBola_7: -8992148401740892955
+      geloSpriteBola_8: -118691828098398448
+      geloSpriteBola_9: -673673424744162589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

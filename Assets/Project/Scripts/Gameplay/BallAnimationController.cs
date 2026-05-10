@@ -1,17 +1,3 @@
-/*
-Responsabilidade:
-Controlar animações visuais da bola.
-
-Como funciona:
-- Recebe o resultado do arremesso.
-- Dispara animação de Good, Perfect ou Miss.
-- Sincroniza o bounce da cesta em acertos.
-- Aguarda o delay antes de liberar nova jogada.
-
-Usado por:
-- InputHandler
-*/
-
 using System.Collections;
 using UnityEngine;
 
@@ -32,10 +18,34 @@ public class BallAnimationController : MonoBehaviour
     public string perfectTrigger = "Perfect";
     public string missTrigger = "Miss";
 
+    private void Awake()
+    {
+        UpdateAnimatorLockState();
+    }
+
+    private void OnEnable()
+    {
+        GameplayLockSystem.OnGameplayLocked += PauseAnimator;
+        GameplayLockSystem.OnGameplayUnlocked += ResumeAnimator;
+
+        UpdateAnimatorLockState();
+    }
+
+    private void OnDisable()
+    {
+        GameplayLockSystem.OnGameplayLocked -= PauseAnimator;
+        GameplayLockSystem.OnGameplayUnlocked -= ResumeAnimator;
+    }
+
     public IEnumerator PlayResultAnimation(ShotEvaluator.ShotResult result)
     {
         if (animator == null)
             yield break;
+
+        if (GameplayLockSystem.IsGameplayLocked)
+            yield break;
+
+        ResumeAnimator();
 
         switch (result)
         {
@@ -64,5 +74,25 @@ public class BallAnimationController : MonoBehaviour
             basket.PlayBounce();
 
         yield return new WaitForSeconds(delay);
+    }
+
+    private void UpdateAnimatorLockState()
+    {
+        if (GameplayLockSystem.IsGameplayLocked)
+            PauseAnimator();
+        else
+            ResumeAnimator();
+    }
+
+    private void PauseAnimator()
+    {
+        if (animator != null)
+            animator.speed = 0f;
+    }
+
+    private void ResumeAnimator()
+    {
+        if (animator != null)
+            animator.speed = 1f;
     }
 }

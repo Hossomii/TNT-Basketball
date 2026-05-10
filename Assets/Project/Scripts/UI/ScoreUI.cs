@@ -40,7 +40,7 @@ public class ScoreUI : MonoBehaviour
             return;
 
         scoreText.text =
-            scoreSystem.score.ToString("F2").Replace(".", ",");
+            Mathf.RoundToInt(scoreSystem.score).ToString();
     }
 
     /*
