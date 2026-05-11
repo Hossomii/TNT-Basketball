@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: ca696ecb24591a74cbed1981f71b03b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8796111120354275753
+    second: fogoSpriteBola_0
+  - first:
+      213: -3838907720496308615
+    second: fogoSpriteBola_1
+  - first:
+      213: -4744990639659200388
+    second: fogoSpriteBola_2
+  - first:
+      213: -6958673223428302619
+    second: fogoSpriteBola_3
+  - first:
+      213: 8092134415938892032
+    second: fogoSpriteBola_4
+  - first:
+      213: -5982639426450229098
+    second: fogoSpriteBola_5
+  - first:
+      213: -4623092874235451792
+    second: fogoSpriteBola_6
+  - first:
+      213: 3550944670918446332
+    second: fogoSpriteBola_7
+  - first:
+      213: 6715189691464862581
+    second: fogoSpriteBola_8
+  - first:
+      213: 6350061461818044480
+    second: fogoSpriteBola_9
+  - first:
+      213: 2433734256716695937
+    second: fogoSpriteBola_10
+  - first:
+      213: 1604034743169453736
+    second: fogoSpriteBola_11
+  - first:
+      213: -4441744170552775091
+    second: fogoSpriteBola_12
+  - first:
+      213: -3046037626581949755
+    second: fogoSpriteBola_13
+  - first:
+      213: 5520824004861591443
+    second: fogoSpriteBola_14
+  - first:
+      213: -8604753172403137870
+    second: fogoSpriteBola_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fogoSpriteBola_0
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1517
+        width: 375
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1749dc570121a70800000000000000
+      internalID: 8796111120354275753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_1
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1500
+        width: 423
+        height: 411
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e105284c579bac0800000000000000
+      internalID: -3838907720496308615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_2
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1491
+        width: 436
+        height: 424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c705f8c3728662eb0800000000000000
+      internalID: -4744990639659200388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_3
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 1491
+        width: 439
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e898896293dd6f90800000000000000
+      internalID: -6958673223428302619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_4
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 999
+        width: 439
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00130c890690d4070800000000000000
+      internalID: 8092134415938892032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_5
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 999
+        width: 438
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698ff27932569fca0800000000000000
+      internalID: -5982639426450229098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_6
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 999
+        width: 441
+        height: 428
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0766e8b668977dfb0800000000000000
+      internalID: -4623092874235451792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_7
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 999
+        width: 441
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc092f4d5d774130800000000000000
+      internalID: 3550944670918446332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 509
+        width: 440
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bc02f1275213d50800000000000000
+      internalID: 6715189691464862581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_9
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 509
+        width: 438
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040ff856143ff1850800000000000000
+      internalID: 6350061461818044480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_10
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 509
+        width: 436
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1894c49796c56c120800000000000000
+      internalID: 2433734256716695937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_11
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 509
+        width: 437
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae0002b91da24610800000000000000
+      internalID: 1604034743169453736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 19
+        width: 436
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e2a03d531cb52c0800000000000000
+      internalID: -4441744170552775091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_13
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 21
+        width: 424
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2eb1fcaec4ab5d0800000000000000
+      internalID: -3046037626581949755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_14
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 25
+        width: 412
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f793d8e28ed9c40800000000000000
+      internalID: 5520824004861591443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fogoSpriteBola_15
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 38
+        width: 382
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2def26496c59880800000000000000
+      internalID: -8604753172403137870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 04b5cd230d4edf445867e6c3d3ce8e11
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":547.0,"y":488.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      fogoSpriteBola_0: 8796111120354275753
+      fogoSpriteBola_1: -3838907720496308615
+      fogoSpriteBola_10: 2433734256716695937
+      fogoSpriteBola_11: 1604034743169453736
+      fogoSpriteBola_12: -4441744170552775091
+      fogoSpriteBola_13: -3046037626581949755
+      fogoSpriteBola_14: 5520824004861591443
+      fogoSpriteBola_15: -8604753172403137870
+      fogoSpriteBola_2: -4744990639659200388
+      fogoSpriteBola_3: -6958673223428302619
+      fogoSpriteBola_4: 8092134415938892032
+      fogoSpriteBola_5: -5982639426450229098
+      fogoSpriteBola_6: -4623092874235451792
+      fogoSpriteBola_7: 3550944670918446332
+      fogoSpriteBola_8: 6715189691464862581
+      fogoSpriteBola_9: 6350061461818044480
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,17 +1,3 @@
-/*
-Responsabilidade:
-Controlar movimento da barra de timing.
-
-Como funciona:
-- Move entre 0 e 1.
-- A velocidade aumenta com o tempo.
-- Inverte direção ao chegar nos limites.
-
-Usado por:
-- ShotEvaluator
-- PowerBarUI
-*/
-
 using UnityEngine;
 
 public class PowerBar : MonoBehaviour
@@ -44,6 +30,9 @@ public class PowerBar : MonoBehaviour
 
     private void Update()
     {
+        if (GameplayLockSystem.IsGameplayLocked)
+            return;
+
         if (!CanMove())
             return;
 
@@ -62,37 +51,22 @@ public class PowerBar : MonoBehaviour
         return true;
     }
 
-    /*
-    Responsabilidade:
-    Aumentar dificuldade conforme o tempo passa.
-    */
     private void UpdateDifficulty()
     {
         if (timerSystem == null)
             return;
 
-        float elapsedTime =
-            timerSystem.startTime - timerSystem.timeRemaining;
+        float elapsedTime = timerSystem.startTime - timerSystem.timeRemaining;
 
-        int difficultyStep =
-            Mathf.FloorToInt(elapsedTime / 10f);
+        int difficultyStep = Mathf.FloorToInt(elapsedTime / 10f);
 
-        speed =
-            startSpeed +
-            (difficultyStep * speedIncreaseEvery10Seconds);
-
+        speed = startSpeed + (difficultyStep * speedIncreaseEvery10Seconds);
         speed = Mathf.Clamp(speed, startSpeed, maxSpeed);
 
         if (enableLogs)
-        {
             Debug.Log($"PowerBar Speed: {speed}");
-        }
     }
 
-    /*
-    Responsabilidade:
-    Mover ponteiro da barra.
-    */
     private void MovePointer()
     {
         float direction = goingRight ? 1f : -1f;

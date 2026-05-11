@@ -1,14 +1,3 @@
-/*
-Responsabilidade:
-Controlar o tempo da partida.
-
-Regras:
-- O tempo começa em 60 segundos.
-- Quando chega em 0, o jogo termina.
-- Pode ser pausado temporariamente por powerups.
-- Quando o jogo termina, a animação da bola para.
-*/
-
 using UnityEngine;
 
 public class TimerSystem : MonoBehaviour
@@ -30,12 +19,26 @@ public class TimerSystem : MonoBehaviour
         isGameOver = false;
         isPaused = false;
 
-        if (ballAnimator != null)
-            ballAnimator.speed = 1f;
+        UpdateBallAnimatorState();
+    }
+
+    private void OnEnable()
+    {
+        GameplayLockSystem.OnGameplayLocked += UpdateBallAnimatorState;
+        GameplayLockSystem.OnGameplayUnlocked += UpdateBallAnimatorState;
+    }
+
+    private void OnDisable()
+    {
+        GameplayLockSystem.OnGameplayLocked -= UpdateBallAnimatorState;
+        GameplayLockSystem.OnGameplayUnlocked -= UpdateBallAnimatorState;
     }
 
     private void Update()
     {
+        if (GameplayLockSystem.IsGameplayLocked)
+            return;
+
         if (isGameOver)
             return;
 
@@ -50,9 +53,7 @@ public class TimerSystem : MonoBehaviour
         timeRemaining -= Time.deltaTime;
 
         if (timeRemaining <= 0f)
-        {
             EndGame();
-        }
     }
 
     private void EndGame()
@@ -61,8 +62,7 @@ public class TimerSystem : MonoBehaviour
         isGameOver = true;
         isPaused = false;
 
-        if (ballAnimator != null)
-            ballAnimator.speed = 0f;
+        UpdateBallAnimatorState();
 
         Debug.Log("FIM DE JOGO!");
     }
@@ -81,7 +81,17 @@ public class TimerSystem : MonoBehaviour
         isGameOver = false;
         isPaused = false;
 
-        if (ballAnimator != null)
+        UpdateBallAnimatorState();
+    }
+
+    private void UpdateBallAnimatorState()
+    {
+        if (ballAnimator == null)
+            return;
+
+        if (GameplayLockSystem.IsGameplayLocked || isGameOver)
+            ballAnimator.speed = 0f;
+        else
             ballAnimator.speed = 1f;
     }
 }

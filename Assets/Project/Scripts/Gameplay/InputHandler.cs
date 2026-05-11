@@ -1,17 +1,3 @@
-/*
-Responsabilidade:
-Controlar input do jogador e fluxo do arremesso.
-
-Fluxo:
-- Clique
-- Avalia resultado
-- Toca animação
-- Toca áudio
-- Atualiza score
-- Atualiza energia TNT
-- Randomiza zonas
-*/
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -43,6 +29,9 @@ public class InputHandler : MonoBehaviour
 
     private bool CanShoot()
     {
+        if (GameplayLockSystem.IsGameplayLocked)
+            return false;
+
         if (timerSystem != null && timerSystem.isGameOver)
             return false;
 
@@ -58,9 +47,7 @@ public class InputHandler : MonoBehaviour
             return;
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
             StartCoroutine(ResolveShotRoutine());
-        }
     }
 
     private IEnumerator ResolveShotRoutine()
@@ -84,21 +71,15 @@ public class InputHandler : MonoBehaviour
         PlayResultSound(result);
 
         if (feedbackUI != null)
-        {
             feedbackUI.Show(result);
-        }
 
         if (scoreSystem != null)
-        {
             scoreSystem.ApplyShotResult(result);
-        }
 
         HandleTNT(result);
 
         if (result != ShotEvaluator.ShotResult.Miss)
-        {
             zoneRandomizer?.TryRandomizeZones();
-        }
 
         isResolvingShot = false;
     }
@@ -109,13 +90,9 @@ public class InputHandler : MonoBehaviour
             return;
 
         if (result == ShotEvaluator.ShotResult.Miss)
-        {
             tntSystem.ApplyMissPenalty();
-        }
         else
-        {
             tntSystem.AddEnergy(1);
-        }
     }
 
     private void PlayShootSound()

@@ -15,6 +15,7 @@ public class PowerBarUI : MonoBehaviour
     private void Start()
     {
         SetupPointer();
+        UpdatePointerPosition();
     }
 
     private void Update()
@@ -34,6 +35,9 @@ public class PowerBarUI : MonoBehaviour
 
     private void SetupPointer()
     {
+        if (aimPointer == null)
+            return;
+
         originalSize = aimPointer.sizeDelta;
 
         aimPointer.anchorMin = new Vector2(0f, 0.5f);
