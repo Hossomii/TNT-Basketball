@@ -1,40 +1,35 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
-using Unity.Services.Core;
-using Unity.Services.Authentication;
-using Unity.Services.Leaderboards;
-
-using System.Threading.Tasks;
+using System.Collections;
 
 public class NameManager : MonoBehaviour
 {
     public TMP_InputField nameInput;
+    public LeaderboardManager leaderboard;
 
-    async void Start()
-    {
-        await UnityServices.InitializeAsync();
-
-        await AuthenticationService.Instance
-            .SignInAnonymouslyAsync();
-    }
-
-    public async void SaveName()
+    public void SaveName()
     {
         string playerName = nameInput.text;
 
-        await AuthenticationService.Instance
-            .UpdatePlayerNameAsync(playerName);
+        if(string.IsNullOrWhiteSpace(playerName))
+        {
+            playerName = "Player";
+        }
 
-        int score = PlayerPrefs.GetInt("LastScore");
+        int score = PlayerPrefs.GetInt("LastScore", 0);
 
-        await LeaderboardsService.Instance
-            .AddPlayerScoreAsync(
-                "HighScore",
-                score
-            );
+        PlayerPrefs.SetString("player_name", playerName);
+        PlayerPrefs.SetInt("last_score", score);
+        PlayerPrefs.Save();
 
-        SceneManager.LoadScene("RankingScene");
+        StartCoroutine(SendScoreAndGoToRanking(playerName, score));
+    }
+
+    IEnumerator SendScoreAndGoToRanking(string playerName, int score)
+    {
+        yield return StartCoroutine(leaderboard.SendScore(playerName, score));
+
+        SceneManager.LoadScene(5);
     }
 }

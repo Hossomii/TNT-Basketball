@@ -160,4 +160,12 @@ public class ScoreSystem : MonoBehaviour
 
         RefreshMultiplierUI();
     }
+
+    public void SaveLastScore()
+    {
+        PlayerPrefs.SetInt("LastScore", Mathf.RoundToInt(score));
+        PlayerPrefs.Save();
+
+        Debug.Log("Último score salvo: " + score);
+    }
 }

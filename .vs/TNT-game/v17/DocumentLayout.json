@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "D:\\TNT project\\TNT-game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|d:\\tnt project\\tnt-game\\assets\\project\\scripts\\menus\\leaderboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\menus\\leaderboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\menus\\leaderboardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\menus\\rankingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\menus\\rankingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\gameplay\\scoresystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\gameplay\\scoresystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|d:\\tnt project\\tnt-game\\assets\\project\\scripts\\menus\\rankingscenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\menus\\rankingscenecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|d:\\tnt project\\tnt-game\\assets\\project\\scripts\\ui\\rankingitemui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\ui\\rankingitemui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\menus\\namemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\menus\\namemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\gameplay\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\gameplay\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\menus\\rankingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|solutionrelative:assets\\project\\scripts\\menus\\rankingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{26F4D6AC-7D02-FBB4-AF7C-6CF05AE6F09E}|Assembly-CSharp.csproj|D:\\TNT project\\TNT-game\\assets\\project\\scripts\\menus\\menuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,8 +65,67 @@
               "Name": "ST:0:0:{93c5e7ad-af06-49e6-a756-b8f3eaca790d}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RankingItemUI.cs",
+              "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\UI\\RankingItemUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\UI\\RankingItemUI.cs",
+              "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\UI\\RankingItemUI.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\UI\\RankingItemUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-11T18:22:28.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RankingSceneController.cs",
+              "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\RankingSceneController.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\RankingSceneController.cs",
+              "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\RankingSceneController.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Menus\\RankingSceneController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T19:42:06.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ScoreSystem.cs",
+              "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Gameplay\\ScoreSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Gameplay\\ScoreSystem.cs",
+              "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Gameplay\\ScoreSystem.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Gameplay\\ScoreSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T19:33:53.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Gameplay\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Gameplay\\GameManager.cs",
+              "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Gameplay\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Gameplay\\GameManager.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T19:19:28.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NameManager.cs",
+              "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\NameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\NameManager.cs",
+              "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\NameManager.cs",
+              "RelativeToolTip": "Assets\\Project\\Scripts\\Menus\\NameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T18:16:30.617Z"
             },
             {
               "$type": "Document",
@@ -60,14 +135,14 @@
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\LeaderboardManager.cs",
               "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\LeaderboardManager.cs",
               "RelativeToolTip": "Assets\\Project\\Scripts\\Menus\\LeaderboardManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-08T16:21:19.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "RankingManager.cs",
               "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\RankingManager.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\RankingManager.cs",
@@ -79,19 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NameManager.cs",
-              "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\NameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\NameManager.cs",
-              "ToolTip": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\NameManager.cs",
-              "RelativeToolTip": "Assets\\Project\\Scripts\\Menus\\NameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T18:16:30.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "MenuUI.cs",
               "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\MenuUI.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\MenuUI.cs",
@@ -103,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "CreditosScroll.cs",
               "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\Menus\\CreditosScroll.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\Menus\\CreditosScroll.cs",
@@ -115,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "MenuUI.cs",
               "DocumentMoniker": "D:\\TNT project\\TNT-game\\Assets\\Project\\Scripts\\MenuUI\\MenuUI.cs",
               "RelativeDocumentMoniker": "Assets\\Project\\Scripts\\MenuUI\\MenuUI.cs",

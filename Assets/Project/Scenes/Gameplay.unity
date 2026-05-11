@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timerSystem: {fileID: 469276461}
-  gameOverUI: {fileID: 0}
+  scoreSystem: {fileID: 469276458}
 --- !u!114 &469276463
 MonoBehaviour:
   m_ObjectHideFlags: 0
