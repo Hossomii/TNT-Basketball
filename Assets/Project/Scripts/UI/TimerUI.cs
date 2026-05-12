@@ -1,13 +1,12 @@
 /*
 Responsabilidade:
-Exibir o tempo restante da partida.
+Atualizar visualmente o timer da partida.
 
-Formato:
-00:60
-
-Usado por:
-- TimerSystem
-- TNTPowerUpSystem
+Controla:
+- texto do tempo restante
+- cor original do material TMP
+- cor azul do freeze baseada no TNTSystem
+- outline do freeze
 */
 
 using UnityEngine;
@@ -19,17 +18,29 @@ public class TimerUI : MonoBehaviour
     [Header("References")]
     public TimerSystem timerSystem;
     public TextMeshProUGUI timerText;
-
-    [Header("Visual")]
-    public Color normalColor = Color.yellow;
-    public Color frozenColor = Color.cyan;
+    public TNTSystem tntSystem;
 
     [Header("FX")]
     public Outline freezeOutline;
 
+    private int lastDisplayedSeconds = -1;
+
+    private Material timerMaterialInstance;
+    private Color originalTextColor;
+    private Color originalFaceColor;
+    private Color frozenColor;
+
+    private void Awake()
+    {
+        SetupTimerMaterial();
+    }
+
     private void Start()
     {
+        SetFrozenColorFromTNTSystem();
+
         SetFrozenVisual(false);
+        UpdateTimerText(true);
     }
 
     private void Update()
@@ -46,36 +57,90 @@ public class TimerUI : MonoBehaviour
                timerText != null;
     }
 
-    /*
-    Responsabilidade:
-    Atualizar texto do timer.
-    */
-    private void UpdateTimerText()
+    private void SetupTimerMaterial()
+    {
+        if (timerText == null)
+            return;
+
+        originalTextColor = timerText.color;
+
+        timerMaterialInstance =
+            new Material(timerText.fontSharedMaterial);
+
+        timerText.fontMaterial = timerMaterialInstance;
+        timerText.enableVertexGradient = false;
+
+        originalFaceColor =
+            timerMaterialInstance.GetColor(ShaderUtilities.ID_FaceColor);
+    }
+
+    private void SetFrozenColorFromTNTSystem()
+    {
+        if (tntSystem != null)
+            frozenColor = tntSystem.buffEnergyColor;
+        else
+            frozenColor = new Color32(0, 255, 255, 255);
+    }
+
+    private void UpdateTimerText(bool forceUpdate = false)
     {
         int seconds =
             Mathf.CeilToInt(timerSystem.timeRemaining);
 
-        timerText.text =
-            $"00:{seconds:00}";
+        if (!forceUpdate &&
+            seconds == lastDisplayedSeconds)
+            return;
+
+        lastDisplayedSeconds = seconds;
+        timerText.text = $"00:{seconds:00}";
     }
 
-    /*
-    Responsabilidade:
-    Ativar visual de congelamento.
-    */
     public void SetFrozenVisual(bool isFrozen)
     {
-        if (timerText != null)
-        {
-            timerText.color =
-                isFrozen
-                ? frozenColor
-                : normalColor;
-        }
+        SetFrozenColorFromTNTSystem();
+
+        if (isFrozen)
+            ApplyFrozenColor();
+        else
+            RestoreOriginalColor();
 
         if (freezeOutline != null)
-        {
             freezeOutline.enabled = isFrozen;
+    }
+
+    private void ApplyFrozenColor()
+    {
+        if (timerText == null)
+            return;
+
+        timerText.color = frozenColor;
+
+        if (timerMaterialInstance != null)
+        {
+            timerMaterialInstance.SetColor(
+                ShaderUtilities.ID_FaceColor,
+                frozenColor
+            );
         }
+
+        timerText.UpdateMeshPadding();
+    }
+
+    private void RestoreOriginalColor()
+    {
+        if (timerText == null)
+            return;
+
+        timerText.color = originalTextColor;
+
+        if (timerMaterialInstance != null)
+        {
+            timerMaterialInstance.SetColor(
+                ShaderUtilities.ID_FaceColor,
+                originalFaceColor
+            );
+        }
+
+        timerText.UpdateMeshPadding();
     }
 }

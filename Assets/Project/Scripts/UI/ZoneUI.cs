@@ -1,12 +1,20 @@
 /*
 Responsabilidade:
-Atualizar visualmente as zonas Good e Perfect na barra.
+Atualizar visualmente as zonas Good e Perfect dentro da PowerBar.
 
-Usado por:
-- ZoneRandomizer
+Esse script altera APENAS a UI.
+Ele não calcula resultado de arremesso e não altera gameplay.
 
-Importante:
-Esse script altera apenas UI.
+Dependências:
+- ZoneRandomizer: envia os valores normalizados das zonas
+- RectTransform goodZone: visual da zona Good
+- RectTransform perfectZone: visual da zona Perfect
+- Outline: feedback visual quando o buff da lata roxa está ativo
+
+Fluxo:
+ZoneRandomizer
+-> ZoneUI.UpdateZones()
+-> atualiza anchors das zonas na barra
 */
 
 using UnityEngine;
@@ -23,7 +31,7 @@ public class ZoneUI : MonoBehaviour
 
     /*
     Responsabilidade:
-    Atualizar zonas da UI.
+    Atualizar as zonas visuais da UI.
     */
     public void UpdateZones(
         float goodStart,
@@ -38,7 +46,10 @@ public class ZoneUI : MonoBehaviour
 
     /*
     Responsabilidade:
-    Atualizar anchors de uma zona.
+    Atualizar anchors de uma zona específica.
+
+    Os valores são sempre protegidos entre 0 e 1
+    para evitar que a zona saia da barra.
     */
     private void UpdateZone(
         RectTransform zone,
@@ -49,8 +60,18 @@ public class ZoneUI : MonoBehaviour
         if (zone == null)
             return;
 
-        zone.anchorMin = new Vector2(start, 0f);
-        zone.anchorMax = new Vector2(end, 1f);
+        float safeStart = Mathf.Clamp01(start);
+        float safeEnd = Mathf.Clamp01(end);
+
+        if (safeStart > safeEnd)
+        {
+            float temp = safeStart;
+            safeStart = safeEnd;
+            safeEnd = temp;
+        }
+
+        zone.anchorMin = new Vector2(safeStart, 0f);
+        zone.anchorMax = new Vector2(safeEnd, 1f);
 
         zone.offsetMin = Vector2.zero;
         zone.offsetMax = Vector2.zero;
@@ -58,13 +79,15 @@ public class ZoneUI : MonoBehaviour
 
     /*
     Responsabilidade:
-    Ativar visual do buff da zona Perfect.
+    Ativar ou desativar o visual do buff da zona Perfect.
+
+    Usado pela lata roxa.
     */
     public void SetBoostVisual(bool active)
     {
-        if (perfectZoneOutline != null)
-        {
-            perfectZoneOutline.enabled = active;
-        }
+        if (perfectZoneOutline == null)
+            return;
+
+        perfectZoneOutline.enabled = active;
     }
 }

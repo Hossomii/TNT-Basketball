@@ -3,213 +3,230 @@ using UnityEngine;
 
 public class TNTCanVisualController : MonoBehaviour
 {
-    [Header("References")]
-    public RectTransform[] cans;
-    public CanvasGroup[] canGroups;
+    [Header("Small Queue")]
+    public RectTransform[] queueCans;
+    public CanvasGroup[] queueGroups;
 
     [Header("Queue Positions")]
-    public Vector2 firstPosition;
-    public Vector2 secondPosition;
-    public Vector2 thirdPosition;
+    public Vector2 firstPos;
+    public Vector2 secondPos;
+    public Vector2 thirdPos;
 
-    [Header("Visual")]
-    public Vector3 nextScale = new Vector3(1.12f, 1.12f, 1f);
-    public Vector3 inactiveScale = new Vector3(0.82f, 0.82f, 1f);
+    [Header("Scale")]
+    public Vector3 highlightedScale = new Vector3(1.1f, 1.1f, 1f);
+    public Vector3 normalScale = new Vector3(0.8f, 0.8f, 1f);
 
-    public float nextAlpha = 1f;
-    public float inactiveAlpha = 0.35f;
+    [Header("Alpha")]
+    public float highlightedAlpha = 1f;
+    public float normalAlpha = 0.45f;
 
-    public float nextBaseRotation = -6f;
+    [Header("Animation")]
+    public float moveSpeed = 8f;
+    public float scaleSpeed = 8f;
+    public float alphaSpeed = 8f;
 
     [Header("Shake")]
-    public float shakeSpeed = 2f;
-    public float shakeAmount = 1.2f;
+    public float shakeSpeed = 5f;
+    public float shakeAmount = 4f;
 
-    [Header("Smooth")]
-    public float smoothSpeed = 10f;
+    private readonly List<int> canQueue = new List<int>();
 
-    private readonly List<int> queue = new List<int>();
+    private bool isVisualLocked;
+
+    private void OnEnable()
+    {
+        GameplayLockSystem.OnGameplayLocked += LockVisuals;
+        GameplayLockSystem.OnGameplayUnlocked += UnlockVisuals;
+
+        isVisualLocked = GameplayLockSystem.IsGameplayLocked;
+    }
+
+    private void OnDisable()
+    {
+        GameplayLockSystem.OnGameplayLocked -= LockVisuals;
+        GameplayLockSystem.OnGameplayUnlocked -= UnlockVisuals;
+    }
 
     private void Start()
     {
         InitializeQueue();
-        UpdateVisualsInstant();
+        ForceVisualRefresh();
     }
 
     private void Update()
     {
-        if (GameplayLockSystem.IsGameplayLocked)
+        if (isVisualLocked)
             return;
 
-        UpdateVisuals();
+        UpdateQueueVisuals();
+    }
+
+    private void LockVisuals()
+    {
+        isVisualLocked = true;
+    }
+
+    private void UnlockVisuals()
+    {
+        isVisualLocked = false;
     }
 
     private void InitializeQueue()
     {
-        queue.Clear();
+        canQueue.Clear();
 
-        if (cans == null)
-            return;
-
-        for (int i = 0; i < cans.Length; i++)
-            queue.Add(i);
+        for (int i = 0; i < queueCans.Length; i++)
+            canQueue.Add(i);
     }
 
     public int GetCurrentCanIndex()
     {
-        if (queue.Count == 0)
+        if (canQueue.Count == 0)
             return 0;
 
-        return queue[0];
+        return canQueue[0];
     }
 
     public void MoveCurrentCanToEnd()
     {
-        if (queue.Count <= 1)
+        if (canQueue.Count <= 1)
             return;
 
-        int current = queue[0];
+        int usedCan = canQueue[0];
 
-        queue.RemoveAt(0);
-        queue.Add(current);
-
-        UpdateVisualsInstant();
+        canQueue.RemoveAt(0);
+        canQueue.Add(usedCan);
     }
 
-    private void UpdateVisuals()
+    private void ForceVisualRefresh()
     {
-        if (!HasValidReferences())
-            return;
-
-        for (int queuePosition = 0; queuePosition < queue.Count; queuePosition++)
+        for (int visualIndex = 0; visualIndex < canQueue.Count; visualIndex++)
         {
-            int canIndex = queue[queuePosition];
+            int canIndex = canQueue[visualIndex];
 
-            if (!IsValidCanIndex(canIndex))
+            if (!IsValidCan(canIndex))
                 continue;
 
-            bool isNext = queuePosition == 0;
+            queueCans[canIndex].anchoredPosition = GetTargetPosition(visualIndex);
+            queueCans[canIndex].localScale = GetTargetScale(visualIndex);
+            queueCans[canIndex].localRotation = Quaternion.identity;
 
-            ApplyPosition(canIndex, queuePosition);
-            ApplyScale(canIndex, isNext);
-            ApplyRotation(canIndex, isNext);
-            ApplyAlpha(canIndex, isNext);
+            if (IsValidGroup(canIndex))
+                queueGroups[canIndex].alpha = GetTargetAlpha(visualIndex);
         }
     }
 
-    private void UpdateVisualsInstant()
+    private void UpdateQueueVisuals()
     {
-        if (!HasValidReferences())
-            return;
-
-        for (int queuePosition = 0; queuePosition < queue.Count; queuePosition++)
+        for (int visualIndex = 0; visualIndex < canQueue.Count; visualIndex++)
         {
-            int canIndex = queue[queuePosition];
+            int canIndex = canQueue[visualIndex];
 
-            if (!IsValidCanIndex(canIndex))
+            if (!IsValidCan(canIndex))
                 continue;
 
-            bool isNext = queuePosition == 0;
+            RectTransform can = queueCans[canIndex];
 
-            cans[canIndex].anchoredPosition = GetTargetPosition(queuePosition);
-            cans[canIndex].localScale = GetTargetScale(isNext);
-            cans[canIndex].localRotation = Quaternion.Euler(0f, 0f, GetTargetRotationWithoutShake(isNext));
-            canGroups[canIndex].alpha = GetTargetAlpha(isNext);
+            Vector2 targetPosition = GetTargetPosition(visualIndex);
+
+            can.anchoredPosition = Vector2.Lerp(
+                can.anchoredPosition,
+                targetPosition,
+                Time.deltaTime * moveSpeed
+            );
+
+            can.localScale = Vector3.Lerp(
+                can.localScale,
+                GetTargetScale(visualIndex),
+                Time.deltaTime * scaleSpeed
+            );
+
+            ApplyRotation(can, visualIndex);
+            ApplyAlpha(canIndex, visualIndex);
         }
     }
 
-    private bool HasValidReferences()
+    private Vector2 GetTargetPosition(int visualIndex)
     {
-        return cans != null &&
-               canGroups != null &&
-               cans.Length > 0 &&
-               canGroups.Length >= cans.Length;
+        switch (visualIndex)
+        {
+            case 0:
+                return firstPos;
+
+            case 1:
+                return secondPos;
+
+            default:
+                return thirdPos;
+        }
     }
 
-    private bool IsValidCanIndex(int canIndex)
+    private Vector3 GetTargetScale(int visualIndex)
     {
-        return canIndex >= 0 &&
-               canIndex < cans.Length &&
-               cans[canIndex] != null &&
-               canGroups[canIndex] != null;
+        return IsHighlightedCan(visualIndex)
+            ? highlightedScale
+            : normalScale;
     }
 
-    private Vector2 GetTargetPosition(int queuePosition)
+    private float GetTargetAlpha(int visualIndex)
     {
-        if (queuePosition == 0)
-            return firstPosition;
-
-        if (queuePosition == 1)
-            return secondPosition;
-
-        return thirdPosition;
+        return IsHighlightedCan(visualIndex)
+            ? highlightedAlpha
+            : normalAlpha;
     }
 
-    private Vector3 GetTargetScale(bool isNext)
+    private void ApplyRotation(RectTransform can, int visualIndex)
     {
-        return isNext ? nextScale : inactiveScale;
+        if (IsHighlightedCan(visualIndex))
+        {
+            float rotationShake = Mathf.Sin(Time.time * shakeSpeed) * shakeAmount;
+
+            can.localRotation = Quaternion.Euler(
+                0f,
+                0f,
+                rotationShake
+            );
+        }
+        else
+        {
+            can.localRotation = Quaternion.Lerp(
+                can.localRotation,
+                Quaternion.identity,
+                Time.deltaTime * 8f
+            );
+        }
     }
 
-    private float GetTargetRotation(bool isNext)
+    private void ApplyAlpha(int canIndex, int visualIndex)
     {
-        if (!isNext)
-            return 0f;
+        if (!IsValidGroup(canIndex))
+            return;
 
-        float shake = Mathf.Sin(Time.time * shakeSpeed) * shakeAmount;
-        return nextBaseRotation + shake;
-    }
-
-    private float GetTargetRotationWithoutShake(bool isNext)
-    {
-        return isNext ? nextBaseRotation : 0f;
-    }
-
-    private float GetTargetAlpha(bool isNext)
-    {
-        return isNext ? nextAlpha : inactiveAlpha;
-    }
-
-    private void ApplyPosition(int canIndex, int queuePosition)
-    {
-        Vector2 targetPosition = GetTargetPosition(queuePosition);
-
-        cans[canIndex].anchoredPosition = Vector2.Lerp(
-            cans[canIndex].anchoredPosition,
-            targetPosition,
-            Time.deltaTime * smoothSpeed
+        queueGroups[canIndex].alpha = Mathf.Lerp(
+            queueGroups[canIndex].alpha,
+            GetTargetAlpha(visualIndex),
+            Time.deltaTime * alphaSpeed
         );
     }
 
-    private void ApplyScale(int canIndex, bool isNext)
+    private bool IsHighlightedCan(int visualIndex)
     {
-        Vector3 targetScale = GetTargetScale(isNext);
-
-        cans[canIndex].localScale = Vector3.Lerp(
-            cans[canIndex].localScale,
-            targetScale,
-            Time.deltaTime * smoothSpeed
-        );
+        return visualIndex == 0;
     }
 
-    private void ApplyRotation(int canIndex, bool isNext)
+    private bool IsValidCan(int canIndex)
     {
-        float targetRotationZ = GetTargetRotation(isNext);
-
-        cans[canIndex].localRotation = Quaternion.Lerp(
-            cans[canIndex].localRotation,
-            Quaternion.Euler(0f, 0f, targetRotationZ),
-            Time.deltaTime * smoothSpeed
-        );
+        return queueCans != null &&
+               canIndex >= 0 &&
+               canIndex < queueCans.Length &&
+               queueCans[canIndex] != null;
     }
 
-    private void ApplyAlpha(int canIndex, bool isNext)
+    private bool IsValidGroup(int canIndex)
     {
-        float targetAlpha = GetTargetAlpha(isNext);
-
-        canGroups[canIndex].alpha = Mathf.Lerp(
-            canGroups[canIndex].alpha,
-            targetAlpha,
-            Time.deltaTime * smoothSpeed
-        );
+        return queueGroups != null &&
+               canIndex >= 0 &&
+               canIndex < queueGroups.Length &&
+               queueGroups[canIndex] != null;
     }
 }

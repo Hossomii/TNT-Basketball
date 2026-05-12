@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: aec015e96fe9d0444a71dd5b2df55560
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2255815792710652697
+    second: good-icon_0
+  - first:
+      213: 7029118929373035093
+    second: good-icon_1
+  - first:
+      213: 5367687054105643772
+    second: good-icon_2
+  - first:
+      213: 4676670269496129129
+    second: good-icon_3
+  - first:
+      213: 7257643626874729268
+    second: good-icon_4
+  - first:
+      213: 5681585473652779649
+    second: good-icon_5
+  - first:
+      213: -3138125762844751962
+    second: good-icon_6
+  - first:
+      213: 5351279632982580959
+    second: good-icon_7
+  - first:
+      213: 3539208581496575130
+    second: good-icon_8
+  - first:
+      213: 4795776316691605196
+    second: good-icon_9
+  - first:
+      213: -4929722149278469084
+    second: good-icon_10
+  - first:
+      213: -7394494698906651769
+    second: good-icon_11
+  - first:
+      213: 8757078431656508331
+    second: good-icon_12
+  - first:
+      213: -2731720247109209626
+    second: good-icon_13
+  - first:
+      213: -8097026076337281278
+    second: good-icon_14
+  - first:
+      213: 3431016195454661124
+    second: good-icon_15
+  - first:
+      213: 504590307829439901
+    second: good-icon_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: good-icon_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 774
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ece3c40d7bb1b0e0800000000000000
+      internalID: -2255815792710652697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_1
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 584
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55af045ac627c8160800000000000000
+      internalID: 7029118929373035093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_2
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 583
+        width: 60
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa0e6dbfeadd7a40800000000000000
+      internalID: 5367687054105643772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_3
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 584
+        width: 70
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96672f005ded6e040800000000000000
+      internalID: 4676670269496129129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_4
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 0
+        width: 685
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433fe3e0d6458b460800000000000000
+      internalID: 7257643626874729268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_5
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 495
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ae71ec2eb09de40800000000000000
+      internalID: 5681585473652779649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_6
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 496
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a70325ce332374d0800000000000000
+      internalID: -3138125762844751962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_7
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 495
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde95b15970934a40800000000000000
+      internalID: 5351279632982580959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_8
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 495
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a941e1e047bcd1130800000000000000
+      internalID: 3539208581496575130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_9
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 495
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc662a2a6250e8240800000000000000
+      internalID: 4795776316691605196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_10
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 496
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424b1e2f2db169bb0800000000000000
+      internalID: -4929722149278469084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_11
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 495
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783f822cf3a716990800000000000000
+      internalID: -7394494698906651769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_12
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 495
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: babfe15cf64678970800000000000000
+      internalID: 8757078431656508331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_13
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 495
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1305598eaf61ad0800000000000000
+      internalID: -2731720247109209626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_14
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 495
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20767d6fea591af80800000000000000
+      internalID: -8097026076337281278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_15
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 495
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402ffac2d0b6d9f20800000000000000
+      internalID: 3431016195454661124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-icon_16
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 497
+        width: 15
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d5747263aa00700800000000000000
+      internalID: 504590307829439901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      good-icon_0: -2255815792710652697
+      good-icon_1: 7029118929373035093
+      good-icon_10: -4929722149278469084
+      good-icon_11: -7394494698906651769
+      good-icon_12: 8757078431656508331
+      good-icon_13: -2731720247109209626
+      good-icon_14: -8097026076337281278
+      good-icon_15: 3431016195454661124
+      good-icon_16: 504590307829439901
+      good-icon_2: 5367687054105643772
+      good-icon_3: 4676670269496129129
+      good-icon_4: 7257643626874729268
+      good-icon_5: 5681585473652779649
+      good-icon_6: -3138125762844751962
+      good-icon_7: 5351279632982580959
+      good-icon_8: 3539208581496575130
+      good-icon_9: 4795776316691605196
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

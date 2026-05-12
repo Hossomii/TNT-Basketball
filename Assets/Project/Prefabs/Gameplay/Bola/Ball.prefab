@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1601746201901029125}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
+  m_LocalScale: {x: 0.82, y: 0.82, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9037136481817058159}
@@ -81,10 +81,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8782654846830204904, guid: 889bce7a323f27343a0034cc197cefde, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,9 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c964df9aa952494b8a93aaaab95aead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowBallScaleEffect
-  ballVisual: {fileID: 9037136481817058159}
-  scaleMultiplier: 1.25
-  smoothSpeed: 12
+  targetBall: {fileID: 0}
+  scaleMultiplier: 0.94
+  minScale: 0.8
+  maxScale: 1
+  smoothSpeed: 18
 --- !u!1 &2955791914322529340
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +160,8 @@ Transform:
   m_GameObject: {fileID: 2955791914322529340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9037136481817058159}
@@ -211,10 +213,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8796111120354275753, guid: ca696ecb24591a74cbed1981f71b03b3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -257,9 +259,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c964df9aa952494b8a93aaaab95aead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowBallScaleEffect
-  ballVisual: {fileID: 9037136481817058159}
-  scaleMultiplier: 1
-  smoothSpeed: 12
+  targetBall: {fileID: 0}
+  scaleMultiplier: 0.96
+  minScale: 0.82
+  maxScale: 1.02
+  smoothSpeed: 22
 --- !u!1 &3682667356959071855
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +295,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.5, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9211017861890636886}
@@ -325,7 +329,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: cce1f63a376a13b488dbf14743b36c71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,7 +352,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 7
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3216574352867161949, guid: 5eb0788a11449b84f9af646c14033aa9, type: 3}
+  m_Sprite: {fileID: -7486938700872508030, guid: 2332ebc09bc57404b8ee0b88d461d0d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -394,10 +398,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BallAnimationController
   animator: {fileID: 5579297353613752576}
   basket: {fileID: 0}
-  goodDelay: 0.8
-  perfectDelay: 0.6
-  missDelay: 0.75
-  basketDelay: 0.25
+  goodDelay: 1
+  perfectDelay: 0.8
+  missDelay: 1.1
+  goodBasketDelay: 0.42
+  perfectBasketDelay: 0.33
+  missBasketDelay: 0.33
+  playBasketOnMiss: 0
   goodTrigger: Good
   perfectTrigger: Perfect
   missTrigger: Miss
@@ -433,9 +440,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3995095bb5056b04dae5f0cb8f81ab35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallVisualEffects
+  ballSpriteRenderer: {fileID: 3543636777945640243}
+  colorOverlayRenderer: {fileID: 0}
+  overlayScale: 1
   fireEffect: {fileID: 2955791914322529340}
   iceEffect: {fileID: 1601746201901029125}
   lightningEffect: {fileID: 5531411136313960019}
+  lightningOverlayColor: {r: 0.47058824, g: 0.92156863, b: 1, a: 0.4509804}
+  iceOverlayColor: {r: 0.7058824, g: 0.9607843, b: 1, a: 0.47058824}
+  fireOverlayColor: {r: 1, g: 0.47058824, b: 0.13725491, a: 0.4117647}
 --- !u!1 &5531411136313960019
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,8 +477,8 @@ Transform:
   m_GameObject: {fileID: 5531411136313960019}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalPosition: {x: 0, y: -0.05, z: 0}
+  m_LocalScale: {x: 0.88, y: 0.88, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9037136481817058159}
@@ -517,10 +530,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2766552075171033096, guid: 67f28bdb71971704ebc242fee15b760f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -563,6 +576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c964df9aa952494b8a93aaaab95aead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowBallScaleEffect
-  ballVisual: {fileID: 9037136481817058159}
-  scaleMultiplier: 1.15
-  smoothSpeed: 12
+  targetBall: {fileID: 0}
+  scaleMultiplier: 0.96
+  minScale: 0.64
+  maxScale: 0.9
+  smoothSpeed: 24

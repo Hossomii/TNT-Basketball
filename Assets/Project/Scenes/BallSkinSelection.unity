@@ -422,8 +422,20 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 472d6ede11e8ed24e8f6a0e638130b93, type: 3}
     - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
       propertyPath: sfxVolume
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: countdown1
+      value: 
+      objectReference: {fileID: 8300000, guid: 409d9dc6fc54a0b498e31a0954177b97, type: 3}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: countdown2
+      value: 
+      objectReference: {fileID: 8300000, guid: ec3800c1799bea041a3769724f2535f1, type: 3}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: countdown3
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d456e2adc5a1da4891be20cf58d2747, type: 3}
     - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
       propertyPath: switchSkin
       value: 
@@ -432,6 +444,22 @@ PrefabInstance:
       propertyPath: canActivate
       value: 
       objectReference: {fileID: 8300000, guid: 897724c623b8fd44887e96d25b7558ca, type: 3}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: countdownGo
+      value: 
+      objectReference: {fileID: 8300000, guid: a4539be35651e4a42823c23675caecb3, type: 3}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: musicVolume
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: generalBackgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1bede6486ebe33a428d2eecc6bb63559, type: 3}
+    - target: {fileID: 7759214203276072177, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
+      propertyPath: gameplayBackgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e66595c909d49d4c9798c29a29d2377, type: 3}
     - target: {fileID: 8578697958141506692, guid: 43bb4540a22aeda47a3770dd5afcc2f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.78531

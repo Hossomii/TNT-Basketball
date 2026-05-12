@@ -1,3 +1,37 @@
+/*
+Responsabilidade:
+Executar os efeitos das latas TNT.
+
+Esse script NÃO controla energia e NÃO escolhe qual lata vem agora.
+Ele apenas recebe o índice da lata e aplica o efeito correspondente.
+
+PowerUps:
+0 - Lata Roxa:
+    aumenta temporariamente a zona Perfect
+
+1 - Lata Azul:
+    pausa temporariamente o timer
+
+2 - Lata Laranja:
+    dobra temporariamente a pontuação
+
+Dependências:
+- ZoneRandomizer: altera o tamanho da zona Perfect
+- ZoneUI: muda o visual da zona quando está buffada
+- TimerSystem: pausa e retoma o tempo
+- TimerUI: muda o visual do timer congelado
+- ScoreSystem: aplica multiplicador externo
+- MultiplierUI: muda visual do multiplicador durante double score
+- BallVisualEffects: ativa efeitos visuais na bola
+
+Fluxo:
+TNTSystem
+-> ActivatePowerUp(index)
+-> inicia coroutine do poder
+-> espera duração
+-> reseta efeito
+*/
+
 using System.Collections;
 using UnityEngine;
 
@@ -48,11 +82,7 @@ public class TNTPowerUpSystem : MonoBehaviour
         if (GameplayLockSystem.IsGameplayLocked)
             return;
 
-        if (activeRoutine != null)
-        {
-            StopCoroutine(activeRoutine);
-            ResetAllPowerUps();
-        }
+        StopActivePowerUp();
 
         switch (index)
         {
@@ -69,107 +99,87 @@ public class TNTPowerUpSystem : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning("PowerUp inexistente: " + index);
+                Debug.LogWarning($"TNTPowerUpSystem: PowerUp inexistente: {index}");
                 break;
         }
     }
 
+    private void StopActivePowerUp()
+    {
+        if (activeRoutine == null)
+            return;
+
+        StopCoroutine(activeRoutine);
+        activeRoutine = null;
+
+        ResetAllPowerUps();
+    }
+
     private IEnumerator GreenZoneBoostRoutine()
     {
-        if (zoneRandomizer != null)
-            zoneRandomizer.SetPerfectZoneBoost(true, boostedPerfectZoneSize);
-
-        if (zoneUI != null)
-            zoneUI.SetBoostVisual(true);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.EnableLightningEffect();
+        SetGreenZoneBoost(true);
+        ballVisualEffects?.EnableLightningEffect();
 
         yield return new WaitForSeconds(greenZoneBoostDuration);
 
-        if (zoneRandomizer != null)
-            zoneRandomizer.SetPerfectZoneBoost(false, boostedPerfectZoneSize);
-
-        if (zoneUI != null)
-            zoneUI.SetBoostVisual(false);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.DisableAllEffects();
+        SetGreenZoneBoost(false);
+        ballVisualEffects?.DisableAllEffects();
 
         activeRoutine = null;
     }
 
     private IEnumerator TimePauseRoutine()
     {
-        if (timerSystem != null)
-            timerSystem.SetTimePaused(true);
-
-        if (timerUI != null)
-            timerUI.SetFrozenVisual(true);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.EnableIceEffect();
+        SetTimePause(true);
+        ballVisualEffects?.EnableIceEffect();
 
         yield return new WaitForSecondsRealtime(timePauseDuration);
 
-        if (timerSystem != null)
-            timerSystem.SetTimePaused(false);
-
-        if (timerUI != null)
-            timerUI.SetFrozenVisual(false);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.DisableAllEffects();
+        SetTimePause(false);
+        ballVisualEffects?.DisableAllEffects();
 
         activeRoutine = null;
     }
 
     private IEnumerator DoubleScoreRoutine()
     {
-        if (scoreSystem != null)
-            scoreSystem.SetExternalMultiplier(doubleScoreMultiplier);
-
-        if (multiplierUI != null)
-            multiplierUI.SetDoubleScoreVisual(true);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.EnableFireEffect();
+        SetDoubleScore(true);
+        ballVisualEffects?.EnableFireEffect();
 
         yield return new WaitForSeconds(doubleScoreDuration);
 
-        if (scoreSystem != null)
-            scoreSystem.SetExternalMultiplier(1f);
-
-        if (multiplierUI != null)
-            multiplierUI.SetDoubleScoreVisual(false);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.DisableAllEffects();
+        SetDoubleScore(false);
+        ballVisualEffects?.DisableAllEffects();
 
         activeRoutine = null;
     }
 
+    private void SetGreenZoneBoost(bool isActive)
+    {
+        zoneRandomizer?.SetPerfectZoneBoost(isActive, boostedPerfectZoneSize);
+        zoneUI?.SetBoostVisual(isActive);
+    }
+
+    private void SetTimePause(bool isActive)
+    {
+        timerSystem?.SetTimePaused(isActive);
+        timerUI?.SetFrozenVisual(isActive);
+    }
+
+    private void SetDoubleScore(bool isActive)
+    {
+        float multiplier = isActive ? doubleScoreMultiplier : 1f;
+
+        scoreSystem?.SetExternalMultiplier(multiplier);
+        multiplierUI?.SetDoubleScoreVisual(isActive);
+    }
+
     private void ResetAllPowerUps()
     {
-        if (zoneRandomizer != null)
-            zoneRandomizer.SetPerfectZoneBoost(false, boostedPerfectZoneSize);
+        SetGreenZoneBoost(false);
+        SetTimePause(false);
+        SetDoubleScore(false);
 
-        if (zoneUI != null)
-            zoneUI.SetBoostVisual(false);
-
-        if (timerSystem != null)
-            timerSystem.SetTimePaused(false);
-
-        if (timerUI != null)
-            timerUI.SetFrozenVisual(false);
-
-        if (scoreSystem != null)
-            scoreSystem.SetExternalMultiplier(1f);
-
-        if (multiplierUI != null)
-            multiplierUI.SetDoubleScoreVisual(false);
-
-        if (ballVisualEffects != null)
-            ballVisualEffects.DisableAllEffects();
+        ballVisualEffects?.DisableAllEffects();
     }
 }

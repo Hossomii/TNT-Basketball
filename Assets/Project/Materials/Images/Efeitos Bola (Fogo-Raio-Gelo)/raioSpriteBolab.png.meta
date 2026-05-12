@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 977845b06b8a1ae46be38a32c3dce3e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7393889153473070344
+    second: raioSpriteBolab_0
+  - first:
+      213: 3404729909713442064
+    second: raioSpriteBolab_1
+  - first:
+      213: 4870677199775970783
+    second: raioSpriteBolab_2
+  - first:
+      213: 7026558902091480937
+    second: raioSpriteBolab_3
+  - first:
+      213: -8338274132705090621
+    second: raioSpriteBolab_4
+  - first:
+      213: 2217373236545270267
+    second: raioSpriteBolab_5
+  - first:
+      213: -3577883653545136641
+    second: raioSpriteBolab_6
+  - first:
+      213: -7063487409827472826
+    second: raioSpriteBolab_7
+  - first:
+      213: -114704939288744783
+    second: raioSpriteBolab_8
+  - first:
+      213: -1707487145375293177
+    second: raioSpriteBolab_9
+  - first:
+      213: 2247952941107643004
+    second: raioSpriteBolab_10
+  - first:
+      213: 6215241951530446995
+    second: raioSpriteBolab_11
+  - first:
+      213: 7193256664060546681
+    second: raioSpriteBolab_12
+  - first:
+      213: 2787482170551807491
+    second: raioSpriteBolab_13
+  - first:
+      213: -8152758150017345038
+    second: raioSpriteBolab_14
+  - first:
+      213: 8652907855046645628
+    second: raioSpriteBolab_15
+  - first:
+      213: 5200567450254059291
+    second: raioSpriteBolab_16
+  - first:
+      213: 4688765683328739782
+    second: raioSpriteBolab_17
+  - first:
+      213: 7062639615061598323
+    second: raioSpriteBolab_18
+  - first:
+      213: 2330627603256817086
+    second: raioSpriteBolab_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: raioSpriteBolab_0
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1692
+        width: 101
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fabf9a4df0a36990800000000000000
+      internalID: -7393889153473070344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_1
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1679
+        width: 77
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0151e9850d7004f20800000000000000
+      internalID: 3404729909713442064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_2
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 1785
+        width: 133
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd5bd347b1f189340800000000000000
+      internalID: 4870677199775970783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_3
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 1515
+        width: 363
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f7588d71a538160800000000000000
+      internalID: 7026558902091480937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_4
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 1508
+        width: 378
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3e848badf784c80800000000000000
+      internalID: -8338274132705090621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_5
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1556
+        width: 99
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf13db2e531b5ce10800000000000000
+      internalID: 2217373236545270267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_6
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1593
+        width: 56
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffde3c606cdc85ec0800000000000000
+      internalID: -3577883653545136641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_7
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1532
+        width: 131
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a1acdef9379fd90800000000000000
+      internalID: -7063487409827472826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1019
+        width: 378
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc26b7277c786ef0800000000000000
+      internalID: -114704939288744783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_9
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1010
+        width: 391
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7012c59ec79cd48e0800000000000000
+      internalID: -1707487145375293177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_10
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 999
+        width: 435
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c72048e2a45523f10800000000000000
+      internalID: 2247952941107643004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_11
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 1000
+        width: 437
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 390f31a00a9f04650800000000000000
+      internalID: 6215241951530446995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 507
+        width: 435
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e4a8f03d493d360800000000000000
+      internalID: 7193256664060546681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_13
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 508
+        width: 437
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ea971f3402fa620800000000000000
+      internalID: 2787482170551807491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_14
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 508
+        width: 436
+        height: 442
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f99b8068a59bde80800000000000000
+      internalID: -8152758150017345038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_15
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 522
+        width: 394
+        height: 396
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c771e3e59dd451870800000000000000
+      internalID: 8652907855046645628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_16
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 915
+        width: 61
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b172adeca802c2840800000000000000
+      internalID: 5200567450254059291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 34
+        width: 394
+        height: 424
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9e9ddfb87d11140800000000000000
+      internalID: 4688765683328739782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_18
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 35
+        width: 388
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37029587f49830260800000000000000
+      internalID: 7062639615061598323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: raioSpriteBolab_19
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 43
+        width: 366
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5b7dbf47d085020800000000000000
+      internalID: 2330627603256817086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bbb72448b6c1dbb4fa14f63ef8052509
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      raioSpriteBolab_0: -7393889153473070344
+      raioSpriteBolab_1: 3404729909713442064
+      raioSpriteBolab_10: 2247952941107643004
+      raioSpriteBolab_11: 6215241951530446995
+      raioSpriteBolab_12: 7193256664060546681
+      raioSpriteBolab_13: 2787482170551807491
+      raioSpriteBolab_14: -8152758150017345038
+      raioSpriteBolab_15: 8652907855046645628
+      raioSpriteBolab_16: 5200567450254059291
+      raioSpriteBolab_17: 4688765683328739782
+      raioSpriteBolab_18: 7062639615061598323
+      raioSpriteBolab_19: 2330627603256817086
+      raioSpriteBolab_2: 4870677199775970783
+      raioSpriteBolab_3: 7026558902091480937
+      raioSpriteBolab_4: -8338274132705090621
+      raioSpriteBolab_5: 2217373236545270267
+      raioSpriteBolab_6: -3577883653545136641
+      raioSpriteBolab_7: -7063487409827472826
+      raioSpriteBolab_8: -114704939288744783
+      raioSpriteBolab_9: -1707487145375293177
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
