@@ -8,6 +8,7 @@ Esse script gerencia:
 - multiplicador por combo
 - multiplicador externo dos buffs TNT
 - atualização visual do multiplicador
+- salvamento do último score para o ranking
 
 Regras atuais:
 - Good = 1 ponto
@@ -25,16 +26,9 @@ Buff TNT:
 
 Dependências:
 - ShotEvaluator: fornece o resultado do arremesso
-- MultiplierUI: atualiza o visual do multiplicador na tela
+- MultiplierUI: atualiza o visual do multiplicador
 - TNTSystem / TNTPowerUpSystem: podem alterar externalMultiplier
-
-Fluxo:
-InputHandler
--> ScoreSystem.ApplyShotResult()
--> atualiza combo
--> calcula multiplicador
--> soma score
--> atualiza UI
+- Ranking/GameManager: pode chamar SaveLastScore()
 */
 
 using UnityEngine;
@@ -73,18 +67,6 @@ public class ScoreSystem : MonoBehaviour
         RefreshMultiplierUI();
     }
 
-    /*
-    Responsabilidade:
-    Aplicar o resultado de um arremesso no score.
-
-    A ordem é importante:
-    1. calcula pontos base
-    2. atualiza combo
-    3. atualiza multiplicador do combo
-    4. calcula multiplicador final
-    5. soma pontuação
-    6. atualiza UI
-    */
     public void ApplyShotResult(ShotEvaluator.ShotResult result)
     {
         float basePoints = GetBasePoints(result);
@@ -103,10 +85,6 @@ public class ScoreSystem : MonoBehaviour
             LogScore(result, basePoints, finalMultiplier, pointsToAdd);
     }
 
-    /*
-    Responsabilidade:
-    Retornar a pontuação base de cada tipo de arremesso.
-    */
     private float GetBasePoints(ShotEvaluator.ShotResult result)
     {
         switch (result)
@@ -125,10 +103,6 @@ public class ScoreSystem : MonoBehaviour
         }
     }
 
-    /*
-    Responsabilidade:
-    Atualizar o combo baseado no resultado.
-    */
     private void UpdateCombo(ShotEvaluator.ShotResult result)
     {
         if (result == ShotEvaluator.ShotResult.Miss)
@@ -140,10 +114,6 @@ public class ScoreSystem : MonoBehaviour
         combo++;
     }
 
-    /*
-    Responsabilidade:
-    Atualizar o multiplicador conforme o combo atual.
-    */
     private void UpdateComboMultiplier()
     {
         if (combo >= comboForTripleMultiplier)
@@ -161,16 +131,6 @@ public class ScoreSystem : MonoBehaviour
         comboMultiplier = 1f;
     }
 
-    /*
-    Responsabilidade:
-    Calcular o multiplicador final.
-
-    Fórmula:
-    multiplicador do combo * multiplicador externo TNT
-
-    Exemplo:
-    3x combo * 2x TNT = 6x final
-    */
     public float GetFinalMultiplier()
     {
         return Mathf.Clamp(
@@ -180,12 +140,6 @@ public class ScoreSystem : MonoBehaviour
         );
     }
 
-    /*
-    Responsabilidade:
-    Alterar multiplicador externo.
-
-    Usado por buffs temporários da TNT.
-    */
     public void SetExternalMultiplier(float value)
     {
         externalMultiplier = Mathf.Max(1f, value);
@@ -193,10 +147,6 @@ public class ScoreSystem : MonoBehaviour
         RefreshMultiplierUI();
     }
 
-    /*
-    Responsabilidade:
-    Atualizar visual do multiplicador.
-    */
     private void RefreshMultiplierUI()
     {
         if (multiplierUI == null)
@@ -205,10 +155,6 @@ public class ScoreSystem : MonoBehaviour
         multiplierUI.UpdateMultiplier(GetFinalMultiplier());
     }
 
-    /*
-    Responsabilidade:
-    Resetar o score e os multiplicadores.
-    */
     public void ResetScore()
     {
         score = 0f;
@@ -236,5 +182,18 @@ public class ScoreSystem : MonoBehaviour
             $"Added: {pointsToAdd} | " +
             $"Score: {score}"
         );
+    }
+
+    public void SaveLastScore()
+    {
+        PlayerPrefs.SetInt(
+            "LastScore",
+            Mathf.RoundToInt(score)
+        );
+
+        PlayerPrefs.Save();
+
+        if (enableLogs)
+            Debug.Log("Último score salvo: " + score);
     }
 }

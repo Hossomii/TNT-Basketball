@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c610698cde4308e4aa3bacad5277ec6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuUI
-  cenaJogo: 2
+  cenaJogo: 0
   cenaRanking: 5
   cenaPersonalizar: 3
   cenaTutorial: 6

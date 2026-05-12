@@ -12,12 +12,12 @@ Depende de:
 */
 
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
     public TimerSystem timerSystem;
-    public GameObject gameOverUI;
-
+    public ScoreSystem scoreSystem;
     private bool gameEnded = false;
 
     private void Update()
@@ -35,10 +35,8 @@ public class GameManager : MonoBehaviour
         gameEnded = true;
 
         Debug.Log("GAME OVER TRIGGERADO");
-
-        if (gameOverUI != null)
-        {
-            gameOverUI.SetActive(true);
-        }
+        scoreSystem.SaveLastScore();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(4);
+        
     }
 }
