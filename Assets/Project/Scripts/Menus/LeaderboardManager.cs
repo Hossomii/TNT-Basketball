@@ -7,22 +7,21 @@ using TMPro;
 public class LeaderboardManager : MonoBehaviour
 {
     [Header("Supabase")]
-    public string supabaseUrl = "https://qlxesskphwzpxyjnhpju.supabase.co";
-    public string anonKey = "sb_publishable_-H64CpcBFTvgu8tmpdCXLQ_2Ddn6a0c";
+    public string supabaseUrl = "https://SEU_PROJETO.supabase.co";
+    public string anonKey = "SUA_ANON_KEY";
 
-    [Header("Ranking UI")]
-    public Transform contentParent;
-    public GameObject rankingItemPrefab;
+    [Header("Ranking Prefab")]
+    public GameObject rankingRowPrefab;
+    public Transform rankingContent;
 
-    [Header("Player Rank UI")]
-    public TMP_Text playerRankText;
+    [Header("Seu Ranking")]
+    public TMP_Text myRankingText;
 
     public IEnumerator SendScore(string playerName, int score)
     {
-        string url = $"{supabaseUrl}/rest/v1/rpc/submit_score";
+        string url = $"{supabaseUrl}/rest/v1/leaderboard?select=id,player_name,score,created_at";
 
-        string json =
-            $"{{\"p_player_name\":\"{playerName}\",\"p_score\":{score}}}";
+        string json = $"{{\"player_name\":\"{playerName}\",\"score\":{score}}}";
 
         UnityWebRequest request = new UnityWebRequest(url, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
@@ -33,22 +32,32 @@ public class LeaderboardManager : MonoBehaviour
         request.SetRequestHeader("Content-Type", "application/json");
         request.SetRequestHeader("apikey", anonKey);
         request.SetRequestHeader("Authorization", "Bearer " + anonKey);
+        request.SetRequestHeader("Prefer", "return=representation");
 
         yield return request.SendWebRequest();
 
         if(request.result != UnityWebRequest.Result.Success)
-        {
             Debug.LogError("Erro ao enviar score: " + request.downloadHandler.text);
-        }
         else
         {
-            Debug.Log("Score enviado/atualizado com sucesso!");
+            ScoreEntry[] insertedScore =
+    JsonHelper.FromJson<ScoreEntry>(request.downloadHandler.text);
+
+            if(insertedScore.Length > 0)
+            {
+                PlayerPrefs.SetString("last_score_id", insertedScore[0].id);
+                PlayerPrefs.Save();
+            }
+
+            Debug.Log("Score enviado!");
         }
+            
     }
 
     public IEnumerator GetTopScores()
     {
-        string url = $"{supabaseUrl}/rest/v1/leaderboard?select=player_name,score&order=score.desc&limit=10";
+        string url =
+            $"{supabaseUrl}/rest/v1/leaderboard?select=id,player_name,score,created_at&order=score.desc&order=created_at.desc&limit=10";
 
         UnityWebRequest request = UnityWebRequest.Get(url);
 
@@ -63,13 +72,43 @@ public class LeaderboardManager : MonoBehaviour
         }
         else
         {
-            ShowRanking(request.downloadHandler.text);
+            ScoreEntry[] scores =
+                JsonHelper.FromJson<ScoreEntry>(request.downloadHandler.text);
+
+            ShowRanking(scores);
+        }
+    }
+
+    void ShowRanking(ScoreEntry[] scores)
+    {
+        foreach(Transform child in rankingContent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for(int i = 0; i < scores.Length; i++)
+        {
+            GameObject row =
+                Instantiate(
+                    rankingRowPrefab,
+                    rankingContent
+                );
+
+            RankingItemUI rankingRow =
+                row.GetComponent<RankingItemUI>();
+
+            rankingRow.Setup(
+                i + 1,
+                scores[i].player_name,
+                scores[i].score
+            );
         }
     }
 
     public IEnumerator GetPlayerRank(string playerName, int playerScore)
     {
-        string url = $"{supabaseUrl}/rest/v1/leaderboard?select=score&score=gt.{playerScore}";
+        string url =
+            $"{supabaseUrl}/rest/v1/leaderboard?select=player_name,score,created_at&order=score.desc&order=created_at.desc&limit=1000";
 
         UnityWebRequest request = UnityWebRequest.Get(url);
 
@@ -80,60 +119,57 @@ public class LeaderboardManager : MonoBehaviour
 
         if(request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Erro ao buscar posição do jogador: " + request.downloadHandler.text);
+            Debug.LogError("Erro posição: " + request.downloadHandler.text);
         }
         else
         {
-            ScoreEntry[] scoresAbove = JsonHelper.FromJson<ScoreEntry>(request.downloadHandler.text);
+            ScoreEntry[] scores =
+                JsonHelper.FromJson<ScoreEntry>(request.downloadHandler.text);
 
-            int rank = scoresAbove.Length + 1;
+            int rank = 1;
 
-            if(playerRankText != null)
+            for(int i = 0; i < scores.Length; i++)
             {
-                playerRankText.text =
-                    $"Seu ranking: #{rank}\n" +
-                    $"Nome: {playerName}\n" +
-                    $"Score: {playerScore}";
+                if(scores[i].score > playerScore)
+                {
+                    rank++;
+                }
+                else if(scores[i].score == playerScore)
+                {
+                    break;
+                }
             }
 
-            Debug.Log($"Seu ranking: #{rank} | Nome: {playerName} | Score: {playerScore}");
+            myRankingText.text =
+                $"Sua posição: #{rank}\n" +
+                $"Jogador: {playerName}\n" +
+                $"Score: {playerScore}";
         }
     }
-
-    private void ShowRanking(string json)
+    public IEnumerator DeleteOldScores(string playerName)
     {
-        ScoreEntry[] scores = JsonHelper.FromJson<ScoreEntry>(json);
+        string url = $"{supabaseUrl}/rest/v1/leaderboard?player_name=eq.{UnityWebRequest.EscapeURL(playerName)}";
 
-        if(contentParent == null || rankingItemPrefab == null)
+        UnityWebRequest request = UnityWebRequest.Delete(url);
+
+        request.SetRequestHeader("apikey", anonKey);
+        request.SetRequestHeader("Authorization", "Bearer " + anonKey);
+
+        yield return request.SendWebRequest();
+
+        if(request.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Content Parent ou Ranking Item Prefab não foi conectado no Inspector.");
-            return;
-        }
-
-        foreach(Transform child in contentParent)
-        {
-            Destroy(child.gameObject);
-        }
-
-        for(int i = 0; i < scores.Length; i++)
-        {
-            GameObject item = Instantiate(rankingItemPrefab, contentParent);
-
-            RankingItemUI itemUI = item.GetComponent<RankingItemUI>();
-
-            if(itemUI != null)
-            {
-                itemUI.Setup(i + 1, scores[i].player_name, scores[i].score);
-            }
+            Debug.LogError("Erro ao apagar score antigo: " + request.downloadHandler.text);
         }
     }
 }
-
 [System.Serializable]
 public class ScoreEntry
 {
+    public string id;
     public string player_name;
     public int score;
+    public string created_at;
 }
 
 public static class JsonHelper
@@ -141,9 +177,7 @@ public static class JsonHelper
     public static T[] FromJson<T>(string json)
     {
         string newJson = "{\"array\":" + json + "}";
-
         Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(newJson);
-
         return wrapper.array;
     }
 

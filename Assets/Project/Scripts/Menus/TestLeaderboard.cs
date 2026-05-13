@@ -6,7 +6,7 @@ public class TestLeaderboard : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(leaderboard.SendScore("JogadorTeste", 1000));
+        StartCoroutine(leaderboard.SendScore("JogadorTeste00001", 1400));
         StartCoroutine(leaderboard.GetTopScores());
     }
 }

@@ -5,6 +5,7 @@ using System.Collections;
 
 public class NameManager : MonoBehaviour
 {
+
     public TMP_InputField nameInput;
     public LeaderboardManager leaderboard;
 
@@ -17,18 +18,29 @@ public class NameManager : MonoBehaviour
             playerName = "Player";
         }
 
+        string oldPlayerName = PlayerPrefs.GetString("player_name", "");
+
         int score = PlayerPrefs.GetInt("LastScore", 0);
 
         PlayerPrefs.SetString("player_name", playerName);
         PlayerPrefs.SetInt("last_score", score);
         PlayerPrefs.Save();
 
-        StartCoroutine(SendScoreAndGoToRanking(playerName, score));
+        StartCoroutine(SendScoreAndGoToRanking(oldPlayerName, playerName, score));
     }
 
-    IEnumerator SendScoreAndGoToRanking(string playerName, int score)
+    IEnumerator SendScoreAndGoToRanking(string oldPlayerName, string playerName, int score)
     {
+        if(!string.IsNullOrEmpty(oldPlayerName))
+        {
+            yield return StartCoroutine(leaderboard.DeleteOldScores(oldPlayerName));
+        }
+
+        yield return StartCoroutine(leaderboard.DeleteOldScores(playerName));
+
         yield return StartCoroutine(leaderboard.SendScore(playerName, score));
+
+        yield return new WaitForSeconds(0.3f);
 
         SceneManager.LoadScene(5);
     }
