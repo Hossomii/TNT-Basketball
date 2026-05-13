@@ -2245,8 +2245,12 @@ PrefabInstance:
       value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 8883859636690788840, guid: d21f80389cf98ff4fb0c1f4f88c0a411, type: 3}
-      propertyPath: perfectBasketDelay
+      propertyPath: missBasketDelay
       value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883859636690788840, guid: d21f80389cf98ff4fb0c1f4f88c0a411, type: 3}
+      propertyPath: perfectBasketDelay
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 9000693746213116811, guid: d21f80389cf98ff4fb0c1f4f88c0a411, type: 3}
       propertyPath: m_Enabled

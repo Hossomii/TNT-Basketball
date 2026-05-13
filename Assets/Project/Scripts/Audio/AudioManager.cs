@@ -2,18 +2,22 @@
 Responsabilidade:
 Gerenciar músicas e efeitos sonoros do jogo.
 
-Compatível com:
+Controla:
+- música geral dos menus
+- música da gameplay
+- efeitos de UI
+- efeitos da gameplay
+- sons do countdown
+- apito final
+- torcida final
+
+Usado por:
+- MenuUI
+- BallSkinSelector
 - InputHandler
 - TNTSystem
-- BallSkinSelector
 - GameStartCountdown
 - GameManager
-
-Controles:
-- volume das músicas
-- volume geral dos efeitos
-- volume separado do apito final
-- volume separado da torcida
 */
 
 using UnityEngine;
@@ -24,8 +28,9 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [Header("Audio Sources")]
-    public AudioSource sfxSource;
     public AudioSource musicSource;
+    public AudioSource sfxSource;
+    public AudioSource uiSource;
 
     [Header("Music")]
     public AudioClip generalBackgroundMusic;
@@ -33,8 +38,10 @@ public class AudioManager : MonoBehaviour
     public string gameplaySceneName = "Gameplay";
 
     [Header("UI SFX")]
-    public AudioClip click;
+    public AudioClip uiClick;
+    public AudioClip uiHover;
     public AudioClip switchSkin;
+    public AudioClip confirmSkin;
 
     [Header("Countdown SFX")]
     public AudioClip countdown3;
@@ -56,6 +63,7 @@ public class AudioManager : MonoBehaviour
     [Header("Volumes")]
     [Range(0f, 1f)] public float musicVolume = 0.45f;
     [Range(0f, 1f)] public float sfxVolume = 1f;
+    [Range(0f, 1f)] public float uiVolume = 1f;
     [Range(0f, 1f)] public float finalWhistleVolume = 1f;
     [Range(0f, 1f)] public float crowdCheerVolume = 0.75f;
 
@@ -94,14 +102,25 @@ public class AudioManager : MonoBehaviour
 
     private void SetupAudioSources()
     {
-        if (sfxSource == null)
-            sfxSource = GetComponent<AudioSource>();
-
         if (musicSource == null)
         {
             musicSource = gameObject.AddComponent<AudioSource>();
             musicSource.loop = true;
             musicSource.playOnAwake = false;
+        }
+
+        if (sfxSource == null)
+        {
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            sfxSource.loop = false;
+            sfxSource.playOnAwake = false;
+        }
+
+        if (uiSource == null)
+        {
+            uiSource = gameObject.AddComponent<AudioSource>();
+            uiSource.loop = false;
+            uiSource.playOnAwake = false;
         }
 
         musicSource.volume = musicVolume;
@@ -149,6 +168,11 @@ public class AudioManager : MonoBehaviour
         sfxVolume = Mathf.Clamp01(volume);
     }
 
+    public void SetUIVolume(float volume)
+    {
+        uiVolume = Mathf.Clamp01(volume);
+    }
+
     public void SetFinalWhistleVolume(float volume)
     {
         finalWhistleVolume = Mathf.Clamp01(volume);
@@ -172,11 +196,62 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, Mathf.Clamp01(volume));
     }
 
-    // UI
-    public void PlayClick() => PlaySFX(click);
-    public void PlaySwitchSkin() => PlaySFX(switchSkin);
+    private void PlayUISFX(AudioClip clip)
+    {
+        if (uiSource == null)
+        {
+            Debug.LogWarning("UI Source vazio");
+            return;
+        }
 
-    // Countdown
+        if (clip == null)
+        {
+            Debug.LogWarning("UI Click Clip vazio");
+            return;
+        }
+
+        Debug.Log("Tocando som de UI: " + clip.name);
+
+        uiSource.PlayOneShot(clip, uiVolume);
+    }
+
+    // =========================
+    // UI
+    // =========================
+
+    public void PlayUIClick()
+    {
+        Debug.Log("PlayUIClick chamado");
+
+        PlayUISFX(uiClick);
+    }
+
+    public void PlayUIHover()
+    {
+        PlayUISFX(uiHover);
+    }
+
+    // compatibilidade
+    public void PlayClick()
+    {
+        
+        PlayUIClick();
+    }
+
+    public void PlaySwitchSkin()
+    {
+        PlayUISFX(switchSkin);
+    }
+
+    public void PlayConfirmSkin()
+    {
+        PlayUISFX(confirmSkin);
+    }
+
+    // =========================
+    // COUNTDOWN
+    // =========================
+
     public void PlayCountdownNumber(int number)
     {
         switch (number)
@@ -195,16 +270,44 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayCountdownGo() => PlaySFX(countdownGo);
+    public void PlayCountdownGo()
+    {
+        PlaySFX(countdownGo);
+    }
 
-    // Gameplay — nomes antigos mantidos para não quebrar scripts
-    public void PlayShoot() => PlaySFX(shoot);
-    public void PlayHit() => PlaySFX(hit);
-    public void PlayMiss() => PlaySFX(miss);
-    public void PlayPerfect() => PlaySFX(perfect);
-    public void PlayCanActivate() => PlaySFX(canActivate);
+    // =========================
+    // GAMEPLAY
+    // =========================
 
-    // End Game
+    public void PlayShoot()
+    {
+        PlaySFX(shoot);
+    }
+
+    public void PlayHit()
+    {
+        PlaySFX(hit);
+    }
+
+    public void PlayMiss()
+    {
+        PlaySFX(miss);
+    }
+
+    public void PlayPerfect()
+    {
+        PlaySFX(perfect);
+    }
+
+    public void PlayCanActivate()
+    {
+        PlaySFX(canActivate);
+    }
+
+    // =========================
+    // END GAME
+    // =========================
+
     public void PlayFinalWhistle()
     {
         PlaySFX(finalWhistle, finalWhistleVolume);

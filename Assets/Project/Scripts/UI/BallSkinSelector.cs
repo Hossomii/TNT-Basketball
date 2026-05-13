@@ -119,19 +119,19 @@ public class BallSkinSelector : MonoBehaviour
 
         isConfirming = true;
 
-        Debug.Log("ConfirmSkin chamado");
+        // Debug.Log("ConfirmSkin chamado");
 
-        PlayClickSound();
+        PlayConfirmSound();
         SaveCurrentSkin();
 
         if (visualController != null)
         {
-            Debug.Log("Fade/transição visual iniciado");
+            // Debug.Log("Fade/transição visual iniciado");
             visualController.PlayConfirmTransition(LoadGameplay);
         }
         else
         {
-            Debug.LogWarning("VisualController está vazio. Indo direto para gameplay.");
+            // Debug.LogWarning("VisualController está vazio. Indo direto para gameplay.");
             LoadGameplay();
         }
     }
@@ -185,8 +185,8 @@ public class BallSkinSelector : MonoBehaviour
         AudioManager.Instance?.PlaySwitchSkin();
     }
 
-    private void PlayClickSound()
+    private void PlayConfirmSound()
     {
-        AudioManager.Instance?.PlayClick();
+        AudioManager.Instance?.PlayConfirmSkin();
     }
 }
