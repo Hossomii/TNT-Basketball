@@ -1,22 +1,19 @@
 /*
 Responsabilidade:
-Gerenciar áudio global do jogo.
+Gerenciar músicas e efeitos sonoros do jogo.
 
-Controla:
-- efeitos sonoros
-- música de fundo dos menus/telas
-- música específica da gameplay
-
-Regras:
-- todas as cenas usam a música geral
-- a cena Gameplay usa uma música própria
-
-Dependências:
+Compatível com:
 - InputHandler
 - TNTSystem
+- BallSkinSelector
 - GameStartCountdown
-- UI
-- SceneManager
+- GameManager
+
+Controles:
+- volume das músicas
+- volume geral dos efeitos
+- volume separado do apito final
+- volume separado da torcida
 */
 
 using UnityEngine;
@@ -33,8 +30,6 @@ public class AudioManager : MonoBehaviour
     [Header("Music")]
     public AudioClip generalBackgroundMusic;
     public AudioClip gameplayBackgroundMusic;
-
-    [Header("Scene Names")]
     public string gameplaySceneName = "Gameplay";
 
     [Header("UI SFX")]
@@ -54,9 +49,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip perfect;
     public AudioClip canActivate;
 
-    [Header("Volume")]
-    [Range(0f, 1f)] public float sfxVolume = 1f;
+    [Header("End Game SFX")]
+    public AudioClip finalWhistle;
+    public AudioClip crowdCheer;
+
+    [Header("Volumes")]
     [Range(0f, 1f)] public float musicVolume = 0.45f;
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+    [Range(0f, 1f)] public float finalWhistleVolume = 1f;
+    [Range(0f, 1f)] public float crowdCheerVolume = 0.75f;
 
     private void Awake()
     {
@@ -121,23 +122,61 @@ public class AudioManager : MonoBehaviour
         PlayMusic(targetMusic);
     }
 
-    private void PlayMusic(AudioClip musicClip)
+    private void PlayMusic(AudioClip clip)
     {
-        if (musicSource == null || musicClip == null)
+        if (musicSource == null || clip == null)
             return;
 
-        if (musicSource.clip == musicClip && musicSource.isPlaying)
+        if (musicSource.clip == clip && musicSource.isPlaying)
             return;
 
-        musicSource.clip = musicClip;
+        musicSource.clip = clip;
         musicSource.volume = musicVolume;
         musicSource.loop = true;
         musicSource.Play();
     }
 
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = Mathf.Clamp01(volume);
+
+        if (musicSource != null)
+            musicSource.volume = musicVolume;
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxVolume = Mathf.Clamp01(volume);
+    }
+
+    public void SetFinalWhistleVolume(float volume)
+    {
+        finalWhistleVolume = Mathf.Clamp01(volume);
+    }
+
+    public void SetCrowdCheerVolume(float volume)
+    {
+        crowdCheerVolume = Mathf.Clamp01(volume);
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        PlaySFX(clip, sfxVolume);
+    }
+
+    private void PlaySFX(AudioClip clip, float volume)
+    {
+        if (clip == null || sfxSource == null)
+            return;
+
+        sfxSource.PlayOneShot(clip, Mathf.Clamp01(volume));
+    }
+
+    // UI
     public void PlayClick() => PlaySFX(click);
     public void PlaySwitchSkin() => PlaySFX(switchSkin);
 
+    // Countdown
     public void PlayCountdownNumber(int number)
     {
         switch (number)
@@ -145,9 +184,11 @@ public class AudioManager : MonoBehaviour
             case 3:
                 PlaySFX(countdown3);
                 break;
+
             case 2:
                 PlaySFX(countdown2);
                 break;
+
             case 1:
                 PlaySFX(countdown1);
                 break;
@@ -156,17 +197,21 @@ public class AudioManager : MonoBehaviour
 
     public void PlayCountdownGo() => PlaySFX(countdownGo);
 
+    // Gameplay — nomes antigos mantidos para não quebrar scripts
     public void PlayShoot() => PlaySFX(shoot);
     public void PlayHit() => PlaySFX(hit);
     public void PlayMiss() => PlaySFX(miss);
     public void PlayPerfect() => PlaySFX(perfect);
     public void PlayCanActivate() => PlaySFX(canActivate);
 
-    public void PlaySFX(AudioClip clip)
+    // End Game
+    public void PlayFinalWhistle()
     {
-        if (clip == null || sfxSource == null)
-            return;
+        PlaySFX(finalWhistle, finalWhistleVolume);
+    }
 
-        sfxSource.PlayOneShot(clip, sfxVolume);
+    public void PlayCrowdCheer()
+    {
+        PlaySFX(crowdCheer, crowdCheerVolume);
     }
 }
