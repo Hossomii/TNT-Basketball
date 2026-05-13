@@ -1,23 +1,34 @@
 /*
 Responsabilidade:
-Gerenciar:
-- Pontuação
-- Combo
-- Multiplicador
-- Multiplicador externo (buff TNT)
+Controlar a pontuação principal do jogador.
 
-Regras:
+Esse script gerencia:
+- score total
+- combo atual
+- multiplicador por combo
+- multiplicador externo dos buffs TNT
+- atualização visual do multiplicador
+- salvamento do último score para o ranking
+
+Regras atuais:
 - Good = 1 ponto
 - Perfect = 3 pontos
-- Miss = reseta combo
-- Combo:
-  0~4 = 1x
-  5~9 = 2x
-  10+ = 3x
+- Miss = 0 ponto e reseta combo
 
-- Buff TNT:
-  multiplica o multiplicador final
-  podendo chegar até 6x
+Combo:
+- 0 até 4 acertos = 1x
+- 5 até 9 acertos = 2x
+- 10 ou mais acertos = 3x
+
+Buff TNT:
+- multiplica o multiplicador final
+- exemplo: combo 3x + buff 2x = 6x
+
+Dependências:
+- ShotEvaluator: fornece o resultado do arremesso
+- MultiplierUI: atualiza o visual do multiplicador
+- TNTSystem / TNTPowerUpSystem: podem alterar externalMultiplier
+- Ranking/GameManager: pode chamar SaveLastScore()
 */
 
 using UnityEngine;
@@ -30,6 +41,14 @@ public class ScoreSystem : MonoBehaviour
     [Header("Combo")]
     public int combo = 0;
 
+    [Header("Points")]
+    [SerializeField] private float goodPoints = 1f;
+    [SerializeField] private float perfectPoints = 3f;
+
+    [Header("Combo Rules")]
+    [SerializeField] private int comboForDoubleMultiplier = 5;
+    [SerializeField] private int comboForTripleMultiplier = 10;
+
     [Header("Multipliers")]
     public float comboMultiplier = 1f;
     public float externalMultiplier = 1f;
@@ -41,7 +60,7 @@ public class ScoreSystem : MonoBehaviour
     public MultiplierUI multiplierUI;
 
     [Header("Debug")]
-    public bool enableLogs = true;
+    public bool enableLogs = false;
 
     private void Start()
     {
@@ -52,11 +71,10 @@ public class ScoreSystem : MonoBehaviour
     {
         float basePoints = GetBasePoints(result);
 
-        HandleCombo(result);
+        UpdateCombo(result);
         UpdateComboMultiplier();
 
         float finalMultiplier = GetFinalMultiplier();
-
         float pointsToAdd = basePoints * finalMultiplier;
 
         score += pointsToAdd;
@@ -64,18 +82,7 @@ public class ScoreSystem : MonoBehaviour
         RefreshMultiplierUI();
 
         if (enableLogs)
-        {
-            Debug.Log(
-                $"[{result}] " +
-                $"Base: {basePoints} | " +
-                $"Combo: {combo} | " +
-                $"ComboMult: {comboMultiplier}x | " +
-                $"External: {externalMultiplier}x | " +
-                $"Final: {finalMultiplier}x | " +
-                $"Added: {pointsToAdd} | " +
-                $"Score: {score}"
-            );
-        }
+            LogScore(result, basePoints, finalMultiplier, pointsToAdd);
     }
 
     private float GetBasePoints(ShotEvaluator.ShotResult result)
@@ -83,47 +90,45 @@ public class ScoreSystem : MonoBehaviour
         switch (result)
         {
             case ShotEvaluator.ShotResult.Perfect:
-                return 3f;
+                return perfectPoints;
 
             case ShotEvaluator.ShotResult.Good:
-                return 1f;
+                return goodPoints;
 
             case ShotEvaluator.ShotResult.Miss:
                 return 0f;
-        }
 
-        return 0f;
+            default:
+                return 0f;
+        }
     }
 
-    private void HandleCombo(ShotEvaluator.ShotResult result)
+    private void UpdateCombo(ShotEvaluator.ShotResult result)
     {
-        switch (result)
+        if (result == ShotEvaluator.ShotResult.Miss)
         {
-            case ShotEvaluator.ShotResult.Perfect:
-            case ShotEvaluator.ShotResult.Good:
-                combo++;
-                break;
-
-            case ShotEvaluator.ShotResult.Miss:
-                combo = 0;
-                break;
+            combo = 0;
+            return;
         }
+
+        combo++;
     }
 
     private void UpdateComboMultiplier()
     {
-        if (combo >= 10)
+        if (combo >= comboForTripleMultiplier)
         {
             comboMultiplier = 3f;
+            return;
         }
-        else if (combo >= 5)
+
+        if (combo >= comboForDoubleMultiplier)
         {
             comboMultiplier = 2f;
+            return;
         }
-        else
-        {
-            comboMultiplier = 1f;
-        }
+
+        comboMultiplier = 1f;
     }
 
     public float GetFinalMultiplier()
@@ -137,7 +142,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void SetExternalMultiplier(float value)
     {
-        externalMultiplier = value;
+        externalMultiplier = Mathf.Max(1f, value);
 
         RefreshMultiplierUI();
     }
@@ -154,18 +159,41 @@ public class ScoreSystem : MonoBehaviour
     {
         score = 0f;
         combo = 0;
-
         comboMultiplier = 1f;
         externalMultiplier = 1f;
 
         RefreshMultiplierUI();
     }
 
+    private void LogScore(
+        ShotEvaluator.ShotResult result,
+        float basePoints,
+        float finalMultiplier,
+        float pointsToAdd
+    )
+    {
+        Debug.Log(
+            $"ScoreSystem | Result: {result} | " +
+            $"Base: {basePoints} | " +
+            $"Combo: {combo} | " +
+            $"ComboMult: {comboMultiplier}x | " +
+            $"External: {externalMultiplier}x | " +
+            $"Final: {finalMultiplier}x | " +
+            $"Added: {pointsToAdd} | " +
+            $"Score: {score}"
+        );
+    }
+
     public void SaveLastScore()
     {
-        PlayerPrefs.SetInt("LastScore", Mathf.RoundToInt(score));
+        PlayerPrefs.SetInt(
+            "LastScore",
+            Mathf.RoundToInt(score)
+        );
+
         PlayerPrefs.Save();
 
-        Debug.Log("Último score salvo: " + score);
+        if (enableLogs)
+            Debug.Log("Último score salvo: " + score);
     }
 }

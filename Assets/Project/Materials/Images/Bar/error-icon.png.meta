@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 466fc52a70c3be74a82b593fed2366e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1338401630408029788
+    second: error-icon_0
+  - first:
+      213: 8983593292031286490
+    second: error-icon_1
+  - first:
+      213: -4050403854771191047
+    second: error-icon_2
+  - first:
+      213: 1863722674768655386
+    second: error-icon_3
+  - first:
+      213: -1773159541810345124
+    second: error-icon_4
+  - first:
+      213: -9208759633188830747
+    second: error-icon_5
+  - first:
+      213: -4060083314421114524
+    second: error-icon_6
+  - first:
+      213: 6437573688275156370
+    second: error-icon_7
+  - first:
+      213: 3383393485333239111
+    second: error-icon_8
+  - first:
+      213: -7944078943123822516
+    second: error-icon_9
+  - first:
+      213: -8399269974017118269
+    second: error-icon_10
+  - first:
+      213: 6550080233313195034
+    second: error-icon_11
+  - first:
+      213: 4442564263570180316
+    second: error-icon_12
+  - first:
+      213: 2841582344789973914
+    second: error-icon_13
+  - first:
+      213: 2920822863595884155
+    second: error-icon_14
+  - first:
+      213: -6931427442780015050
+    second: error-icon_15
+  - first:
+      213: -878769957601375511
+    second: error-icon_16
+  - first:
+      213: -1889019952534140041
+    second: error-icon_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: error-icon_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 1502
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9c9bceeca0d6de0800000000000000
+      internalID: -1338401630408029788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 436
+        width: 271
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc5b1280822cac70800000000000000
+      internalID: 8983593292031286490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_2
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 584
+        width: 52
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f28d7f67231ac7c0800000000000000
+      internalID: -4050403854771191047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_3
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 583
+        width: 63
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a143d65f5e54dd910800000000000000
+      internalID: 1863722674768655386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_4
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 584
+        width: 56
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5bcc449ac87467e0800000000000000
+      internalID: -1773159541810345124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_5
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 583
+        width: 60
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1c2d957e9e33080800000000000000
+      internalID: -9208759633188830747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 498
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469507d9cbfa7a7c0800000000000000
+      internalID: -4060083314421114524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_7
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 495
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29dba09692bd65950800000000000000
+      internalID: 6437573688275156370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_8
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 498
+        width: 13
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74598ace27a34fe20800000000000000
+      internalID: 3383393485333239111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_9
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 498
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48a17f6a46f0c190800000000000000
+      internalID: -7944078943123822516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_10
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 495
+        width: 17
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfea1ab57ccf6b80800000000000000
+      internalID: -8399269974017118269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_11
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 496
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14d0f4b44f86ea50800000000000000
+      internalID: 6550080233313195034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_12
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 498
+        width: 14
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd802f5f8a827ad30800000000000000
+      internalID: 4442564263570180316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_13
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 498
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b5a3556145f6720800000000000000
+      internalID: 2841582344789973914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_14
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 497
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ec8745be8d88820800000000000000
+      internalID: 2920822863595884155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_15
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 496
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636f3be077f9ecf90800000000000000
+      internalID: -6931427442780015050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_16
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 495
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea82e5216bfdc3f0800000000000000
+      internalID: -878769957601375511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: error-icon_17
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 495
+        width: 37
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bc3939c5ad8c5e0800000000000000
+      internalID: -1889019952534140041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      error-icon_0: -1338401630408029788
+      error-icon_1: 8983593292031286490
+      error-icon_10: -8399269974017118269
+      error-icon_11: 6550080233313195034
+      error-icon_12: 4442564263570180316
+      error-icon_13: 2841582344789973914
+      error-icon_14: 2920822863595884155
+      error-icon_15: -6931427442780015050
+      error-icon_16: -878769957601375511
+      error-icon_17: -1889019952534140041
+      error-icon_2: -4050403854771191047
+      error-icon_3: 1863722674768655386
+      error-icon_4: -1773159541810345124
+      error-icon_5: -9208759633188830747
+      error-icon_6: -4060083314421114524
+      error-icon_7: 6437573688275156370
+      error-icon_8: 3383393485333239111
+      error-icon_9: -7944078943123822516
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 1023bb6d0a57d1c439fa4847f650c674
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6258168237949686655
+    second: perfect-icon_0
+  - first:
+      213: 2372106115086947860
+    second: perfect-icon_1
+  - first:
+      213: -3872223218890601173
+    second: perfect-icon_2
+  - first:
+      213: -1835773578903636397
+    second: perfect-icon_3
+  - first:
+      213: -4141240901969014650
+    second: perfect-icon_4
+  - first:
+      213: -9097538070537530539
+    second: perfect-icon_5
+  - first:
+      213: -1123278055292011183
+    second: perfect-icon_6
+  - first:
+      213: 2874713409854741539
+    second: perfect-icon_7
+  - first:
+      213: 268645874602262700
+    second: perfect-icon_8
+  - first:
+      213: -9032694116719550356
+    second: perfect-icon_9
+  - first:
+      213: 1013070867051569054
+    second: perfect-icon_10
+  - first:
+      213: -6422662648077338405
+    second: perfect-icon_11
+  - first:
+      213: -796364077251727933
+    second: perfect-icon_12
+  - first:
+      213: 4252392612050591981
+    second: perfect-icon_13
+  - first:
+      213: -5427844533920208298
+    second: perfect-icon_14
+  - first:
+      213: -825187364772937074
+    second: perfect-icon_15
+  - first:
+      213: -2790302208993237557
+    second: perfect-icon_16
+  - first:
+      213: 780822616633587237
+    second: perfect-icon_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: perfect-icon_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 774
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c606015258629a0800000000000000
+      internalID: -6258168237949686655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_1
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 559
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4161a4791f96be020800000000000000
+      internalID: 2372106115086947860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_2
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 448
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d81039f79134ac0800000000000000
+      internalID: -3872223218890601173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_3
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 448
+        width: 62
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 356b66508a50686e0800000000000000
+      internalID: -1835773578903636397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 559
+        width: 63
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68091d4475b5786c0800000000000000
+      internalID: -4141240901969014650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_5
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 449
+        width: 15
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553940f535d0fb180800000000000000
+      internalID: -9097538070537530539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_6
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 559
+        width: 69
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15df3526f805960f0800000000000000
+      internalID: -1123278055292011183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_7
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 441
+        width: 51
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c91798d9805e720800000000000000
+      internalID: 2874713409854741539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_8
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 0
+        width: 164
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0ca06effb6ab300800000000000000
+      internalID: 268645874602262700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_9
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 496
+        width: 676
+        height: 528
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60ab20ee8c65a280800000000000000
+      internalID: -9032694116719550356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_10
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 249
+        width: 106
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9fd7ea06962f0e00800000000000000
+      internalID: 1013070867051569054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_11
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 559
+        width: 55
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd83e2da95e1ed6a0800000000000000
+      internalID: -6422662648077338405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_12
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 559
+        width: 59
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd678f471fb2f4f0800000000000000
+      internalID: -796364077251727933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_13
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 558
+        width: 20
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de065ceec88830b30800000000000000
+      internalID: 4252392612050591981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_14
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 158
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ae3a3872c6ca4b0800000000000000
+      internalID: -5427844533920208298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_15
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 559
+        width: 62
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e828199b6785c84f0800000000000000
+      internalID: -825187364772937074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_16
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 1
+        width: 357
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc568f0bcead649d0800000000000000
+      internalID: -2790302208993237557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perfect-icon_17
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 475
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5263909680a06da00800000000000000
+      internalID: 780822616633587237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      perfect-icon_0: -6258168237949686655
+      perfect-icon_1: 2372106115086947860
+      perfect-icon_10: 1013070867051569054
+      perfect-icon_11: -6422662648077338405
+      perfect-icon_12: -796364077251727933
+      perfect-icon_13: 4252392612050591981
+      perfect-icon_14: -5427844533920208298
+      perfect-icon_15: -825187364772937074
+      perfect-icon_16: -2790302208993237557
+      perfect-icon_17: 780822616633587237
+      perfect-icon_2: -3872223218890601173
+      perfect-icon_3: -1835773578903636397
+      perfect-icon_4: -4141240901969014650
+      perfect-icon_5: -9097538070537530539
+      perfect-icon_6: -1123278055292011183
+      perfect-icon_7: 2874713409854741539
+      perfect-icon_8: 268645874602262700
+      perfect-icon_9: -9032694116719550356
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

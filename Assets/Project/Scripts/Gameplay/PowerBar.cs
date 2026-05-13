@@ -1,3 +1,27 @@
+/*
+Responsabilidade:
+Controlar o valor do ponteiro da barra de força/precisão.
+
+Esse script NÃO desenha a UI.
+Ele apenas calcula o valor atual da barra entre 0 e 1.
+
+Valor:
+- 0 = lado esquerdo da barra
+- 1 = lado direito da barra
+
+Regras:
+- o ponteiro começa indo para a direita
+- ao chegar em 1, volta para a esquerda
+- ao chegar em 0, volta para a direita
+- a velocidade aumenta a cada 10 segundos de partida
+
+Dependências:
+- TimerSystem: usado para calcular o tempo passado e aumentar a dificuldade
+- GameplayLockSystem: impede movimento durante countdown/pause inicial
+- ShotEvaluator: lê o value para decidir Miss, Good ou Perfect
+- PowerBarUI: normalmente usa esse value para mover o ponteiro visual
+*/
+
 using UnityEngine;
 
 public class PowerBar : MonoBehaviour
@@ -23,16 +47,15 @@ public class PowerBar : MonoBehaviour
     [Header("Debug")]
     public bool enableLogs = false;
 
+    private int lastDifficultyStep = -1;
+
     private void Start()
     {
-        speed = startSpeed;
+        ResetBar();
     }
 
     private void Update()
     {
-        if (GameplayLockSystem.IsGameplayLocked)
-            return;
-
         if (!CanMove())
             return;
 
@@ -40,33 +63,60 @@ public class PowerBar : MonoBehaviour
         MovePointer();
     }
 
+    /*
+    Responsabilidade:
+    Definir se a barra pode se mover agora.
+    */
     private bool CanMove()
     {
-        if (timerSystem == null)
-            return true;
+        if (GameplayLockSystem.IsGameplayLocked)
+            return false;
 
-        if (timerSystem.isGameOver)
+        if (timerSystem != null && timerSystem.isGameOver)
             return false;
 
         return true;
     }
 
+    /*
+    Responsabilidade:
+    Atualizar dificuldade baseada no tempo de partida.
+
+    A cada 10 segundos:
+    - aumenta a velocidade da barra
+    - respeita o limite máximo
+    */
     private void UpdateDifficulty()
     {
         if (timerSystem == null)
             return;
 
-        float elapsedTime = timerSystem.startTime - timerSystem.timeRemaining;
+        float elapsedTime =
+            timerSystem.startTime - timerSystem.timeRemaining;
 
-        int difficultyStep = Mathf.FloorToInt(elapsedTime / 10f);
+        int difficultyStep =
+            Mathf.FloorToInt(elapsedTime / 10f);
 
-        speed = startSpeed + (difficultyStep * speedIncreaseEvery10Seconds);
-        speed = Mathf.Clamp(speed, startSpeed, maxSpeed);
+        speed = startSpeed +
+                (difficultyStep * speedIncreaseEvery10Seconds);
 
-        if (enableLogs)
-            Debug.Log($"PowerBar Speed: {speed}");
+        speed = Mathf.Clamp(
+            speed,
+            startSpeed,
+            maxSpeed
+        );
+
+        if (enableLogs && difficultyStep != lastDifficultyStep)
+        {
+            Debug.Log($"PowerBar | Speed: {speed}");
+            lastDifficultyStep = difficultyStep;
+        }
     }
 
+    /*
+    Responsabilidade:
+    Mover o ponteiro entre 0 e 1.
+    */
     private void MovePointer()
     {
         float direction = goingRight ? 1f : -1f;
@@ -77,18 +127,25 @@ public class PowerBar : MonoBehaviour
         {
             value = 1f;
             goingRight = false;
+            return;
         }
-        else if (value <= 0f)
+
+        if (value <= 0f)
         {
             value = 0f;
             goingRight = true;
         }
     }
 
+    /*
+    Responsabilidade:
+    Resetar a barra para o estado inicial.
+    */
     public void ResetBar()
     {
         value = 0f;
         speed = startSpeed;
         goingRight = true;
+        lastDifficultyStep = -1;
     }
 }

@@ -1,19 +1,40 @@
 /*
 Responsabilidade:
-Controlar:
-- Energia TNT
-- Buff ativo
-- Preview da lata ativa
-- Ícone do poder ativo
-- Integração com a fila visual das latas
+Controlar todo o sistema de energia TNT e buffs temporários.
+
+Esse sistema gerencia:
+- energia TNT
+- ativação automática das latas
+- duração do buff atual
+- preview visual da lata ativa
+- ícone do poder ativo
+- integração com a fila visual das latas
 
 Fluxo:
-- Acumula energia
-- Quando chega no máximo, ativa a primeira lata da fila
-- Executa o buff
-- Mostra preview da lata ativa
-- Mostra ícone do poder ativo
-- Quando o buff termina, a lata usada vai para o final da fila
+1. jogador ganha energia ao acertar
+2. ao atingir energia máxima:
+   -> ativa a primeira lata da fila
+3. buff é executado
+4. UI mostra:
+   - lata ativa
+   - ícone do poder
+   - tempo restante
+5. quando o buff termina:
+   -> UI é limpa
+   -> próxima lata entra na fila
+
+Dependências:
+- TNTPowerUpSystem:
+  executa os efeitos reais dos buffs
+
+- TNTCanVisualController:
+  controla a fila visual das latas
+
+- InputHandler:
+  chama AddEnergy() e ApplyMissPenalty()
+
+- AudioManager:
+  toca som de ativação da lata
 */
 
 using UnityEngine;
@@ -60,15 +81,13 @@ public class TNTSystem : MonoBehaviour
 
     private void Start()
     {
-        HideActiveCanPreview();
-        HidePowerIcon();
-
+        ResetVisuals();
         UpdateEnergyUI();
     }
 
     private void Update()
     {
-        if (!isBuffActive)
+        if (!CanUpdateBuff())
             return;
 
         UpdateBuffTimer();
@@ -76,7 +95,16 @@ public class TNTSystem : MonoBehaviour
 
     /*
     Responsabilidade:
-    Adicionar energia TNT.
+    Define se o buff atual precisa atualizar.
+    */
+    private bool CanUpdateBuff()
+    {
+        return isBuffActive;
+    }
+
+    /*
+    Responsabilidade:
+    Adicionar energia TNT ao acertar.
     */
     public void AddEnergy(int amount)
     {
@@ -102,7 +130,7 @@ public class TNTSystem : MonoBehaviour
 
     /*
     Responsabilidade:
-    Penalizar energia ao errar.
+    Remover energia TNT ao errar.
     */
     public void ApplyMissPenalty()
     {
@@ -122,14 +150,15 @@ public class TNTSystem : MonoBehaviour
 
     /*
     Responsabilidade:
-    Ativar a primeira lata da fila.
+    Ativar a lata atual da fila.
     */
     private void ActivateCurrentCan()
     {
-        if (powerUpSystem == null || visualController == null)
+        if (!CanActivateCan())
             return;
 
-        activeCanIndex = visualController.GetCurrentCanIndex();
+        activeCanIndex =
+            visualController.GetCurrentCanIndex();
 
         activeBuffDuration =
             powerUpSystem.GetPowerUpDuration(activeCanIndex);
@@ -141,8 +170,9 @@ public class TNTSystem : MonoBehaviour
 
         powerUpSystem.ActivatePowerUp(activeCanIndex);
 
-        ShowActiveCanPreview(activeCanIndex);
-        ShowPowerIcon(activeCanIndex);
+        UpdateActiveCanUI(activeCanIndex);
+
+        visualController.MoveCurrentCanToEnd();
 
         AudioManager.Instance?.PlayCanActivate();
 
@@ -150,13 +180,25 @@ public class TNTSystem : MonoBehaviour
 
         if (enableLogs)
         {
-            Debug.Log($"Activated Can: {activeCanIndex}");
+            Debug.Log(
+                $"TNTSystem | Activated Can: {activeCanIndex}"
+            );
         }
     }
 
     /*
     Responsabilidade:
-    Atualizar contagem do buff ativo.
+    Verificar se o sistema pode ativar uma lata.
+    */
+    private bool CanActivateCan()
+    {
+        return powerUpSystem != null &&
+               visualController != null;
+    }
+
+    /*
+    Responsabilidade:
+    Atualizar o tempo restante do buff.
     */
     private void UpdateBuffTimer()
     {
@@ -165,6 +207,7 @@ public class TNTSystem : MonoBehaviour
         if (activeBuffTimer <= 0f)
         {
             EndCurrentBuff();
+            return;
         }
 
         UpdateEnergyUI();
@@ -172,7 +215,7 @@ public class TNTSystem : MonoBehaviour
 
     /*
     Responsabilidade:
-    Encerrar buff atual e mandar a lata usada para o final da fila.
+    Encerrar o buff atual.
     */
     private void EndCurrentBuff()
     {
@@ -181,23 +224,19 @@ public class TNTSystem : MonoBehaviour
         isBuffActive = false;
         activeCanIndex = -1;
 
-        HideActiveCanPreview();
-        HidePowerIcon();
-
-        if (visualController != null)
-            visualController.MoveCurrentCanToEnd();
+        ResetVisuals();
 
         UpdateEnergyUI();
 
         if (enableLogs)
         {
-            Debug.Log("Buff Ended");
+            Debug.Log("TNTSystem | Buff Ended");
         }
     }
 
     /*
     Responsabilidade:
-    Atualizar UI da energia ou do tempo restante do buff.
+    Atualizar visual da energia ou do buff.
     */
     private void UpdateEnergyUI()
     {
@@ -210,6 +249,10 @@ public class TNTSystem : MonoBehaviour
         UpdateNormalEnergyUI();
     }
 
+    /*
+    Responsabilidade:
+    Atualizar UI da energia normal.
+    */
     private void UpdateNormalEnergyUI()
     {
         if (energyText != null)
@@ -228,6 +271,10 @@ public class TNTSystem : MonoBehaviour
         }
     }
 
+    /*
+    Responsabilidade:
+    Atualizar UI durante buff ativo.
+    */
     private void UpdateBuffUI()
     {
         if (energyText != null)
@@ -250,6 +297,16 @@ public class TNTSystem : MonoBehaviour
 
     /*
     Responsabilidade:
+    Atualizar preview e ícone da lata ativa.
+    */
+    private void UpdateActiveCanUI(int canIndex)
+    {
+        ShowActiveCanPreview(canIndex);
+        ShowPowerIcon(canIndex);
+    }
+
+    /*
+    Responsabilidade:
     Mostrar preview da lata ativa.
     */
     private void ShowActiveCanPreview(int canIndex)
@@ -257,23 +314,15 @@ public class TNTSystem : MonoBehaviour
         if (activeCanPreviewImage == null)
             return;
 
-        if (activeCanSprites != null &&
-            canIndex >= 0 &&
-            canIndex < activeCanSprites.Length)
+        if (HasValidSprite(
+            activeCanSprites,
+            canIndex))
         {
             activeCanPreviewImage.sprite =
                 activeCanSprites[canIndex];
         }
 
         activeCanPreviewImage.gameObject.SetActive(true);
-    }
-
-    private void HideActiveCanPreview()
-    {
-        if (activeCanPreviewImage != null)
-        {
-            activeCanPreviewImage.gameObject.SetActive(false);
-        }
     }
 
     /*
@@ -285,9 +334,9 @@ public class TNTSystem : MonoBehaviour
         if (powerIconImage == null)
             return;
 
-        if (powerIconSprites != null &&
-            canIndex >= 0 &&
-            canIndex < powerIconSprites.Length)
+        if (HasValidSprite(
+            powerIconSprites,
+            canIndex))
         {
             powerIconImage.sprite =
                 powerIconSprites[canIndex];
@@ -296,11 +345,42 @@ public class TNTSystem : MonoBehaviour
         powerIconImage.gameObject.SetActive(true);
     }
 
+    /*
+    Responsabilidade:
+    Resetar elementos visuais do buff.
+    */
+    private void ResetVisuals()
+    {
+        HideActiveCanPreview();
+        HidePowerIcon();
+    }
+
+    private void HideActiveCanPreview()
+    {
+        if (activeCanPreviewImage != null)
+        {
+            activeCanPreviewImage.gameObject.SetActive(false);
+        }
+    }
+
     private void HidePowerIcon()
     {
         if (powerIconImage != null)
         {
             powerIconImage.gameObject.SetActive(false);
         }
+    }
+
+    /*
+    Responsabilidade:
+    Validar sprites antes de acessar arrays.
+    */
+    private bool HasValidSprite(
+        Sprite[] sprites,
+        int index)
+    {
+        return sprites != null &&
+               index >= 0 &&
+               index < sprites.Length;
     }
 }

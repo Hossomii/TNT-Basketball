@@ -14,37 +14,32 @@ public class BallVisualEffects : MonoBehaviour
 
     public void DisableAllEffects()
     {
-        if (fireEffect != null)
-            fireEffect.SetActive(false);
-
-        if (iceEffect != null)
-            iceEffect.SetActive(false);
-
-        if (lightningEffect != null)
-            lightningEffect.SetActive(false);
+        SetEffectActive(fireEffect, false);
+        SetEffectActive(iceEffect, false);
+        SetEffectActive(lightningEffect, false);
     }
 
     public void EnableFireEffect()
     {
         DisableAllEffects();
-
-        if (fireEffect != null)
-            fireEffect.SetActive(true);
+        SetEffectActive(fireEffect, true);
     }
 
     public void EnableIceEffect()
     {
         DisableAllEffects();
-
-        if (iceEffect != null)
-            iceEffect.SetActive(true);
+        SetEffectActive(iceEffect, true);
     }
 
     public void EnableLightningEffect()
     {
         DisableAllEffects();
+        SetEffectActive(lightningEffect, true);
+    }
 
-        if (lightningEffect != null)
-            lightningEffect.SetActive(true);
+    private void SetEffectActive(GameObject effect, bool active)
+    {
+        if (effect != null)
+            effect.SetActive(active);
     }
 }

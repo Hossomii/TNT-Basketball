@@ -1,16 +1,24 @@
 /*
 Responsabilidade:
-Avaliar o resultado do arremesso baseado
-na posição atual da barra.
+Avaliar o resultado do arremesso usando a posição atual do ponteiro da barra.
 
-Resultados:
-- Miss
-- Good
-- Perfect
+Esse script NÃO move a barra e NÃO altera a UI.
+Ele apenas lê o valor atual da PowerBar e compara com as zonas configuradas.
 
-Usado por:
-- InputHandler
-- ZoneRandomizer
+Resultados possíveis:
+- Miss: fora das zonas de acerto
+- Good: dentro da zona boa
+- Perfect: dentro da zona perfeita
+
+Dependências:
+- PowerBar: fornece o valor atual do ponteiro entre 0 e 1
+- ZoneRandomizer: pode atualizar as zonas dinamicamente usando SetZones()
+- InputHandler: chama Evaluate() quando o jogador arremessa
+
+Fluxo:
+InputHandler
+-> ShotEvaluator.Evaluate()
+-> retorna Miss, Good ou Perfect
 */
 
 using UnityEngine;
@@ -41,24 +49,22 @@ public class ShotEvaluator : MonoBehaviour
         Perfect
     }
 
+    /*
+    Responsabilidade:
+    Avaliar o arremesso atual.
+    */
     public ShotResult Evaluate()
     {
         if (powerBar == null)
         {
-            Debug.LogWarning("PowerBar não encontrada.");
+            Debug.LogWarning("ShotEvaluator: PowerBar não configurada.");
             return ShotResult.Miss;
         }
 
-        float value = powerBar.value;
+        float value = Mathf.Clamp01(powerBar.value);
 
         if (enableLogs)
-        {
-            Debug.Log(
-                $"Value: {value:F3} | " +
-                $"Perfect: {perfectStart:F3}-{perfectEnd:F3} | " +
-                $"Good: {goodStart:F3}-{goodEnd:F3}"
-            );
-        }
+            LogEvaluation(value);
 
         if (IsInsidePerfectZone(value))
             return ShotResult.Perfect;
@@ -69,21 +75,58 @@ public class ShotEvaluator : MonoBehaviour
         return ShotResult.Miss;
     }
 
+    /*
+    Responsabilidade:
+    Verificar se o valor está dentro da zona Perfect.
+
+    Perfect é verificado antes do Good porque normalmente
+    a zona Perfect fica dentro da zona Good.
+    */
     private bool IsInsidePerfectZone(float value)
     {
-        return value >= perfectStart - tolerance &&
-               value <= perfectEnd + tolerance;
-    }
-
-    private bool IsInsideGoodZone(float value)
-    {
-        return value >= goodStart - tolerance &&
-               value <= goodEnd + tolerance;
+        return IsInsideZone(
+            value,
+            perfectStart,
+            perfectEnd
+        );
     }
 
     /*
     Responsabilidade:
-    Atualizar posições das zonas dinamicamente.
+    Verificar se o valor está dentro da zona Good.
+    */
+    private bool IsInsideGoodZone(float value)
+    {
+        return IsInsideZone(
+            value,
+            goodStart,
+            goodEnd
+        );
+    }
+
+    /*
+    Responsabilidade:
+    Comparar um valor com uma zona usando tolerância.
+
+    A tolerância ajuda a deixar o jogo menos injusto
+    em cliques muito próximos da borda.
+    */
+    private bool IsInsideZone(
+        float value,
+        float start,
+        float end
+    )
+    {
+        return value >= start - tolerance &&
+               value <= end + tolerance;
+    }
+
+    /*
+    Responsabilidade:
+    Atualizar as zonas dinamicamente.
+
+    Usado pelo ZoneRandomizer para mover as áreas de acerto
+    durante a partida.
     */
     public void SetZones(
         float newGoodStart,
@@ -92,10 +135,47 @@ public class ShotEvaluator : MonoBehaviour
         float newPerfectEnd
     )
     {
-        goodStart = newGoodStart;
-        goodEnd = newGoodEnd;
+        goodStart = Mathf.Clamp01(newGoodStart);
+        goodEnd = Mathf.Clamp01(newGoodEnd);
 
-        perfectStart = newPerfectStart;
-        perfectEnd = newPerfectEnd;
+        perfectStart = Mathf.Clamp01(newPerfectStart);
+        perfectEnd = Mathf.Clamp01(newPerfectEnd);
+
+        ValidateZones();
+    }
+
+    /*
+    Responsabilidade:
+    Evitar zonas invertidas.
+
+    Exemplo de problema:
+    start = 0.70
+    end = 0.30
+
+    Isso quebraria a leitura da zona.
+    */
+    private void ValidateZones()
+    {
+        if (goodStart > goodEnd)
+            Swap(ref goodStart, ref goodEnd);
+
+        if (perfectStart > perfectEnd)
+            Swap(ref perfectStart, ref perfectEnd);
+    }
+
+    private void Swap(ref float a, ref float b)
+    {
+        float temp = a;
+        a = b;
+        b = temp;
+    }
+
+    private void LogEvaluation(float value)
+    {
+        Debug.Log(
+            $"ShotEvaluator | Value: {value:F3} | " +
+            $"Perfect: {perfectStart:F3}-{perfectEnd:F3} | " +
+            $"Good: {goodStart:F3}-{goodEnd:F3}"
+        );
     }
 }

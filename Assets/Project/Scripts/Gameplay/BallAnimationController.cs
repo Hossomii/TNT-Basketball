@@ -1,3 +1,21 @@
+/*
+Responsabilidade:
+Controlar as animações da bola após o arremesso.
+
+Esse script recebe o resultado do arremesso e toca:
+- animação Good
+- animação Perfect
+- animação Miss
+
+Também sincroniza o impacto da cesta no momento certo.
+
+Dependências:
+- Animator da bola
+- BasketAnimationController
+- InputHandler: espera essa coroutine terminar antes de liberar novo arremesso
+- GameplayLockSystem: pausa animações durante countdown
+*/
+
 using System.Collections;
 using UnityEngine;
 
@@ -7,11 +25,18 @@ public class BallAnimationController : MonoBehaviour
     public Animator animator;
     public BasketAnimationController basket;
 
-    [Header("Animation Delays")]
-    public float goodDelay = 0.9f;
-    public float perfectDelay = 0.7f;
-    public float missDelay = 0.5f;
-    public float basketDelay = 0.3f;
+    [Header("Animation Total Delays")]
+    public float goodDelay = 1.00f;
+    public float perfectDelay = 0.80f;
+    public float missDelay = 1.10f;
+
+    [Header("Basket Impact Delays")]
+    public float goodBasketDelay = 0.47f;
+    public float perfectBasketDelay = 0.33f;
+    public float missBasketDelay = 0.33f;
+
+    [Header("Basket Impact")]
+    public bool playBasketOnMiss = false;
 
     [Header("Animator Triggers")]
     public string goodTrigger = "Good";
@@ -37,12 +62,13 @@ public class BallAnimationController : MonoBehaviour
         GameplayLockSystem.OnGameplayUnlocked -= ResumeAnimator;
     }
 
+    /*
+    Responsabilidade:
+    Tocar a animação correspondente ao resultado.
+    */
     public IEnumerator PlayResultAnimation(ShotEvaluator.ShotResult result)
     {
-        if (animator == null)
-            yield break;
-
-        if (GameplayLockSystem.IsGameplayLocked)
+        if (!CanPlayAnimation())
             yield break;
 
         ResumeAnimator();
@@ -50,30 +76,82 @@ public class BallAnimationController : MonoBehaviour
         switch (result)
         {
             case ShotEvaluator.ShotResult.Good:
-                yield return PlayHitAnimation(goodTrigger, goodDelay);
+                yield return PlayShotAnimation(
+                    goodTrigger,
+                    goodDelay,
+                    goodBasketDelay,
+                    true
+                );
                 break;
 
             case ShotEvaluator.ShotResult.Perfect:
-                yield return PlayHitAnimation(perfectTrigger, perfectDelay);
+                yield return PlayShotAnimation(
+                    perfectTrigger,
+                    perfectDelay,
+                    perfectBasketDelay,
+                    true
+                );
                 break;
 
             case ShotEvaluator.ShotResult.Miss:
-                animator.SetTrigger(missTrigger);
-                yield return new WaitForSeconds(missDelay);
+                yield return PlayShotAnimation(
+                    missTrigger,
+                    missDelay,
+                    missBasketDelay,
+                    playBasketOnMiss
+                );
                 break;
         }
     }
 
-    private IEnumerator PlayHitAnimation(string triggerName, float delay)
+    private bool CanPlayAnimation()
     {
-        animator.SetTrigger(triggerName);
+        if (animator == null)
+        {
+            Debug.LogWarning("BallAnimationController: Animator da bola não atribuído.");
+            return false;
+        }
 
-        yield return new WaitForSeconds(basketDelay);
+        if (GameplayLockSystem.IsGameplayLocked)
+            return false;
 
-        if (basket != null)
+        return true;
+    }
+
+    /*
+    Responsabilidade:
+    Tocar animação da bola e sincronizar a cesta.
+    */
+    private IEnumerator PlayShotAnimation(
+        string triggerName,
+        float totalDelay,
+        float impactDelay,
+        bool shouldPlayBasket
+    )
+    {
+        PlayBallTrigger(triggerName);
+
+        if (shouldPlayBasket && basket != null)
+        {
+            yield return new WaitForSeconds(impactDelay);
+
             basket.PlayBounce();
 
-        yield return new WaitForSeconds(delay);
+            float remainingDelay = totalDelay - impactDelay;
+
+            if (remainingDelay > 0f)
+                yield return new WaitForSeconds(remainingDelay);
+
+            yield break;
+        }
+
+        yield return new WaitForSeconds(totalDelay);
+    }
+
+    private void PlayBallTrigger(string triggerName)
+    {
+        animator.ResetTrigger(triggerName);
+        animator.SetTrigger(triggerName);
     }
 
     private void UpdateAnimatorLockState()
