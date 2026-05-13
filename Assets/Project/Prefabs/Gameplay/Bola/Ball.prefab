@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5341809385945806435}
   - component: {fileID: 6413180139828824321}
   - component: {fileID: 1596644218695598461}
-  - component: {fileID: 8672286701233972869}
   m_Layer: 0
   m_Name: IceEffect
   m_TagString: Untagged
@@ -115,23 +114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8672286701233972869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601746201901029125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c964df9aa952494b8a93aaaab95aead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FollowBallScaleEffect
-  targetBall: {fileID: 0}
-  scaleMultiplier: 0.94
-  minScale: 0.8
-  maxScale: 1
-  smoothSpeed: 18
 --- !u!1 &2955791914322529340
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +125,6 @@ GameObject:
   - component: {fileID: 9211017861890636886}
   - component: {fileID: 9000693746213116811}
   - component: {fileID: 2037961888640541209}
-  - component: {fileID: 6816072803387316723}
   m_Layer: 0
   m_Name: FireEffect
   m_TagString: Untagged
@@ -247,23 +228,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6816072803387316723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2955791914322529340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c964df9aa952494b8a93aaaab95aead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FollowBallScaleEffect
-  targetBall: {fileID: 0}
-  scaleMultiplier: 0.96
-  minScale: 0.82
-  maxScale: 1.02
-  smoothSpeed: 22
 --- !u!1 &3682667356959071855
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +324,7 @@ SpriteRenderer:
   m_Size: {x: 3.1270103, y: 3.09375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!95 &5579297353613752576
 Animator:
@@ -440,15 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3995095bb5056b04dae5f0cb8f81ab35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallVisualEffects
-  ballSpriteRenderer: {fileID: 3543636777945640243}
-  colorOverlayRenderer: {fileID: 0}
-  overlayScale: 1
   fireEffect: {fileID: 2955791914322529340}
   iceEffect: {fileID: 1601746201901029125}
   lightningEffect: {fileID: 5531411136313960019}
-  lightningOverlayColor: {r: 0.47058824, g: 0.92156863, b: 1, a: 0.4509804}
-  iceOverlayColor: {r: 0.7058824, g: 0.9607843, b: 1, a: 0.47058824}
-  fireOverlayColor: {r: 1, g: 0.47058824, b: 0.13725491, a: 0.4117647}
 --- !u!1 &5531411136313960019
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +418,6 @@ GameObject:
   - component: {fileID: 569451501890979432}
   - component: {fileID: 7475349668454659312}
   - component: {fileID: 7422531472939159170}
-  - component: {fileID: 7723988543437787722}
   m_Layer: 0
   m_Name: LightingEffect
   m_TagString: Untagged
@@ -564,20 +521,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7723988543437787722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5531411136313960019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c964df9aa952494b8a93aaaab95aead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FollowBallScaleEffect
-  targetBall: {fileID: 0}
-  scaleMultiplier: 0.96
-  minScale: 0.64
-  maxScale: 0.9
-  smoothSpeed: 24
