@@ -1,15 +1,19 @@
 /*
 Responsabilidade:
-Controlar seleção de skins da bola.
+Controlar a lógica de seleção de skins da bola.
 
-Funcionalidades:
-- Trocar skin
-- Salvar skin selecionada
-- Atualizar preview
-- Confirmar seleção
+Esse script cuida de:
+- trocar skin
+- salvar skin selecionada
+- atualizar preview
+- confirmar seleção
+- carregar a gameplay
 
-Usado na cena:
-- Skin Selection
+Dependências:
+- Image da bola preview
+- SkinSelectionVisualController para efeitos visuais
+- AudioManager para sons
+- PlayerPrefs para salvar a skin
 */
 
 using UnityEngine;
@@ -25,6 +29,9 @@ public class BallSkinSelector : MonoBehaviour
     [Header("Skins")]
     public Sprite[] skins;
 
+    [Header("Visual")]
+    public SkinSelectionVisualController visualController;
+
     [Header("Scene")]
     public string gameplaySceneName = "Gameplay";
 
@@ -36,6 +43,7 @@ public class BallSkinSelector : MonoBehaviour
 
     private int currentIndex = 0;
     private float inputDelayTimer;
+    private bool isConfirming = false;
 
     private void Start()
     {
@@ -43,54 +51,40 @@ public class BallSkinSelector : MonoBehaviour
 
         inputDelayTimer = inputDelayOnStart;
 
-        UpdateSkinPreview();
+        UpdateSkinPreview(false);
     }
 
     private void Update()
     {
         HandleInputDelay();
 
-        if (inputDelayTimer > 0f)
+        if (inputDelayTimer > 0f || isConfirming)
             return;
 
         HandleKeyboardInput();
     }
 
-    /*
-    Responsabilidade:
-    Impedir input instantâneo ao entrar na cena.
-    */
     private void HandleInputDelay()
     {
         if (inputDelayTimer > 0f)
-        {
             inputDelayTimer -= Time.deltaTime;
-        }
     }
 
-    /*
-    Responsabilidade:
-    Ler input do teclado.
-    */
     private void HandleKeyboardInput()
     {
         if (Keyboard.current == null)
             return;
 
         if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
-        {
             NextSkin();
-        }
 
         if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
-        {
             PreviousSkin();
-        }
     }
 
     public void NextSkin()
     {
-        if (!HasValidSkins())
+        if (!CanChangeSkin())
             return;
 
         PlaySwitchSound();
@@ -98,16 +92,14 @@ public class BallSkinSelector : MonoBehaviour
         currentIndex++;
 
         if (currentIndex >= skins.Length)
-        {
             currentIndex = 0;
-        }
 
-        UpdateSkinPreview();
+        UpdateSkinPreview(true);
     }
 
     public void PreviousSkin()
     {
-        if (!HasValidSkins())
+        if (!CanChangeSkin())
             return;
 
         PlaySwitchSound();
@@ -115,68 +107,77 @@ public class BallSkinSelector : MonoBehaviour
         currentIndex--;
 
         if (currentIndex < 0)
-        {
             currentIndex = skins.Length - 1;
-        }
 
-        UpdateSkinPreview();
+        UpdateSkinPreview(true);
     }
 
-    /*
-    Responsabilidade:
-    Confirmar skin e entrar na gameplay.
-    */
     public void ConfirmSkin()
     {
-        PlayClickSound();
+        if (isConfirming)
+            return;
 
+        isConfirming = true;
+
+        Debug.Log("ConfirmSkin chamado");
+
+        PlayClickSound();
         SaveCurrentSkin();
 
+        if (visualController != null)
+        {
+            Debug.Log("Fade/transição visual iniciado");
+            visualController.PlayConfirmTransition(LoadGameplay);
+        }
+        else
+        {
+            Debug.LogWarning("VisualController está vazio. Indo direto para gameplay.");
+            LoadGameplay();
+        }
+    }
+
+    private void LoadGameplay()
+    {
         SceneManager.LoadScene(gameplaySceneName);
     }
 
-    /*
-    Responsabilidade:
-    Salvar skin selecionada.
-    */
     public void SaveCurrentSkin()
     {
         PlayerPrefs.SetInt(saveKey, currentIndex);
         PlayerPrefs.Save();
     }
 
-    /*
-    Responsabilidade:
-    Carregar skin salva anteriormente.
-    */
     private void LoadSavedSkin()
     {
-        currentIndex =
-            PlayerPrefs.GetInt(saveKey, 0);
+        if (!HasValidSkins())
+        {
+            currentIndex = 0;
+            return;
+        }
 
-        currentIndex =
-            Mathf.Clamp(currentIndex, 0, skins.Length - 1);
+        currentIndex = PlayerPrefs.GetInt(saveKey, 0);
+        currentIndex = Mathf.Clamp(currentIndex, 0, skins.Length - 1);
     }
 
-    /*
-    Responsabilidade:
-    Atualizar preview visual da skin.
-    */
-    private void UpdateSkinPreview()
+    private void UpdateSkinPreview(bool animate)
     {
-        if (ballPreview == null)
-            return;
-
-        if (!HasValidSkins())
+        if (ballPreview == null || !HasValidSkins())
             return;
 
         ballPreview.sprite = skins[currentIndex];
+
+        if (animate && visualController != null)
+            visualController.PlaySkinChangeFeedback();
+    }
+
+    private bool CanChangeSkin()
+    {
+        return HasValidSkins() && !isConfirming;
     }
 
     private bool HasValidSkins()
     {
-        return skins != null &&
-               skins.Length > 0;
+        return skins != null && skins.Length > 0;
     }
 
     private void PlaySwitchSound()

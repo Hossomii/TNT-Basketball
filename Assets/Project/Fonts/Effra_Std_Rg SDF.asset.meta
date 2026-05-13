@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 70013066dcab9594e949944f446943cd
+=======
+guid: a6290dff96512074b8cedc2f0e2d43a0
+>>>>>>> feature/hossomii
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

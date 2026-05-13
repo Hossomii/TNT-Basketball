@@ -44,6 +44,9 @@ public class InputHandler : MonoBehaviour
     [Header("State")]
     public bool isResolvingShot = false;
 
+    [Header("Shot Delay")]
+    [SerializeField] private float delayAfterShot = 0.10f;
+
     [Header("Debug")]
     public bool enableLogs = false;
 
@@ -171,6 +174,7 @@ public class InputHandler : MonoBehaviour
         if (result != ShotEvaluator.ShotResult.Miss)
             zoneRandomizer?.TryRandomizeZones();
 
+        yield return new WaitForSeconds(delayAfterShot);
         isResolvingShot = false;
         shotRoutine = null;
     }

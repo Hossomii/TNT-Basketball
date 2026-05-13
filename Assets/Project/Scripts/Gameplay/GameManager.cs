@@ -1,42 +1,69 @@
 /*
 Responsabilidade:
-Controlar o estado global do jogo.
+Controlar o estado global da partida.
 
-Como funciona:
-- Recebe evento de fim de jogo do TimerSystem
-- Ativa UI de fim de jogo
-- Pode pausar sistemas futuramente
+Esse script:
+- detecta o fim do timer
+- salva a pontuação final
+- mostra tela simples de fim de jogo
+- toca apito e torcida
+- carrega a cena de ranking após um pequeno delay
 
-Depende de:
+Dependências:
 - TimerSystem
+- ScoreSystem
+- EndGameOverlay
+- AudioManager
 */
 
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("References")]
     public TimerSystem timerSystem;
     public ScoreSystem scoreSystem;
+
+    [Header("End Game UI")]
+    public GameObject endGameOverlay;
+
+    [Header("Scene")]
+    public string nextSceneName = "NameScene";
+
+    [Header("Timing")]
+    public float endGameDelay = 1.5f;
+
     private bool gameEnded = false;
 
     private void Update()
     {
-        if (gameEnded) return;
+        if (gameEnded)
+            return;
 
         if (timerSystem != null && timerSystem.isGameOver)
-        {
-            EndGame();
-        }
+            StartCoroutine(EndGameRoutine());
     }
 
-    private void EndGame()
+    private IEnumerator EndGameRoutine()
     {
         gameEnded = true;
 
-        Debug.Log("GAME OVER TRIGGERADO");
-        scoreSystem.SaveLastScore();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(4);
-        
+        GameplayLockSystem lockSystem = FindFirstObjectByType<GameplayLockSystem>();
+        lockSystem?.LockGameplay();
+
+        if (scoreSystem != null)
+            scoreSystem.SaveLastScore();
+
+        if (endGameOverlay != null)
+            endGameOverlay.SetActive(true);
+
+        AudioManager.Instance?.PlayFinalWhistle();
+        AudioManager.Instance?.PlayCrowdCheer();
+
+        yield return new WaitForSecondsRealtime(endGameDelay);
+
+        SceneManager.LoadScene(nextSceneName);
     }
 }
