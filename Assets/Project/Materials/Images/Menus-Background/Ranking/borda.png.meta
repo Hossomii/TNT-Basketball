@@ -1,58 +1,82 @@
 fileFormatVersion: 2
-guid: fc332df77d9d4474c82378b157c560ea
+guid: 4059ced55a7cfe945a6de3ccec3ec93b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8841490917199087839
-    second: table_0
+      213: 1829586873364883901
+    second: borda_0
   - first:
-      213: 70885313432537070
-    second: table_1
+      213: 2588673957536241730
+    second: borda_1
   - first:
-      213: 5172761442312012347
-    second: table_2
+      213: 5255284898531117007
+    second: borda_2
   - first:
-      213: -8393496852473891571
-    second: table_3
+      213: -8342081685676527644
+    second: borda_3
   - first:
-      213: 7790998481412912861
-    second: table_4
+      213: -4332171528672267090
+    second: borda_4
   - first:
-      213: -5504044869223272507
-    second: table_5
+      213: 5352401420137540318
+    second: borda_5
   - first:
-      213: 6243382068904927358
-    second: table_6
+      213: -7400362285530251706
+    second: borda_6
   - first:
-      213: -8357357505806109085
-    second: table_7
+      213: -4751514851566939568
+    second: borda_7
   - first:
-      213: -1839717815967708537
-    second: table_8
+      213: -3067911813927661507
+    second: borda_8
   - first:
-      213: -2650419976776877479
-    second: table_9
+      213: 9019315374294126913
+    second: borda_9
   - first:
-      213: 6367737224808873920
-    second: table_10
+      213: 3261610378146865276
+    second: borda_10
   - first:
-      213: 9025253950873618479
-    second: table_11
+      213: -6128258653565355409
+    second: borda_11
   - first:
-      213: 8002183768100935404
-    second: table_12
+      213: -9198952912511794821
+    second: borda_12
   - first:
-      213: -4118665353266273475
-    second: table_13
+      213: 2436985936141931649
+    second: borda_13
   - first:
-      213: 4669002050373205556
-    second: table_14
+      213: 6047220495299390734
+    second: borda_14
   - first:
-      213: -1155744471425098008
-    second: table_15
+      213: -2550113670138249123
+    second: borda_15
   - first:
-      213: 9069648414227227969
-    second: table_16
+      213: -7202368965367986059
+    second: borda_16
+  - first:
+      213: 5869592344476418086
+    second: borda_17
+  - first:
+      213: 2606004759593671916
+    second: borda_18
+  - first:
+      213: 1063263176142957285
+    second: borda_19
+  - first:
+      213: 1478235928423428449
+    second: borda_20
+  - first:
+      213: 6536719054555711147
+    second: borda_21
+  - first:
+      213: -6037389427425490178
+    second: borda_22
+  - first:
+      213: -8363683366251174778
+    second: borda_23
+  - first:
+      213: 1143705455727494651
+    second: borda_24
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,7 +120,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -123,7 +147,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -161,12 +185,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: table_0
+      name: borda_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 1523
+        width: 1536
         height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -176,18 +200,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1277183ead6bc4580800000000000000
-      internalID: -8841490917199087839
+      spriteID: db9a1a8519ff36910800000000000000
+      internalID: 1829586873364883901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_1
+      name: borda_1
       rect:
         serializedVersion: 2
-        x: 994
-        y: 671
+        x: 995
+        y: 1016
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248904ebf31dce320800000000000000
+      internalID: 2588673957536241730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1008
         width: 6
         height: 7
       alignment: 0
@@ -198,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee740f621d5dbf000800000000000000
-      internalID: 70885313432537070
+      spriteID: fc70c6285c58ee840800000000000000
+      internalID: 5255284898531117007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_2
+      name: borda_3
       rect:
         serializedVersion: 2
-        x: 82
-        y: 622
-        width: 6
-        height: 6
+        x: 81
+        y: 990
+        width: 8
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3248d4102759c740800000000000000
-      internalID: 5172761442312012347
+      spriteID: 4ef65f5b7e8fa3c80800000000000000
+      internalID: -8342081685676527644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_3
+      name: borda_4
       rect:
         serializedVersion: 2
         x: 83
-        y: 487
+        y: 998
         width: 6
-        height: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,18 +288,106 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d053fe4551f448b80800000000000000
-      internalID: -8393496852473891571
+      spriteID: ea4bd6f82f801e3c0800000000000000
+      internalID: -4332171528672267090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_4
+      name: borda_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 982
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda289ebbbc874a40800000000000000
+      internalID: 5352401420137540318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_6
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 974
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e75c9c5b1ac4990800000000000000
+      internalID: -7400362285530251706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_7
       rect:
         serializedVersion: 2
         x: 82
-        y: 350
+        y: 955
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0521c57ca6a3f0eb0800000000000000
+      internalID: -4751514851566939568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_8
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 952
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d301e90b5769c65d0800000000000000
+      internalID: -3067911813927661507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_9
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 928
         width: 6
         height: 6
       alignment: 0
@@ -264,18 +398,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd6793227df2f1c60800000000000000
-      internalID: 7790998481412912861
+      spriteID: 141550aeb8b0b2d70800000000000000
+      internalID: 9019315374294126913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_5
+      name: borda_10
       rect:
         serializedVersion: 2
-        x: 82
-        y: 326
+        x: 1041
+        y: 919
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c70eb21bb51934d20800000000000000
+      internalID: 3261610378146865276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 902
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6af586393d04faa0800000000000000
+      internalID: -6128258653565355409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_12
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 904
         width: 6
         height: 6
       alignment: 0
@@ -286,40 +464,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cfa2266a54bd93b0800000000000000
-      internalID: -5504044869223272507
+      spriteID: b7180307011c65080800000000000000
+      internalID: -9198952912511794821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_6
+      name: borda_13
       rect:
         serializedVersion: 2
-        x: 174
-        y: 323
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e702f1ea9e2f4a650800000000000000
-      internalID: 6243382068904927358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table_7
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 328
+        x: 67
+        y: 802
         width: 7
         height: 6
       alignment: 0
@@ -330,20 +486,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3667b7da0a3b40c80800000000000000
-      internalID: -8357357505806109085
+      spriteID: 184dc561cc9e1d120800000000000000
+      internalID: 2436985936141931649
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_8
+      name: borda_14
       rect:
         serializedVersion: 2
-        x: 179
-        y: 324
-        width: 6
-        height: 14
+        x: 81
+        y: 91
+        width: 8
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,18 +508,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78a8944c4620876e0800000000000000
-      internalID: -1839717815967708537
+      spriteID: e0d28cc300b0ce350800000000000000
+      internalID: 6047220495299390734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_9
+      name: borda_15
       rect:
         serializedVersion: 2
-        x: 177
-        y: 317
+        x: 81
+        y: 86
         width: 8
         height: 7
       alignment: 0
@@ -374,19 +530,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95a7d9ad211d73bd0800000000000000
-      internalID: -2650419976776877479
+      spriteID: d50ca8ac02d2c9cd0800000000000000
+      internalID: -2550113670138249123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_10
+      name: borda_16
       rect:
         serializedVersion: 2
-        x: 179
-        y: 306
+        x: 994
+        y: 91
         width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57881f5f59b0c0c90800000000000000
+      internalID: -7202368965367986059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_17
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 68
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -396,40 +574,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cfb3cba44fbe5850800000000000000
-      internalID: 6367737224808873920
+      spriteID: 6208edc832bf47150800000000000000
+      internalID: 5869592344476418086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_11
+      name: borda_18
       rect:
         serializedVersion: 2
-        x: 179
-        y: 300
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f28438586a4204d70800000000000000
-      internalID: 9025253950873618479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table_12
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 218
+        x: 1041
+        y: 71
         width: 6
         height: 7
       alignment: 0
@@ -440,19 +596,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce69d0d5db77d0f60800000000000000
-      internalID: 8002183768100935404
+      spriteID: cecde8a85836a2420800000000000000
+      internalID: 2606004759593671916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_13
+      name: borda_19
       rect:
         serializedVersion: 2
-        x: 1039
-        y: 219
-        width: 9
+        x: 82
+        y: 61
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea21cca93871ce00800000000000000
+      internalID: 1063263176142957285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 54
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161f5efaebfb38410800000000000000
+      internalID: 1478235928423428449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_21
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 30
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6025bd85717ba50800000000000000
+      internalID: 6536719054555711147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_22
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 35
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efaca9f9d42e63ca0800000000000000
+      internalID: -6037389427425490178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: borda_23
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 39
+        width: 6
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -462,42 +706,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d33eaddceaf87d6c0800000000000000
-      internalID: -4118665353266273475
+      spriteID: 68461c48a4a3eeb80800000000000000
+      internalID: -8363683366251174778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: table_14
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 218
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43eb01c90a0abc040800000000000000
-      internalID: 4669002050373205556
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table_15
+      name: borda_24
       rect:
         serializedVersion: 2
         x: 994
-        y: 200
+        y: 23
         width: 6
-        height: 6
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,30 +728,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8eed591d688f5ffe0800000000000000
-      internalID: -1155744471425098008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: table_16
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 186
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 145e2bffd2ddddd70800000000000000
-      internalID: 9069648414227227969
+      spriteID: bf540586d024fdf00800000000000000
+      internalID: 1143705455727494651
       vertices: []
       indices: 
       edges: []
@@ -548,23 +748,31 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      table_0: -8841490917199087839
-      table_1: 70885313432537070
-      table_10: 6367737224808873920
-      table_11: 9025253950873618479
-      table_12: 8002183768100935404
-      table_13: -4118665353266273475
-      table_14: 4669002050373205556
-      table_15: -1155744471425098008
-      table_16: 9069648414227227969
-      table_2: 5172761442312012347
-      table_3: -8393496852473891571
-      table_4: 7790998481412912861
-      table_5: -5504044869223272507
-      table_6: 6243382068904927358
-      table_7: -8357357505806109085
-      table_8: -1839717815967708537
-      table_9: -2650419976776877479
+      borda_0: 1829586873364883901
+      borda_1: 2588673957536241730
+      borda_10: 3261610378146865276
+      borda_11: -6128258653565355409
+      borda_12: -9198952912511794821
+      borda_13: 2436985936141931649
+      borda_14: 6047220495299390734
+      borda_15: -2550113670138249123
+      borda_16: -7202368965367986059
+      borda_17: 5869592344476418086
+      borda_18: 2606004759593671916
+      borda_19: 1063263176142957285
+      borda_2: 5255284898531117007
+      borda_20: 1478235928423428449
+      borda_21: 6536719054555711147
+      borda_22: -6037389427425490178
+      borda_23: -8363683366251174778
+      borda_24: 1143705455727494651
+      borda_3: -8342081685676527644
+      borda_4: -4332171528672267090
+      borda_5: 5352401420137540318
+      borda_6: -7400362285530251706
+      borda_7: -4751514851566939568
+      borda_8: -3067911813927661507
+      borda_9: 9019315374294126913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

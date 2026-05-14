@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: f0855b664c89c2142bdc9663b05c5850
+guid: cf4ca7c1448e02a4f911af0520491c72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1109130075425308621
-    second: nomeAleatorio_0
+      213: -8114199531863159972
+    second: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_0
+  - first:
+      213: 61485149557256386
+    second: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_1
+  - first:
+      213: -573453756846009509
+    second: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_2
+  - first:
+      213: 3970183857759919435
+    second: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +55,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,12 +122,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nomeAleatorio_0
+      name: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_0
       rect:
         serializedVersion: 2
         x: 11
         y: 0
-        width: 1494
+        width: 1502
         height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dcf7d6b5deb646f00800000000000000
-      internalID: 1109130075425308621
+      spriteID: c5bc7a24482946f80800000000000000
+      internalID: -8114199531863159972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 526
+        width: 10
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c07252fa607ad000800000000000000
+      internalID: 61485149557256386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_2
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 580
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b539410b8deaa08f0800000000000000
+      internalID: -573453756846009509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 93a5244c-7f58-4719-b869-e3fdd81a4a9a_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 518
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d15c60f2de81730800000000000000
+      internalID: 3970183857759919435
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      nomeAleatorio_0: 1109130075425308621
+      93a5244c-7f58-4719-b869-e3fdd81a4a9a_0: -8114199531863159972
+      93a5244c-7f58-4719-b869-e3fdd81a4a9a_1: 61485149557256386
+      93a5244c-7f58-4719-b869-e3fdd81a4a9a_2: -573453756846009509
+      93a5244c-7f58-4719-b869-e3fdd81a4a9a_3: 3970183857759919435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
