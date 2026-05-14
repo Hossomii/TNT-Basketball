@@ -141,7 +141,7 @@ public class LeaderboardManager : MonoBehaviour
             }
 
             myRankingText.text =
-                $"Sua posição: #{rank}\n" +
+                $"Rank: #{rank}\n" +
                 $"Jogador: {playerName}\n" +
                 $"Score: {playerScore}";
         }
