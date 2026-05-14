@@ -42,6 +42,6 @@ public class NameManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
 }
