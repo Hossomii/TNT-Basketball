@@ -239,5 +239,5 @@ Todo o conteúdo visual, gameplay, interface, identidade visual, assets e códig
 ---
 
 <p align="center">
-© TNT Basketball — Todos os direitos reservados aos desenvolvedores do projeto.
+© TNT Basketball - Todos os direitos reservados aos desenvolvedores do projeto.
 </p>
