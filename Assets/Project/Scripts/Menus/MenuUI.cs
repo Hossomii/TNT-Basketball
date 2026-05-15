@@ -5,14 +5,20 @@ public class MenuUI : MonoBehaviour
 {
     // Nome das cenas (igual no Build Settings)
     public int cenaJogo = 2;
-    public int cenaRanking = 0;
-    public int cenaPersonalizar = 3;
-    public int cenaTutorial = 1;
-    public int cenaCreditos = 4;
+    public int cenaRanking = 4;
+    public int cenaPersonalizar = 0;
+    public int cenaTutorial = 5;
+    public int cenaCreditos = 6;
+    public int trocaSkin = 1;
 
     public void IniciarJogo()
     {
         SceneManager.LoadScene(cenaJogo);
+    }
+
+    public void TrocarSkin()
+    {
+        SceneManager.LoadScene(trocaSkin);
     }
 
     public void AbrirRanking()

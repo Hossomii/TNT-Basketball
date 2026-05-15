@@ -154,7 +154,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -165,7 +165,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 256
@@ -229,28 +229,6 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: "bot\xE3oIniciarJogo_0"
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 0
-        width: 318
-        height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75e5baaf5ef3ff9e0800000000000000
-      internalID: -1585478286825529769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     - serializedVersion: 2
       name: "bot\xE3oIniciarJogo_1"
       rect:
@@ -629,10 +607,10 @@ TextureImporter:
       name: "bot\xE3oIniciarJogo_18"
       rect:
         serializedVersion: 2
-        x: 190
-        y: 0
-        width: 1187
-        height: 718
+        x: 177
+        y: 368
+        width: 1200
+        height: 350
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,28 +621,6 @@ TextureImporter:
       bones: []
       spriteID: 322ca6fd3011e22d0800000000000000
       internalID: -3301682768485105117
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "bot\xE3oIniciarJogo_19"
-      rect:
-        serializedVersion: 2
-        x: 348
-        y: 715
-        width: 701
-        height: 309
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dbb37e13e51a39d0800000000000000
-      internalID: -2793896553617310764
       vertices: []
       indices: 
       edges: []
@@ -1061,28 +1017,6 @@ TextureImporter:
       bones: []
       spriteID: 0bcecef563825d6b0800000000000000
       internalID: -5272263574764589904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "bot\xE3oIniciarJogo_38"
-      rect:
-        serializedVersion: 2
-        x: 1067
-        y: 9
-        width: 462
-        height: 1015
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 796057efa34c6a440800000000000000
-      internalID: 4946856998369298071
       vertices: []
       indices: 
       edges: []
