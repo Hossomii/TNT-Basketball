@@ -1,320 +1,195 @@
 /*
 Responsabilidade:
-Gerenciar músicas e efeitos sonoros do jogo.
-
-Controla:
-- música geral dos menus
-- música da gameplay
-- efeitos de UI
-- efeitos da gameplay
-- sons do countdown
-- apito final
-- torcida final
+Gerenciar música, efeitos sonoros e sons de interface de forma global.
 
 Usado por:
-- MenuUI
-- BallSkinSelector
-- InputHandler
-- TNTSystem
-- GameStartCountdown
-- GameManager
+- Menu
+- Gameplay
+- Tutorial
+- Ranking
+- Skin Selector
+- SettingsMenuController
+
+Funções:
+- Mantém áudio entre cenas
+- Salva preferências do jogador
+- Muta música e SFX separadamente
+- Mantém compatibilidade com scripts antigos
 */
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
     [Header("Audio Sources")]
-    public AudioSource musicSource;
-    public AudioSource sfxSource;
-    public AudioSource uiSource;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource uiSource;
 
-    [Header("Music")]
-    public AudioClip generalBackgroundMusic;
-    public AudioClip gameplayBackgroundMusic;
-    public string gameplaySceneName = "Gameplay";
+    [Header("UI Clips")]
+    [SerializeField] private AudioClip uiClickClip;
+    [SerializeField] private AudioClip uiHoverClip;
 
-    [Header("UI SFX")]
-    public AudioClip uiClick;
-    public AudioClip uiHover;
-    public AudioClip switchSkin;
-    public AudioClip confirmSkin;
+    [Header("Gameplay Clips")]
+    [SerializeField] private AudioClip shootClip;
+    [SerializeField] private AudioClip perfectClip;
+    [SerializeField] private AudioClip hitClip;
+    [SerializeField] private AudioClip missClip;
 
-    [Header("Countdown SFX")]
-    public AudioClip countdown3;
-    public AudioClip countdown2;
-    public AudioClip countdown1;
-    public AudioClip countdownGo;
+    [Header("Countdown Clips")]
+    [SerializeField] private AudioClip countdownNumberClip;
+    [SerializeField] private AudioClip countdownGoClip;
 
-    [Header("Gameplay SFX")]
-    public AudioClip shoot;
-    public AudioClip hit;
-    public AudioClip miss;
-    public AudioClip perfect;
-    public AudioClip canActivate;
+    [Header("Game Flow Clips")]
+    [SerializeField] private AudioClip finalWhistleClip;
+    [SerializeField] private AudioClip crowdCheerClip;
 
-    [Header("End Game SFX")]
-    public AudioClip finalWhistle;
-    public AudioClip crowdCheer;
+    [Header("PowerUp Clips")]
+    [SerializeField] private AudioClip canActivateClip;
 
-    [Header("Volumes")]
-    [Range(0f, 1f)] public float musicVolume = 0.45f;
-    [Range(0f, 1f)] public float sfxVolume = 1f;
-    [Range(0f, 1f)] public float uiVolume = 1f;
-    [Range(0f, 1f)] public float finalWhistleVolume = 1f;
-    [Range(0f, 1f)] public float crowdCheerVolume = 0.75f;
+    [Header("Skin Clips")]
+    [SerializeField] private AudioClip switchSkinClip;
+    [SerializeField] private AudioClip confirmSkinClip;
+
+    private const string MUSIC_KEY = "music_enabled";
+    private const string SFX_KEY = "sfx_enabled";
+
+    private bool musicEnabled = true;
+    private bool sfxEnabled = true;
 
     private void Awake()
     {
-        SetupSingleton();
-        SetupAudioSources();
-    }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += HandleSceneLoaded;
-    }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= HandleSceneLoaded;
+        LoadAudioSettings();
+        ApplyAudioSettings();
     }
 
     private void Start()
     {
-        PlayMusicForScene(SceneManager.GetActiveScene().name);
+        EnsureMusicIsPlaying();
     }
 
-    private void SetupSingleton()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            return;
-        }
-
-        Destroy(gameObject);
-    }
-
-    private void SetupAudioSources()
+    private void EnsureMusicIsPlaying()
     {
         if (musicSource == null)
-        {
-            musicSource = gameObject.AddComponent<AudioSource>();
-            musicSource.loop = true;
-            musicSource.playOnAwake = false;
-        }
+            return;
 
-        if (sfxSource == null)
-        {
-            sfxSource = gameObject.AddComponent<AudioSource>();
-            sfxSource.loop = false;
-            sfxSource.playOnAwake = false;
-        }
+        if (musicSource.clip != null && !musicSource.isPlaying)
+            musicSource.Play();
 
-        if (uiSource == null)
-        {
-            uiSource = gameObject.AddComponent<AudioSource>();
-            uiSource.loop = false;
-            uiSource.playOnAwake = false;
-        }
-
-        musicSource.volume = musicVolume;
+        ApplyAudioSettings();
     }
 
-    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void SetMusicEnabled(bool enabled)
     {
-        PlayMusicForScene(scene.name);
+        musicEnabled = enabled;
+
+        PlayerPrefs.SetInt(MUSIC_KEY, enabled ? 1 : 0);
+        PlayerPrefs.Save();
+
+        if (musicEnabled)
+            EnsureMusicIsPlaying();
+
+        ApplyAudioSettings();
     }
 
-    private void PlayMusicForScene(string sceneName)
+    public void SetSfxEnabled(bool enabled)
     {
-        AudioClip targetMusic =
-            sceneName == gameplaySceneName
-                ? gameplayBackgroundMusic
-                : generalBackgroundMusic;
+        sfxEnabled = enabled;
 
-        PlayMusic(targetMusic);
+        PlayerPrefs.SetInt(SFX_KEY, enabled ? 1 : 0);
+        PlayerPrefs.Save();
+
+        ApplyAudioSettings();
     }
 
-    private void PlayMusic(AudioClip clip)
+    public bool IsMusicEnabled()
+    {
+        return musicEnabled;
+    }
+
+    public bool IsSfxEnabled()
+    {
+        return sfxEnabled;
+    }
+
+    public void ApplyAudioSettings()
+    {
+        if (musicSource != null)
+            musicSource.mute = !musicEnabled;
+
+        if (sfxSource != null)
+            sfxSource.mute = !sfxEnabled;
+
+        if (uiSource != null)
+            uiSource.mute = !sfxEnabled;
+    }
+
+    private void LoadAudioSettings()
+    {
+        musicEnabled = PlayerPrefs.GetInt(MUSIC_KEY, 1) == 1;
+        sfxEnabled = PlayerPrefs.GetInt(SFX_KEY, 1) == 1;
+    }
+
+    public void PlayMusic(AudioClip clip)
     {
         if (musicSource == null || clip == null)
             return;
 
-        if (musicSource.clip == clip && musicSource.isPlaying)
+        if (musicSource.clip != clip)
+            musicSource.clip = clip;
+
+        if (!musicSource.isPlaying)
+            musicSource.Play();
+
+        ApplyAudioSettings();
+    }
+
+    public void PlaySfx(AudioClip clip)
+    {
+        if (sfxSource == null || clip == null || !sfxEnabled)
             return;
 
-        musicSource.clip = clip;
-        musicSource.volume = musicVolume;
-        musicSource.loop = true;
-        musicSource.Play();
+        sfxSource.PlayOneShot(clip);
     }
 
-    public void SetMusicVolume(float volume)
+    public void PlayUI(AudioClip clip)
     {
-        musicVolume = Mathf.Clamp01(volume);
-
-        if (musicSource != null)
-            musicSource.volume = musicVolume;
-    }
-
-    public void SetSFXVolume(float volume)
-    {
-        sfxVolume = Mathf.Clamp01(volume);
-    }
-
-    public void SetUIVolume(float volume)
-    {
-        uiVolume = Mathf.Clamp01(volume);
-    }
-
-    public void SetFinalWhistleVolume(float volume)
-    {
-        finalWhistleVolume = Mathf.Clamp01(volume);
-    }
-
-    public void SetCrowdCheerVolume(float volume)
-    {
-        crowdCheerVolume = Mathf.Clamp01(volume);
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        PlaySFX(clip, sfxVolume);
-    }
-
-    private void PlaySFX(AudioClip clip, float volume)
-    {
-        if (clip == null || sfxSource == null)
+        if (uiSource == null || clip == null || !sfxEnabled)
             return;
 
-        sfxSource.PlayOneShot(clip, Mathf.Clamp01(volume));
+        uiSource.PlayOneShot(clip);
     }
 
-    private void PlayUISFX(AudioClip clip)
-    {
-        if (uiSource == null)
-        {
-            Debug.LogWarning("UI Source vazio");
-            return;
-        }
+    public void PlayUIClick() => PlayUI(uiClickClip);
+    public void PlayUIHover() => PlayUI(uiHoverClip);
 
-        if (clip == null)
-        {
-            Debug.LogWarning("UI Click Clip vazio");
-            return;
-        }
+    public void PlayShoot() => PlaySfx(shootClip);
+    public void PlayPerfect() => PlaySfx(perfectClip);
+    public void PlayHit() => PlaySfx(hitClip);
+    public void PlayMiss() => PlaySfx(missClip);
 
-        Debug.Log("Tocando som de UI: " + clip.name);
+    public void PlayCountdownNumber() => PlaySfx(countdownNumberClip);
+    public void PlayCountdownNumber(int number) => PlaySfx(countdownNumberClip);
+    public void PlayCountdownNumber(string number) => PlaySfx(countdownNumberClip);
 
-        uiSource.PlayOneShot(clip, uiVolume);
-    }
+    public void PlayCountdownGo() => PlaySfx(countdownGoClip);
 
-    // =========================
-    // UI
-    // =========================
+    public void PlayFinalWhistle() => PlaySfx(finalWhistleClip);
+    public void PlayCrowdCheer() => PlaySfx(crowdCheerClip);
 
-    public void PlayUIClick()
-    {
-        Debug.Log("PlayUIClick chamado");
+    public void PlayCanActivate() => PlaySfx(canActivateClip);
 
-        PlayUISFX(uiClick);
-    }
-
-    public void PlayUIHover()
-    {
-        PlayUISFX(uiHover);
-    }
-
-    // compatibilidade
-    public void PlayClick()
-    {
-        
-        PlayUIClick();
-    }
-
-    public void PlaySwitchSkin()
-    {
-        PlayUISFX(switchSkin);
-    }
-
-    public void PlayConfirmSkin()
-    {
-        PlayUISFX(confirmSkin);
-    }
-
-    // =========================
-    // COUNTDOWN
-    // =========================
-
-    public void PlayCountdownNumber(int number)
-    {
-        switch (number)
-        {
-            case 3:
-                PlaySFX(countdown3);
-                break;
-
-            case 2:
-                PlaySFX(countdown2);
-                break;
-
-            case 1:
-                PlaySFX(countdown1);
-                break;
-        }
-    }
-
-    public void PlayCountdownGo()
-    {
-        PlaySFX(countdownGo);
-    }
-
-    // =========================
-    // GAMEPLAY
-    // =========================
-
-    public void PlayShoot()
-    {
-        PlaySFX(shoot);
-    }
-
-    public void PlayHit()
-    {
-        PlaySFX(hit);
-    }
-
-    public void PlayMiss()
-    {
-        PlaySFX(miss);
-    }
-
-    public void PlayPerfect()
-    {
-        PlaySFX(perfect);
-    }
-
-    public void PlayCanActivate()
-    {
-        PlaySFX(canActivate);
-    }
-
-    // =========================
-    // END GAME
-    // =========================
-
-    public void PlayFinalWhistle()
-    {
-        PlaySFX(finalWhistle, finalWhistleVolume);
-    }
-
-    public void PlayCrowdCheer()
-    {
-        PlaySFX(crowdCheer, crowdCheerVolume);
-    }
+    public void PlaySwitchSkin() => PlaySfx(switchSkinClip);
+    public void PlayConfirmSkin() => PlaySfx(confirmSkinClip);
 }
