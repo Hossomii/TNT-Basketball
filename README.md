@@ -17,7 +17,7 @@ Fast-paced arcade basketball inspired by the energy of TNT Energy Drink
 
 # TNT Basketball
 
-TNT Basketball é um jogo arcade de basquete desenvolvido em Unity como projeto final do bootcamp Desenvolvedor de Games com IA, realizado pela **SoulCode Academy em parceria com a TNT Energy Drink e Grupo Petrópolis.
+TNT Basketball é um jogo arcade de basquete desenvolvido em Unity como projeto final do bootcamp **Desenvolvedor de Games com IA**, realizado pela **SoulCode Academy** em parceria com a **TNT Energy Drink** e **Grupo Petrópolis**.
 
 O projeto foi criado para entregar partidas rápidas, competitivas e visualmente marcantes, combinando:
 
@@ -106,15 +106,16 @@ Grande parte do desenvolvimento foi dedicada ao refinamento visual da experiênc
 
 # Tecnologias Utilizadas
 
-txt  
-Unity 6  
-C#  
-WebGL  
-TextMeshPro  
-Git & GitHub  
-Photoshop  
-Canva  
-IA Generativa para criação visual  
+```txt
+Unity 6
+C#
+WebGL
+TextMeshPro
+Git & GitHub
+Photoshop
+Canva
+IA Generativa para criação visual
+```
 
 ---
 
@@ -171,11 +172,13 @@ IA Generativa para criação visual
 # Equipe
 
 <p align="center">
-  Anthony da Silveira Bugs<br/>
-  Gabriel José Araújo<br/>
-  Adolfo Athayde<br/>
-  Wallyson Schumacher<br/>
-  Laila Zappiello
+
+Anthony da Silveira Bugs  
+Gabriel José Araújo  
+Adolfo Athayde  
+Wallyson Schumacher  
+Laila Zappiello  
+
 </p>
 
 ---
@@ -239,5 +242,5 @@ Todo o conteúdo visual, gameplay, interface, identidade visual, assets e códig
 ---
 
 <p align="center">
-© TNT Basketball - Todos os direitos reservados aos desenvolvedores do projeto.
+© TNT Basketball — Todos os direitos reservados aos desenvolvedores do projeto.
 </p>
