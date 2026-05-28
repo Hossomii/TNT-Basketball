@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Assets/Project/Materials/Images/GAMELOGO/tnt_logo.png" width="220"/>
+  <img src="./Assets/Project/Materials/Images-Sprites/GAMELOGO/tnt_logo.png" width="220"/>
 </p>
 
 <h3 align="center">
