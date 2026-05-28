@@ -2,109 +2,115 @@
   <img src="./Assets/Project/Materials/Images-Sprites/GAMELOGO/tnt_logo.png" width="220"/>
 </p>
 
-<h3 align="center">
-Fast-paced arcade basketball inspired by the energy of TNT Energy Drink
-</h3>
+<h1 align="center">TNT Basketball</h1>
+
+<p align="center">
+Fast-paced arcade basketball experience developed with Unity and C#.
+</p>
+
+<p align="center">
+  <strong>From concept to code.</strong>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Unity-6-black?style=for-the-badge&logo=unity"/>
-  <img src="https://img.shields.io/badge/C%23-Gameplay%20Programming-purple?style=for-the-badge&logo=csharp"/>
+  <img src="https://img.shields.io/badge/C%23-Gameplay_Programming-purple?style=for-the-badge&logo=csharp"/>
   <img src="https://img.shields.io/badge/WebGL-Optimized-red?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Mobile-Landscape-orange?style=for-the-badge"/>
 </p>
 
 ---
 
-# TNT Basketball
+# About The Project
 
-TNT Basketball é um jogo arcade de basquete desenvolvido em Unity como projeto final do bootcamp **Desenvolvedor de Games com IA**, realizado pela **SoulCode Academy** em parceria com a **TNT Energy Drink** e **Grupo Petrópolis**.
+TNT Basketball is a fast-paced arcade basketball game developed as the final project for the **AI Game Developer Bootcamp**, organized by **SoulCode Academy** in partnership with **TNT Energy Drink** and **Grupo Petrópolis**.
 
-O projeto foi criado para entregar partidas rápidas, competitivas e visualmente marcantes, combinando:
+The project was designed to deliver a competitive and visually polished gameplay experience focused on:
 
-- precisão
-- timing
+- timing precision
 - combos
-- multiplicadores
+- score multipliers
 - power-ups
-- ranking competitivo
+- responsive feedback
+- competitive ranking systems
 
-Tudo isso inspirado na identidade energética e intensa da TNT Energy Drink.
-
----
-
-# Objetivo do Projeto
-
-A proposta do jogo foi criar uma experiência:
-
-- simples de aprender
-- competitiva
-- dinâmica
-- acessível
-- visualmente impactante
-
-Além da gameplay arcade, o projeto também conecta o universo da TNT ao estilo visual moderno de esports e jogos competitivos.
+Inspired by the energetic identity of TNT Energy Drink, the game combines arcade gameplay with modern esports-inspired visuals.
 
 ---
 
-# Destaques do Desenvolvimento
+# My Role
 
-## Interface Responsiva
+Main contributions during development:
 
-Toda a interface foi refeita e adaptada para:
+- Gameplay systems
+- Score & combo logic
+- Power-up systems
+- UI implementation
+- Responsive HUD adjustments
+- Gameplay balancing
+- Audio & visual feedback integration
+- General gameplay flow polishing
+
+---
+
+# Technical Highlights
+
+## Modular Architecture
+
+The gameplay was built using modular systems for:
+
+- score handling
+- combo systems
+- multipliers
+- TNT energy mechanics
+- power-ups
+- ranking system
+- visual feedback
+- audio systems
+
+This structure improved:
+
+- scalability
+- maintainability
+- readability
+- overall performance
+
+---
+
+## WebGL Optimization
+
+The game was optimized for browser execution with focus on:
+
+- performance
+- fast loading
+- mobile compatibility
+- responsive interface behavior
+
+---
+
+## Responsive Interface
+
+The UI was adapted for:
 
 - Desktop
 - Notebook
-- Celulares na horizontal (Landscape)
+- Mobile Landscape
 
 ---
 
-## Estrutura Modular
+## Visual Polish
 
-A gameplay foi construída utilizando sistemas independentes para:
+A large part of the project focused on gameplay feel and visual clarity:
 
-- pontuação
-- combos
-- multiplicadores
-- energia TNT
-- power-ups
-- ranking
-- feedback visual
-- áudio
-
-Essa estrutura tornou o projeto:
-
-- mais organizado
-- escalável
-- performático
-- fácil de manter e expandir
+- responsive HUD
+- arcade-style visual effects
+- hit feedback systems
+- UI readability
+- esports-inspired visual identity
 
 ---
 
-## Otimização WebGL
-
-O jogo foi otimizado para rodar diretamente no navegador, priorizando:
-
-- estabilidade
-- carregamento rápido
-- compatibilidade mobile
-- responsividade
-
----
-
-## Polish Visual
-
-Grande parte do desenvolvimento foi dedicada ao refinamento visual da experiência:
-
-- HUD responsiva
-- feedbacks visuais de acerto
-- efeitos arcade
-- clareza visual
-- contraste
-- identidade cyberpunk/esports
-
----
-
-# Tecnologias Utilizadas
+# Technologies
 
 ```txt
 Unity 6
@@ -114,8 +120,8 @@ TextMeshPro
 Git & GitHub
 Photoshop
 Canva
-IA Generativa para criação visual
-```
+Generative AI for visual ideation
+````
 
 ---
 
@@ -140,12 +146,20 @@ IA Generativa para criação visual
 ## Ranking
 
 <p align="center">
+  <img src="./Assets/Docs/README/ranking.png" width="900"/>
+</p>
+
+---
+
+## Credits
+
+<p align="center">
   <img src="./Assets/Docs/README/credits.png" width="900"/>
 </p>
 
 ---
 
-## Menu Principal
+## Main Menu
 
 <p align="center">
   <img src="./Assets/Docs/README/menu.png" width="900"/>
@@ -153,7 +167,7 @@ IA Generativa para criação visual
 
 ---
 
-## Seleção de Skin
+## Skin Selection
 
 <p align="center">
   <img src="./Assets/Docs/README/skinselector.png" width="900"/>
@@ -161,7 +175,7 @@ IA Generativa para criação visual
 
 ---
 
-## Entrada de Nome
+## Name Input
 
 <p align="center">
   <img src="./Assets/Docs/README/namescene.png" width="900"/>
@@ -169,78 +183,56 @@ IA Generativa para criação visual
 
 ---
 
-# Equipe
-
-<p align="center">
-
-Anthony da Silveira Bugs  
-Gabriel José Araújo  
-Adolfo Athayde  
-Wallyson Schumacher  
-Laila Zappiello  
-
-</p>
-
----
-
-# Experimente o sabor de ser o máximo
+# Play The Game
 
 <p align="center">
   <a href="https://grupo-1.itch.io/tnt-basketball" target="_blank">
-    <img src="https://img.shields.io/badge/JOGAR%20AGORA-Itch.io-red?style=for-the-badge&logo=itchdotio"/>
+    <img src="https://img.shields.io/badge/PLAY_NOW-Itch.io-red?style=for-the-badge&logo=itchdotio"/>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://grupo-1.itch.io/tnt-basketball">
-    grupo-1.itch.io/tnt-basketball
-  </a>
+  https://grupo-1.itch.io/tnt-basketball
 </p>
 
 ---
 
-# Repositório
+# Compatibility
 
-<p align="center">
-  <a href="https://github.com/Hossomii/TNT-game">
-    github.com/Hossomii/TNT-game
-  </a>
-</p>
+Currently supported on:
 
----
+* Desktop
+* Notebook
+* Mobile Landscape
 
-# Compatibilidade
-
-Atualmente o jogo possui suporte oficial para:
-
-- Desktop
-- Notebook
-- Celulares na horizontal (Landscape)
-
-O modo vertical/retrato ainda não possui suporte oficial.
+Portrait mode is not officially supported yet.
 
 ---
 
-# Direitos Autorais
+# Team
 
-Este projeto foi desenvolvido exclusivamente para fins educacionais e demonstrativos em parceria com:
+* Anthony da Silveira Bugs (Tech Lead)
+* Gabriel José Araújo
+* Adolfo Athayde
+* Wallyson Schumacher
+* Laila Zappiello
 
-- TNT Energy Drink
-- SoulCode Academy
-- Grupo Petrópolis
+---
 
-Todo o conteúdo visual, gameplay, interface, identidade visual, assets e código presentes neste repositório fazem parte do desenvolvimento original da equipe responsável pelo projeto e dos materiais disponibilizados pela TNT Energy Drink.
+# Disclaimer
 
-## Não é permitido
+This project was developed for educational and portfolio purposes in partnership with:
 
-- reutilizar assets
-- copiar interfaces
-- redistribuir arquivos
-- republicar o projeto
-- utilizar partes do código ou identidade visual sem autorização
+* TNT Energy Drink
+* SoulCode Academy
+* Grupo Petrópolis
+
+All trademarks and visual assets belong to their respective owners.
 
 ---
 
 <p align="center">
-© TNT Basketball — Todos os direitos reservados aos desenvolvedores do projeto.
+  <strong>TNT Basketball</strong><br/>
+  Built with Unity & C#
 </p>
+
